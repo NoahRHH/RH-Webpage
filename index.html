@@ -1,105 +1,12 @@
-.story-title {
-            font-size: 1.6rem;
-            color: var(--accent);
-            margin-bottom: 1.5rem;
-            font-family: 'UnifrakturMaguntia', 'Old English Text MT', 'Blackletter', serif;
-            text-align: center;
-        }
-        
-        .story-content {
-            margin-bottom: 2rem;
-        }
-        
-        .story-content p {
-            margin-bottom: 1rem;
-            line-height: 1.8;
-        }    <script>
-        // Stories collection
-        const stories = [
-            {
-                title: "🟫 Robinhood and the Crimson Vial (The Story of the HbA1c Test)",
-                content: `<p><span class="first-letter">I</span>n the heart of Sherwood, trouble brewed not in the form of bandits, but in the bellies and blood of its people. They grew tired, slow to heal, and endlessly thirsty. The wise healer Dame Glycema feared it was the Sugar Curse—an invisible ailment that lurked in the bloodstream, stealing health by the moon.</p>
-                <p>But there was hope. A single drop of blood, she claimed, could tell the tale of one's past three months. A magical test called the HbA1c could reveal the hidden truth.</p>
-                <p>Robinhood, protector of the people, knew what had to be done.</p>
-                <p>He declared the Festival of the Crimson Vial. No jousting. No archery. Just a gathering of brave souls ready to face their inner foe.</p>
-                <p>"Give but one drop," he said, holding up a tiny vial, "and learn what threatens you from within."</p>
-                <p>Skeptics scoffed. But when Friar Tuck shared his own results, showing his path to health, the village joined in.</p>
-                <p>One prick. One story. Some found they were well. Others found the Sugar Curse and began their journey to healing.</p>
-                <p>And so, Robinhood saved Sherwood once more—not with arrow or blade, but with a drop of truth.</p>`
-            },
-            {
-                title: "🟨 Robinhood and the Feathered Shield (The Story of the Flu Vaccine)",
-                content: `<p><span class="first-letter">A</span>s winter's breath chilled Sherwood to the bone, a different kind of enemy rode in—The Cold Riders, spirits of fever and coughing fits, invading homes and hearts alike.</p>
-                <p>Robinhood returned from a far-off apothecary with a mysterious gift: a vial no bigger than a thimble. "This," he announced, "is the Feathered Shield—a vaccine to protect us from the flu!"</p>
-                <p>The villagers raised eyebrows. "A pinch in the arm?" one asked. "That'll stop the Cold Riders?"</p>
-                <p>"It already has," said Maid Marian, showing her bandaged shoulder. "I've danced through three winters without falling ill."</p>
-                <p>Robinhood stood tall. "True courage isn't always on the battlefield. Sometimes it's rolling up your sleeve."</p>
-                <p>They called a gathering in the town square. No sword fights. No feasts. Just a line of villagers, sleeves rolled, arms ready.</p>
-                <p>That winter, while other towns coughed and shivered, Sherwood sang and celebrated.</p>
-                <p>For in a world full of dangers, the bravest thing they did... was get their flu shot.</p>`
-            },
-            {
-                title: "🟩 Robinhood and the Infinite Refill (The Story of the Extended Prescription)",
-                content: `<p><span class="first-letter">I</span>n the days when dragons were few but doctor visits were many, the people of Sherwood faced a new frustration—empty bottles.</p>
-                <p>The healers prescribed life-saving potions, but gave only a month at a time. The villagers missed doses. Some forgot. Some ran out in the middle of a moonlit hunt.</p>
-                <p>Robinhood saw the problem and devised a clever fix.</p>
-                <p>"Why," he asked, "must the potions be rationed like bread in a famine? Let's give more at once! Three moons' worth, six even!"</p>
-                <p>He rode to the apothecary and returned with a new decree: The Infinite Refill. Medicines could now be sent for longer periods, delivered straight to the cottage gate.</p>
-                <p>Friar Tuck was the first to try it. "No more running out!" he cheered. "And no more late-night scrolls to the healer!"</p>
-                <p>Soon, Sherwood's people were healthier, happier, and far less forgetful.</p>
-                <p>Robinhood smiled. "Sometimes, helping the people means making the easy things easier."</p>`
-            },
-            {
-                title: "🟦 Robinhood and the Elixir of the Stream (The Story of the Kidney Test)",
-                content: `<p><span class="first-letter">T</span>here was once a time in Sherwood when strength faded and energy drained from the people like rain through a cracked bucket. The healers suspected the cause: hidden damage in the kidneys—those small but mighty guardians of the body's balance.</p>
-                <p>Lady Creatina, a wise woman of herbs and scrolls, offered a solution. "A simple test," she said. "Just a stream of your water. We can detect the danger before it strikes."</p>
-                <p>The villagers were appalled. "You want us to... pee in a cup?"</p>
-                <p>But Robinhood, ever clever, announced a new tradition: The Festival of the Elixir of the Stream.</p>
-                <p>He brought cups, music, and courage. "Heroes face their fears," he said. "Even when it's... awkward."</p>
-                <p>Friar Tuck raised his goblet proudly. "I've given my sample. And I now drink twice the ale!"</p>
-                <p>Soon, the villagers followed. Some discovered early warnings and changed their fates. Others found peace of mind.</p>
-                <p>The kidneys were guarded. The people were spared.</p>
-                <p>And once again, Robinhood saved the day—not with sword or arrow, but with good old-fashioned urine.</p>`
-            },
-            {
-                title: "🟥 Robinhood and the Magic Scroll (The Story of the FIT Test)",
-                content: `<p><span class="first-letter">I</span>n the peaceful glades of Sherwood, a strange and silent danger began to creep—one that attacked the bowels from within. Few noticed until it was too late.</p>
-                <p>But Robinhood had heard tales from the village monks. "There is a way," they said, "to spot the danger early. A test of courage, yes—but also of... dignity."</p>
-                <p>It was called the FIT test.</p>
-                <p>Robinhood crafted a tale of valor. "A contest!" he declared. "One of precision, bravery, and truth!"</p>
-                <p>The villagers arrived expecting archery and swordplay. Instead, Robinhood handed them small boxes.</p>
-                <p>"What sorcery is this?" Will Scarlet asked.</p>
-                <p>"A box for your offering," Robinhood explained. "A stool sample, sent to wise healers who can detect hidden illness. It may save your life."</p>
-                <p>At first, they laughed. But when Friar Tuck raised his hand, declaring, "I've done it, and my bowels are as blessed as the Holy Grail," the people reconsidered.</p>
-                <p>And so, one by one, they took their boxes. Some returned with good news. Others were caught just in time.</p>
-                <p>Robinhood grinned. "Sometimes the greatest act of courage... is pooping in a box."</p>`
-            }
-        ];
-
-        // Function to load a random story
-        function loadRandomStory() {
-            const randomIndex = Math.floor(Math.random() * stories.length);
-            const story = stories[randomIndex];
-            
-            const storyContainer = document.getElementById('storyContainer');
-            storyContainer.innerHTML = `
-                <h3 class="story-title">${story.title}</h3>
-                <div class="story-content">${story.content}</div>
-            `;
-        }
-
-        // Load a random story when the page loads
-        document.addEventListener('DOMContentLoaded', loadRandomStory);
-    </script><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Robinhood Health</title>
+    <!-- Import Google Fonts for Old English style -->
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
     <style>
-        /* Import Google Fonts for Old English style */
-        @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
-        
         /* Old English Storybook Style */
         :root {
             --parchment: #f5e7c1;
@@ -114,7 +21,8 @@
         }
         
         body {
-            font-family: 'UnifrakturMaguntia', 'Blackletter', 'Old English Text MT', 'Garamond', 'Times New Roman', serif;
+            /* Changed font to improve readability while keeping old style */
+            font-family: 'Georgia', 'Times New Roman', serif;
             background-color: var(--parchment);
             color: var(--ink);
             line-height: 1.6;
@@ -139,11 +47,6 @@
             padding: 2rem;
             margin-bottom: 2rem;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        
-        header {
-            text-align: center;
-            margin-bottom: 2rem;
         }
         
         h1 {
@@ -186,10 +89,6 @@
             border: 5px solid var(--accent);
         }
         
-        .hero-content {
-            max-width: 800px;
-        }
-        
         .first-letter {
             float: left;
             font-size: 6rem;
@@ -223,61 +122,6 @@
             color: var(--ink);
         }
         
-        .services {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin: 3rem 0;
-        }
-        
-        .service {
-            flex: 1;
-            min-width: 300px;
-            margin: 1rem;
-            padding: 1.5rem;
-            background-color: rgba(255, 255, 255, 0.3);
-            border: 1px solid var(--accent);
-            text-align: center;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        .service h3 {
-            color: var(--highlight);
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            font-family: 'UnifrakturMaguntia', 'Old English Text MT', 'Blackletter', serif;
-        }
-        
-        .cta {
-            text-align: center;
-            margin: 3rem 0;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background-color: var(--highlight);
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            border: 2px solid var(--highlight);
-        }
-        
-        .btn:hover {
-            background-color: transparent;
-            color: var(--highlight);
-        }
-        
-        footer {
-            text-align: center;
-            padding: 2rem;
-            border-top: 2px solid var(--accent);
-            margin-top: 3rem;
-            font-style: italic;
-        }
-        
         /* Decorative elements */
         .divider {
             height: 2px;
@@ -292,13 +136,26 @@
             margin: 1rem 0;
         }
         
+        .story-title {
+            font-size: 1.6rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            font-family: 'UnifrakturMaguntia', 'Old English Text MT', 'Blackletter', serif;
+            text-align: center;
+        }
+        
+        .story-content {
+            margin-bottom: 2rem;
+        }
+        
+        .story-content p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        
         @media (max-width: 768px) {
             h1 {
                 font-size: 2.5rem;
-            }
-            
-            .services {
-                flex-direction: column;
             }
             
             .container {
@@ -320,15 +177,92 @@
                 <div class="hero-image">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Robin_Hood_on_a_Horse.jpg" alt="Robin Hood on a Horse" />
                 </div>
-                <div class="hero-content">
                 <div id="storyContainer">
                     <!-- Story will be loaded here -->
                 </div>
-            </div>
             </div>
             
             <div class="ornament">❧</div>
         </div>
     </div>
+
+    <script>
+        // Stories collection
+        const stories = [
+            {
+                title: "Robinhood and the Crimson Vial (The Story of the HbA1c Test)",
+                content: `<p><span class="first-letter">I</span>n the heart of Sherwood, trouble brewed not in the form of bandits, but in the bellies and blood of its people. They grew tired, slow to heal, and endlessly thirsty. The wise healer Dame Glycema feared it was the Sugar Curse—an invisible ailment that lurked in the bloodstream, stealing health by the moon.</p>
+                <p>But there was hope. A single drop of blood, she claimed, could tell the tale of one's past three months. A magical test called the HbA1c could reveal the hidden truth.</p>
+                <p>Robinhood, protector of the people, knew what had to be done.</p>
+                <p>He declared the Festival of the Crimson Vial. No jousting. No archery. Just a gathering of brave souls ready to face their inner foe.</p>
+                <p>"Give but one drop," he said, holding up a tiny vial, "and learn what threatens you from within."</p>
+                <p>Skeptics scoffed. But when Friar Tuck shared his own results, showing his path to health, the village joined in.</p>
+                <p>One prick. One story. Some found they were well. Others found the Sugar Curse and began their journey to healing.</p>
+                <p>And so, Robinhood saved Sherwood once more—not with arrow or blade, but with a drop of truth.</p>`
+            },
+            {
+                title: "Robinhood and the Feathered Shield (The Story of the Flu Vaccine)",
+                content: `<p><span class="first-letter">A</span>s winter's breath chilled Sherwood to the bone, a different kind of enemy rode in—The Cold Riders, spirits of fever and coughing fits, invading homes and hearts alike.</p>
+                <p>Robinhood returned from a far-off apothecary with a mysterious gift: a vial no bigger than a thimble. "This," he announced, "is the Feathered Shield—a vaccine to protect us from the flu!"</p>
+                <p>The villagers raised eyebrows. "A pinch in the arm?" one asked. "That'll stop the Cold Riders?"</p>
+                <p>"It already has," said Maid Marian, showing her bandaged shoulder. "I've danced through three winters without falling ill."</p>
+                <p>Robinhood stood tall. "True courage isn't always on the battlefield. Sometimes it's rolling up your sleeve."</p>
+                <p>They called a gathering in the town square. No sword fights. No feasts. Just a line of villagers, sleeves rolled, arms ready.</p>
+                <p>That winter, while other towns coughed and shivered, Sherwood sang and celebrated.</p>
+                <p>For in a world full of dangers, the bravest thing they did... was get their flu shot.</p>`
+            },
+            {
+                title: "Robinhood and the Infinite Refill (The Story of the Extended Prescription)",
+                content: `<p><span class="first-letter">I</span>n the days when dragons were few but doctor visits were many, the people of Sherwood faced a new frustration—empty bottles.</p>
+                <p>The healers prescribed life-saving potions, but gave only a month at a time. The villagers missed doses. Some forgot. Some ran out in the middle of a moonlit hunt.</p>
+                <p>Robinhood saw the problem and devised a clever fix.</p>
+                <p>"Why," he asked, "must the potions be rationed like bread in a famine? Let's give more at once! Three moons' worth, six even!"</p>
+                <p>He rode to the apothecary and returned with a new decree: The Infinite Refill. Medicines could now be sent for longer periods, delivered straight to the cottage gate.</p>
+                <p>Friar Tuck was the first to try it. "No more running out!" he cheered. "And no more late-night scrolls to the healer!"</p>
+                <p>Soon, Sherwood's people were healthier, happier, and far less forgetful.</p>
+                <p>Robinhood smiled. "Sometimes, helping the people means making the easy things easier."</p>`
+            },
+            {
+                title: "Robinhood and the Elixir of the Stream (The Story of the Kidney Test)",
+                content: `<p><span class="first-letter">T</span>here was once a time in Sherwood when strength faded and energy drained from the people like rain through a cracked bucket. The healers suspected the cause: hidden damage in the kidneys—those small but mighty guardians of the body's balance.</p>
+                <p>Lady Creatina, a wise woman of herbs and scrolls, offered a solution. "A simple test," she said. "Just a stream of your water. We can detect the danger before it strikes."</p>
+                <p>The villagers were appalled. "You want us to... pee in a cup?"</p>
+                <p>But Robinhood, ever clever, announced a new tradition: The Festival of the Elixir of the Stream.</p>
+                <p>He brought cups, music, and courage. "Heroes face their fears," he said. "Even when it's... awkward."</p>
+                <p>Friar Tuck raised his goblet proudly. "I've given my sample. And I now drink twice the ale!"</p>
+                <p>Soon, the villagers followed. Some discovered early warnings and changed their fates. Others found peace of mind.</p>
+                <p>The kidneys were guarded. The people were spared.</p>
+                <p>And once again, Robinhood saved the day—not with sword or arrow, but with good old-fashioned urine.</p>`
+            },
+            {
+                title: "Robinhood and the Magic Scroll (The Story of the FIT Test)",
+                content: `<p><span class="first-letter">I</span>n the peaceful glades of Sherwood, a strange and silent danger began to creep—one that attacked the bowels from within. Few noticed until it was too late.</p>
+                <p>But Robinhood had heard tales from the village monks. "There is a way," they said, "to spot the danger early. A test of courage, yes—but also of... dignity."</p>
+                <p>It was called the FIT test.</p>
+                <p>Robinhood crafted a tale of valor. "A contest!" he declared. "One of precision, bravery, and truth!"</p>
+                <p>The villagers arrived expecting archery and swordplay. Instead, Robinhood handed them small boxes.</p>
+                <p>"What sorcery is this?" Will Scarlet asked.</p>
+                <p>"A box for your offering," Robinhood explained. "A stool sample, sent to wise healers who can detect hidden illness. It may save your life."</p>
+                <p>At first, they laughed. But when Friar Tuck raised his hand, declaring, "I've done it, and my bowels are as blessed as the Holy Grail," the people reconsidered.</p>
+                <p>And so, one by one, they took their boxes. Some returned with good news. Others were caught just in time.</p>
+                <p>Robinhood grinned. "Sometimes the greatest act of courage... is pooping in a box."</p>`
+            }
+        ];
+
+        // Function to load a random story
+        function loadRandomStory() {
+            const randomIndex = Math.floor(Math.random() * stories.length);
+            const story = stories[randomIndex];
+            
+            const storyContainer = document.getElementById('storyContainer');
+            storyContainer.innerHTML = `
+                <h3 class="story-title">${story.title}</h3>
+                <div class="story-content">${story.content}</div>
+            `;
+        }
+
+        // Load a random story when the page loads
+        document.addEventListener('DOMContentLoaded', loadRandomStory);
+    </script>
 </body>
 </html>
