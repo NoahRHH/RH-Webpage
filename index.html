@@ -3,190 +3,241 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robinhood Health</title>
-    <!-- Import Google Fonts for Old English style -->
-    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <title>The Health Adventures of Robin Hood</title>
+    <!-- Import Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=IM+Fell+English:ital@0;1&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        /* Old English Storybook Style */
+        /* Howard Pyle's Robin Hood Book Style */
         :root {
-            --parchment: #f5e7c1;
-            --ink: #472d0f;
-            --accent: #8b5a2b;
-            --highlight: #a52a2a;
+            --parchment: #f8f0d8;
+            --ink: #2b1d0e;
+            --accent: #731a07;
+            --border: #8f5922;
+            --heading: #4a2511;
         }
         
         body {
-            /* Changed font to improve readability while keeping old style */
-            font-family: 'Georgia', 'Times New Roman', serif;
+            font-family: 'Libre Baskerville', 'Georgia', serif;
             background-color: var(--parchment);
             color: var(--ink);
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23a1825f' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            /* Texture overlay to mimic old paper */
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.05' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.3 0' /%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.1'/%3E%3C/svg%3E"),
+                linear-gradient(to bottom, #f8f0d8, #f2e8c9);
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 2rem 1rem;
             position: relative;
         }
         
-        /* Decorative border */
-        .parchment {
+        /* Main content area styled like book pages */
+        .book-page {
             position: relative;
             background-color: var(--parchment);
-            border: 12px solid transparent;
-            border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='none' stroke='%23472d0f' stroke-width='2' d='M10,10 L90,10 L90,90 L10,90 L10,10 Z M5,5 L95,5 L95,95 L5,95 L5,5 Z' /%3E%3C/svg%3E") 30 stretch;
-            padding: 2rem;
+            border: 2px solid var(--border);
+            padding: 3rem 2rem;
             margin-bottom: 2rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        
+        /* Decorative corner flourishes */
+        .book-page::before {
+            content: "";
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 40px;
+            height: 40px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3E%3Cpath d='M5,5 C15,15 35,15 45,5 M5,5 C15,15 15,35 5,45' stroke='%238f5922' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        
+        .book-page::after {
+            content: "";
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 40px;
+            height: 40px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3E%3Cpath d='M5,45 C15,35 35,35 45,45 M45,45 C35,35 35,15 45,5' stroke='%238f5922' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        
+        /* Book title styling */
+        .book-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
         }
         
         h1 {
-            font-size: 3rem;
-            color: var(--highlight);
-            margin-bottom: 0.5rem;
+            font-family: 'UnifrakturMaguntia', 'Old English Text MT', serif;
+            font-size: 2.5rem;
+            color: var(--heading);
+            margin: 0.5rem 0;
             font-weight: normal;
-            font-family: 'UnifrakturMaguntia', 'Old English Text MT', 'Blackletter', serif;
-            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
             letter-spacing: 0.05em;
+            text-align: center;
         }
         
         h2 {
+            font-family: 'IM Fell English', 'Times New Roman', serif;
+            font-size: 1.4rem;
+            color: var(--heading);
+            font-weight: normal;
+            font-style: italic;
+            margin: 0.5rem 0;
+            text-align: center;
+        }
+        
+        /* Illustration styling */
+        .illustration {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+        
+        .illustration img {
+            max-width: 90%;
+            height: auto;
+            border: 1px solid var(--border);
+            padding: 0.5rem;
+            background-color: #fff;
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Chapter heading styling */
+        .chapter-title {
+            font-family: 'UnifrakturMaguntia', 'Old English Text MT', serif;
             font-size: 1.8rem;
             color: var(--accent);
+            text-align: center;
+            margin: 2rem 0 1.5rem;
+            padding: 0 3rem;
+            position: relative;
             font-weight: normal;
-            margin-bottom: 1.5rem;
+        }
+        
+        .chapter-title::before,
+        .chapter-title::after {
+            content: "❧";
+            font-size: 1.2rem;
+            color: var(--border);
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .chapter-title::before {
+            left: 1rem;
+        }
+        
+        .chapter-title::after {
+            right: 1rem;
+        }
+        
+        /* Drop cap styling - First letter */
+        .drop-cap {
+            float: left;
+            font-family: 'UnifrakturMaguntia', 'Old English Text MT', serif;
+            font-size: 3.5rem;
+            line-height: 0.8;
+            padding-top: 0.1em;
+            padding-right: 0.1em;
+            padding-left: 0;
+            color: var(--accent);
+        }
+        
+        /* Text styling */
+        p {
+            font-family: 'IM Fell English', 'Georgia', serif;
+            font-size: 1.1rem;
+            margin-bottom: 1.2rem;
+            text-align: justify;
+            color: var(--ink);
+            line-height: 1.7;
+            text-indent: 1.5rem;
+        }
+        
+        p:first-of-type {
+            text-indent: 0;
+        }
+        
+        /* Direct speech styling */
+        p.speech {
+            padding-left: 1.5rem;
+            border-left: 2px solid var(--border);
+            margin-left: 1rem;
             font-style: italic;
         }
         
-        .hero {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 1rem 0;
-        }
-        
-        .hero-image {
-            position: relative;
-            width: 300px;
-            margin: 2rem 0;
-            filter: drop-shadow(0 0 15px rgba(139, 90, 43, 0.3));
-            background-color: var(--parchment);
-            border-radius: 10px;
-            border: 5px solid var(--accent);
-            padding: 5px;
-        }
-        
-        .hero-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
-        
-        .first-letter {
-            float: left;
-            font-size: 6rem;
-            line-height: 0.8;
-            margin-right: 0.2em;
-            margin-top: 0.1em;
-            color: var(--highlight);
-            font-family: 'UnifrakturMaguntia', 'Old English Text MT', 'Blackletter', serif;
-            text-shadow: 2px 2px 3px rgba(139, 90, 43, 0.4);
-            position: relative;
-        }
-        
-        .first-letter::before {
-            content: "";
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' fill='none'%3E%3Cpath d='M20,20 C40,5 60,5 80,20 C60,35 40,35 20,20 Z' stroke='%23a52a2a' stroke-width='1' fill='none' opacity='0.3'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 150% 150%;
-            z-index: -1;
-        }
-        
-        p {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            text-align: justify;
-            color: var(--ink);
-        }
-        
-        /* Decorative elements */
+        /* Decorative divider */
         .divider {
-            height: 2px;
-            background-image: linear-gradient(to right, transparent, var(--accent), transparent);
+            text-align: center;
             margin: 2rem 0;
+            color: var(--border);
+            font-size: 1.5rem;
+            letter-spacing: 0.5rem;
         }
         
-        .ornament {
+        /* Page number styling */
+        .page-number {
             text-align: center;
-            font-size: 2rem;
-            color: var(--accent);
-            margin: 1rem 0;
+            margin-top: 2rem;
+            font-family: 'IM Fell English', 'Georgia', serif;
+            font-style: italic;
+            color: var(--heading);
+            font-size: 0.9rem;
         }
         
-        .story-title {
-            font-size: 1.6rem;
-            color: var(--accent);
-            margin-bottom: 1.5rem;
-            font-family: 'UnifrakturMaguntia', 'Old English Text MT', 'Blackletter', serif;
-            text-align: center;
-        }
-        
-        .story-content {
-            margin-bottom: 2rem;
-        }
-        
-        .story-content p {
-            margin-bottom: 1rem;
-            line-height: 1.8;
-        }
-        
-        .robin-hood-image {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-        
+        /* Media queries for responsive design */
         @media (max-width: 768px) {
+            .book-page {
+                padding: 2rem 1rem;
+            }
+            
             h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
             
-            .container {
-                padding: 1rem;
+            .chapter-title {
+                font-size: 1.5rem;
             }
             
-            .parchment {
-                padding: 1rem;
+            .drop-cap {
+                font-size: 3rem;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="parchment">
-            <div class="divider"></div>
-            
-            <div class="hero">
-                <div class="hero-image">
-    <img src="Robin_Hood_on_a_Horse.jpg" alt="Robin Hood on a Horse">
-</div>
-                <div id="storyContainer">
-                    <!-- Story will be loaded here -->
-                </div>
+        <div class="book-page">
+            <div class="book-title">
+                <h1>The Health Adventures of Robin Hood</h1>
+                <h2>Being the Tales of Good Deeds in Sherwood Health</h2>
             </div>
             
-            <div class="ornament">❧</div>
+            <div class="illustration">
+                <img src="Robin_Hood_on_a_Horse.jpg" alt="Robin Hood on a Horse">
+            </div>
+            
+            <div id="storyContainer">
+                <!-- Story will be loaded here -->
+            </div>
+            
+            <div class="divider">❧ ❧ ❧</div>
+            
+            <div class="page-number">— 1 —</div>
         </div>
     </div>
 
@@ -194,62 +245,73 @@
         // Stories collection
         const stories = [
             {
-                title: "Robinhood and the Crimson Vial (The Story of the HbA1c Test)",
-                content: `<p><span class="first-letter">I</span>n the heart of Sherwood, trouble brewed not in the form of bandits, but in the bellies and blood of its people. They grew tired, slow to heal, and endlessly thirsty. The wise healer Dame Glycema feared it was the Sugar Curse—an invisible ailment that lurked in the bloodstream, stealing health by the moon.</p>
+                title: "How Robin Hood Found the Crimson Vial",
+                content: `<p><span class="drop-cap">I</span>n the heart of Sherwood, trouble brewed not in the form of bandits, but in the bellies and blood of its people. They grew tired, slow to heal, and endlessly thirsty. The wise healer Dame Glycema feared it was the Sugar Curse—an invisible ailment that lurked in the bloodstream, stealing health by the moon.</p>
                 <p>But there was hope. A single drop of blood, she claimed, could tell the tale of one's past three months. A magical test called the HbA1c could reveal the hidden truth.</p>
                 <p>Robinhood, protector of the people, knew what had to be done.</p>
                 <p>He declared the Festival of the Crimson Vial. No jousting. No archery. Just a gathering of brave souls ready to face their inner foe.</p>
-                <p>"Give but one drop," he said, holding up a tiny vial, "and learn what threatens you from within."</p>
+                <p class="speech">"Give but one drop," he said, holding up a tiny vial, "and learn what threatens you from within."</p>
                 <p>Skeptics scoffed. But when Friar Tuck shared his own results, showing his path to health, the village joined in.</p>
                 <p>One prick. One story. Some found they were well. Others found the Sugar Curse and began their journey to healing.</p>
                 <p>And so, Robinhood saved Sherwood once more—not with arrow or blade, but with a drop of truth.</p>`
             },
             {
-                title: "Robinhood and the Feathered Shield (The Story of the Flu Vaccine)",
-                content: `<p><span class="first-letter">A</span>s winter's breath chilled Sherwood to the bone, a different kind of enemy rode in—The Cold Riders, spirits of fever and coughing fits, invading homes and hearts alike.</p>
+                title: "Robin Hood and the Tale of the Feathered Shield",
+                content: `<p><span class="drop-cap">A</span>s winter's breath chilled Sherwood to the bone, a different kind of enemy rode in—The Cold Riders, spirits of fever and coughing fits, invading homes and hearts alike.</p>
                 <p>Robinhood returned from a far-off apothecary with a mysterious gift: a vial no bigger than a thimble. "This," he announced, "is the Feathered Shield—a vaccine to protect us from the flu!"</p>
-                <p>The villagers raised eyebrows. "A pinch in the arm?" one asked. "That'll stop the Cold Riders?"</p>
-                <p>"It already has," said Maid Marian, showing her bandaged shoulder. "I've danced through three winters without falling ill."</p>
-                <p>Robinhood stood tall. "True courage isn't always on the battlefield. Sometimes it's rolling up your sleeve."</p>
+                <p>The villagers raised eyebrows.</p>
+                <p class="speech">"A pinch in the arm?" one asked. "That'll stop the Cold Riders?"</p>
+                <p class="speech">"It already has," said Maid Marian, showing her bandaged shoulder. "I've danced through three winters without falling ill."</p>
+                <p>Robinhood stood tall.</p>
+                <p class="speech">"True courage isn't always on the battlefield. Sometimes it's rolling up your sleeve."</p>
                 <p>They called a gathering in the town square. No sword fights. No feasts. Just a line of villagers, sleeves rolled, arms ready.</p>
                 <p>That winter, while other towns coughed and shivered, Sherwood sang and celebrated.</p>
                 <p>For in a world full of dangers, the bravest thing they did... was get their flu shot.</p>`
             },
             {
-                title: "Robinhood and the Infinite Refill (The Story of the Extended Prescription)",
-                content: `<p><span class="first-letter">I</span>n the days when dragons were few but doctor visits were many, the people of Sherwood faced a new frustration—empty bottles.</p>
+                title: "The Merry Tale of the Infinite Refill",
+                content: `<p><span class="drop-cap">I</span>n the days when dragons were few but doctor visits were many, the people of Sherwood faced a new frustration—empty bottles.</p>
                 <p>The healers prescribed life-saving potions, but gave only a month at a time. The villagers missed doses. Some forgot. Some ran out in the middle of a moonlit hunt.</p>
                 <p>Robinhood saw the problem and devised a clever fix.</p>
-                <p>"Why," he asked, "must the potions be rationed like bread in a famine? Let's give more at once! Three moons' worth, six even!"</p>
+                <p class="speech">"Why," he asked, "must the potions be rationed like bread in a famine? Let's give more at once! Three moons' worth, six even!"</p>
                 <p>He rode to the apothecary and returned with a new decree: The Infinite Refill. Medicines could now be sent for longer periods, delivered straight to the cottage gate.</p>
-                <p>Friar Tuck was the first to try it. "No more running out!" he cheered. "And no more late-night scrolls to the healer!"</p>
+                <p>Friar Tuck was the first to try it.</p>
+                <p class="speech">"No more running out!" he cheered. "And no more late-night scrolls to the healer!"</p>
                 <p>Soon, Sherwood's people were healthier, happier, and far less forgetful.</p>
-                <p>Robinhood smiled. "Sometimes, helping the people means making the easy things easier."</p>`
+                <p>Robinhood smiled.</p>
+                <p class="speech">"Sometimes, helping the people means making the easy things easier."</p>`
             },
             {
-                title: "Robinhood and the Elixir of the Stream (The Story of the Kidney Test)",
-                content: `<p><span class="first-letter">T</span>here was once a time in Sherwood when strength faded and energy drained from the people like rain through a cracked bucket. The healers suspected the cause: hidden damage in the kidneys—those small but mighty guardians of the body's balance.</p>
-                <p>Lady Creatina, a wise woman of herbs and scrolls, offered a solution. "A simple test," she said. "Just a stream of your water. We can detect the danger before it strikes."</p>
-                <p>The villagers were appalled. "You want us to... pee in a cup?"</p>
+                title: "How Robin Hood Discovered the Elixir of the Stream",
+                content: `<p><span class="drop-cap">T</span>here was once a time in Sherwood when strength faded and energy drained from the people like rain through a cracked bucket. The healers suspected the cause: hidden damage in the kidneys—those small but mighty guardians of the body's balance.</p>
+                <p>Lady Creatina, a wise woman of herbs and scrolls, offered a solution.</p>
+                <p class="speech">"A simple test," she said. "Just a stream of your water. We can detect the danger before it strikes."</p>
+                <p>The villagers were appalled.</p>
+                <p class="speech">"You want us to... pee in a cup?"</p>
                 <p>But Robinhood, ever clever, announced a new tradition: The Festival of the Elixir of the Stream.</p>
-                <p>He brought cups, music, and courage. "Heroes face their fears," he said. "Even when it's... awkward."</p>
-                <p>Friar Tuck raised his goblet proudly. "I've given my sample. And I now drink twice the ale!"</p>
+                <p>He brought cups, music, and courage.</p>
+                <p class="speech">"Heroes face their fears," he said. "Even when it's... awkward."</p>
+                <p>Friar Tuck raised his goblet proudly.</p>
+                <p class="speech">"I've given my sample. And I now drink twice the ale!"</p>
                 <p>Soon, the villagers followed. Some discovered early warnings and changed their fates. Others found peace of mind.</p>
                 <p>The kidneys were guarded. The people were spared.</p>
                 <p>And once again, Robinhood saved the day—not with sword or arrow, but with good old-fashioned urine.</p>`
             },
             {
-                title: "Robinhood and the Magic Scroll (The Story of the FIT Test)",
-                content: `<p><span class="first-letter">I</span>n the peaceful glades of Sherwood, a strange and silent danger began to creep—one that attacked the bowels from within. Few noticed until it was too late.</p>
-                <p>But Robinhood had heard tales from the village monks. "There is a way," they said, "to spot the danger early. A test of courage, yes—but also of... dignity."</p>
+                title: "Robin Hood and the Adventure of the Magic Scroll",
+                content: `<p><span class="drop-cap">I</span>n the peaceful glades of Sherwood, a strange and silent danger began to creep—one that attacked the bowels from within. Few noticed until it was too late.</p>
+                <p>But Robinhood had heard tales from the village monks.</p>
+                <p class="speech">"There is a way," they said, "to spot the danger early. A test of courage, yes—but also of... dignity."</p>
                 <p>It was called the FIT test.</p>
-                <p>Robinhood crafted a tale of valor. "A contest!" he declared. "One of precision, bravery, and truth!"</p>
+                <p>Robinhood crafted a tale of valor.</p>
+                <p class="speech">"A contest!" he declared. "One of precision, bravery, and truth!"</p>
                 <p>The villagers arrived expecting archery and swordplay. Instead, Robinhood handed them small boxes.</p>
-                <p>"What sorcery is this?" Will Scarlet asked.</p>
-                <p>"A box for your offering," Robinhood explained. "A stool sample, sent to wise healers who can detect hidden illness. It may save your life."</p>
+                <p class="speech">"What sorcery is this?" Will Scarlet asked.</p>
+                <p class="speech">"A box for your offering," Robinhood explained. "A stool sample, sent to wise healers who can detect hidden illness. It may save your life."</p>
                 <p>At first, they laughed. But when Friar Tuck raised his hand, declaring, "I've done it, and my bowels are as blessed as the Holy Grail," the people reconsidered.</p>
                 <p>And so, one by one, they took their boxes. Some returned with good news. Others were caught just in time.</p>
-                <p>Robinhood grinned. "Sometimes the greatest act of courage... is pooping in a box."</p>`
+                <p>Robinhood grinned.</p>
+                <p class="speech">"Sometimes the greatest act of courage... is pooping in a box."</p>`
             }
         ];
 
@@ -260,7 +322,7 @@
             
             const storyContainer = document.getElementById('storyContainer');
             storyContainer.innerHTML = `
-                <h3 class="story-title">${story.title}</h3>
+                <h3 class="chapter-title">${story.title}</h3>
                 <div class="story-content">${story.content}</div>
             `;
         }
