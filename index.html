@@ -227,10 +227,6 @@
                 <h2>Being the Tales of Good Deeds in Sherwood Health</h2>
             </div>
             
-            <div class="illustration">
-                <img src="Robin_Hood_on_a_Horse.jpg" alt="Robin Hood on a Horse">
-            </div>
-            
             <div id="storyContainer">
                 <!-- Story will be loaded here -->
             </div>
@@ -246,6 +242,7 @@
         const stories = [
             {
                 title: "How Robin Hood Found the Crimson Vial",
+                image: "Robinhood and the Crimson Vial.png",
                 content: `<p><span class="drop-cap">I</span>n the heart of Sherwood, trouble brewed not in the form of bandits, but in the bellies and blood of its people. They grew tired, slow to heal, and endlessly thirsty. The wise healer Dame Glycema feared it was the Sugar Curse—an invisible ailment that lurked in the bloodstream, stealing health by the moon.</p>
                 <p>But there was hope. A single drop of blood, she claimed, could tell the tale of one's past three months. A magical test called the HbA1c could reveal the hidden truth.</p>
                 <p>Robinhood, protector of the people, knew what had to be done.</p>
@@ -257,6 +254,7 @@
             },
             {
                 title: "Robin Hood and the Tale of the Feathered Shield",
+                image: "Robinhood and the Feathered Shield.png",
                 content: `<p><span class="drop-cap">A</span>s winter's breath chilled Sherwood to the bone, a different kind of enemy rode in—The Cold Riders, spirits of fever and coughing fits, invading homes and hearts alike.</p>
                 <p>Robinhood returned from a far-off apothecary with a mysterious gift: a vial no bigger than a thimble. "This," he announced, "is the Feathered Shield—a vaccine to protect us from the flu!"</p>
                 <p>The villagers raised eyebrows.</p>
@@ -270,6 +268,7 @@
             },
             {
                 title: "The Merry Tale of the Infinite Refill",
+                image: "Robinhood and the Infinite Refill v2.png",
                 content: `<p><span class="drop-cap">I</span>n the days when dragons were few but doctor visits were many, the people of Sherwood faced a new frustration—empty bottles.</p>
                 <p>The healers prescribed life-saving potions, but gave only a month at a time. The villagers missed doses. Some forgot. Some ran out in the middle of a moonlit hunt.</p>
                 <p>Robinhood saw the problem and devised a clever fix.</p>
@@ -283,6 +282,7 @@
             },
             {
                 title: "How Robin Hood Discovered the Elixir of the Stream",
+                image: "Robinhood and the Elixir of the Stream .png",
                 content: `<p><span class="drop-cap">T</span>here was once a time in Sherwood when strength faded and energy drained from the people like rain through a cracked bucket. The healers suspected the cause: hidden damage in the kidneys—those small but mighty guardians of the body's balance.</p>
                 <p>Lady Creatina, a wise woman of herbs and scrolls, offered a solution.</p>
                 <p class="speech">"A simple test," she said. "Just a stream of your water. We can detect the danger before it strikes."</p>
@@ -299,6 +299,7 @@
             },
             {
                 title: "Robin Hood and the Adventure of the Magic Scroll",
+                image: "Robinhood and the Magic Scroll.png",
                 content: `<p><span class="drop-cap">I</span>n the peaceful glades of Sherwood, a strange and silent danger began to creep—one that attacked the bowels from within. Few noticed until it was too late.</p>
                 <p>But Robinhood had heard tales from the village monks.</p>
                 <p class="speech">"There is a way," they said, "to spot the danger early. A test of courage, yes—but also of... dignity."</p>
@@ -323,6 +324,9 @@
             const storyContainer = document.getElementById('storyContainer');
             storyContainer.innerHTML = `
                 <h3 class="chapter-title">${story.title}</h3>
+                <div class="illustration">
+                    <img src="${story.image}" alt="${story.title}">
+                </div>
                 <div class="story-content">${story.content}</div>
             `;
         }
