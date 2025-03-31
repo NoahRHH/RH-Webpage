@@ -75,32 +75,31 @@
             z-index: 1;
         }
         /* Improved Hero circle styling */
-    .hero-circle-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 450px;
-    margin: 0 auto;
-    position: relative; /* Added to create positioning context */
-}
-.hero-circle {
-    background-color: #2e8b57; /* Forest green color */
-    border-radius: 50%;
-    width: 400px; /* Set explicit width */
-    height: 400px; /* Set explicit height */
+   .hero-circle-container {
     position: relative;
-    z-index: 1; /* Circle behind the image */
+    width: 400px;
+    height: 400px;
 }
-.hero-circle img {
+
+.hero-circle {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px; /* Same width as circle */
-    height: 400px; /* Same height as circle */
-    object-fit: contain; /* Changed from cover to contain to show the whole image */
-    z-index: 2; /* Image in front of the circle */
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 400px;
+    background-color: #2e8b57;
+    border-radius: 50%;
+    z-index: 1; /* behind */
 }
+
+.hero-circle img {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    object-fit: contain;
+    z-index: 2; /* in front */
+}
+
         /* Step circle for approach section */
         .step-circle {
             width: 80px;
