@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="refresh" content="0; url=story.html">
+    <title>Redirecting to Robin Hood Health</title>
+</head>
+<body>
+    <p>If you are not redirected automatically, click <a href="story.html">here</a> to go to the Robin Hood Health adventure.</p>
+    <script>
+        window.location.href = "story.html";
+    </script>
+</body>
+</html>
