@@ -85,21 +85,19 @@
         .hero-circle {
             background-color: #2e8b57; /* Forest green color */
             border-radius: 50%;
-            width: 100%;
-            height: 0;
-            padding-bottom: 100%; /* Creates a perfect circle */
+            width: 400px; /* Set explicit width */
+            height: 400px; /* Set explicit height */
             position: relative;
             overflow: hidden;
+            display: flex; /* Added to help with centering */
+            align-items: center; /* Added to help with centering */
+            justify-content: center; /* Added to help with centering */
         }
         .hero-circle img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
+            display: block;
+            width: 100%; /* Changed from absolute positioning to responsive sizing */
             height: 100%;
-            object-fit: cover; /* Changed from contain to cover */
-            display: block; /* Ensure image is displayed as block */
-            max-width: 100%; /* Ensure image doesn't exceed container */
+            object-fit: cover;
         }
         /* Step circle for approach section */
         .step-circle {
@@ -139,7 +137,7 @@
         </div>
     </nav>
 
-    <!-- Hero Section with Fixed Image Reference -->
+  <!-- Hero Section with Fixed Image Reference -->
     <section class="hero-section py-16 md:py-24">        
         <div class="container mx-auto px-6 relative z-10">
             <div class="flex flex-col md:flex-row items-center">
@@ -151,8 +149,8 @@
                 <div class="md:w-1/2 flex justify-center">
                     <div class="hero-circle-container">
                         <div class="hero-circle">
-                            <!-- Updated path with ./ prefix to ensure proper relative path -->
-                            <img src="./RobinhoodHerov2.png" alt="Healthcare Illustration" width="400" height="400">
+                            <!-- Fixed image path by removing ./ prefix -->
+                            <img src="RobinhoodHerov2.png" alt="Healthcare Illustration" width="400" height="400">
                         </div>
                     </div>
                 </div>
