@@ -146,7 +146,7 @@
                     <img src="/api/placeholder/80/80" alt="Robin Hood Hat" class="robin-image robin-hat mt-6">
                 </div>
                 <div class="md:w-1/2 flex justify-center">
-                    <img src="/api/placeholder/400/300" alt="Healthcare Illustration" class="max-w-full h-auto rounded-lg">
+                    <img src="RobinhoodHero.png" alt="Healthcare Illustration" class="max-w-full h-auto rounded-lg">
                 </div>
             </div>
         </div>
