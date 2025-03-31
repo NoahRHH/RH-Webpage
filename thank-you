@@ -1,0 +1,103 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Robinhood Health</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --mint-green: #B8E6D0;
+        }
+        body {
+            font-family: 'Lexend', sans-serif;
+            color: #333;
+            background-color: #FFFCF8;
+        }
+        .highlight-text {
+            background-color: var(--mint-green);
+            padding: 0 5px;
+        }
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md py-4">
+        <div class="container mx-auto px-6 flex items-center justify-between">
+            <div class="flex items-center">
+                <img src="RH-Logo.png" alt="Robinhood Health Logo" class="h-10 mr-3">
+                <span class="text-2xl font-bold">Robinhood Health</span>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html#services" class="text-gray-700 hover:text-green-600">Services</a>
+                <a href="index.html#approach" class="text-gray-700 hover:text-green-600">Our Approach</a>
+                <a href="index.html#pricing" class="text-gray-700 hover:text-green-600">Pricing</a>
+                <a href="index.html#benefits" class="text-gray-700 hover:text-green-600">Benefits</a>
+                <a href="index.html#contact" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Thank You Section -->
+    <section class="py-32 md:py-40">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center">
+                <div class="card p-12">
+                    <div class="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-8">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                    </div>
+                    
+                    <h1 class="text-4xl font-bold mb-6">Thank You!</h1>
+                    <p class="text-xl mb-8">Your message has been successfully sent to our team at <span class="highlight-text">Robinhood Health</span>. We appreciate your interest in our services.</p>
+                    
+                    <p class="text-lg mb-10">We'll review your inquiry and get back to you as soon as possible.</p>
+                    
+                    <div class="flex justify-center">
+                        <a href="index.html" class="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-md text-lg font-medium">Return to Homepage</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-10 mt-24">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center">
+                        <img src="RH-Logo.png" alt="Robinhood Health Logo" class="h-10 mr-3">
+                        <span class="text-2xl font-bold">Robinhood Health</span>
+                    </div>
+                    <p class="mt-2 text-gray-400">Virtual medical group focusing on population health programs</p>
+                </div>
+                
+                <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-10">
+                    <div>
+                        <h4 class="text-lg font-semibold mb-3">Contact</h4>
+                        <ul class="space-y-2">
+                            <li class="text-gray-400">Noah Weiner, Founder/CEO</li>
+                            <li><a href="mailto:Noah@robinhoodhealth.co" class="text-gray-400 hover:text-white">Noah@robinhoodhealth.co</a></li>
+                            <li><a href="tel:4108120940" class="text-gray-400 hover:text-white">(410) 812-0940</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center">
+                <p class="text-gray-400">&copy; 2025 Robinhood Health. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
