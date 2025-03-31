@@ -75,30 +75,32 @@
             z-index: 1;
         }
         /* Improved Hero circle styling */
-        .hero-circle-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            max-width: 450px;
-            margin: 0 auto;
-        }
-        .hero-circle {
-            background-color: #2e8b57; /* Forest green color */
-            border-radius: 50%;
-            width: 400px; /* Set explicit width */
-            height: 400px; /* Set explicit height */
-            position: relative;
-            overflow: hidden;
-            display: flex; /* Added to help with centering */
-            align-items: center; /* Added to help with centering */
-            justify-content: center; /* Added to help with centering */
-        }
-        .hero-circle img {
-            display: block;
-            width: 100%; /* Changed from absolute positioning to responsive sizing */
-            height: 100%;
-            object-fit: cover;
-        }
+    .hero-circle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 450px;
+    margin: 0 auto;
+    position: relative; /* Added to create positioning context */
+}
+.hero-circle {
+    background-color: #2e8b57; /* Forest green color */
+    border-radius: 50%;
+    width: 400px; /* Set explicit width */
+    height: 400px; /* Set explicit height */
+    position: relative;
+    z-index: 1; /* Circle behind the image */
+}
+.hero-circle img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px; /* Same width as circle */
+    height: 400px; /* Same height as circle */
+    object-fit: contain; /* Changed from cover to contain to show the whole image */
+    z-index: 2; /* Image in front of the circle */
+}
         /* Step circle for approach section */
         .step-circle {
             width: 80px;
@@ -137,26 +139,24 @@
         </div>
     </nav>
 
-  <!-- Hero Section with Fixed Image Reference -->
-    <section class="hero-section py-16 md:py-24">        
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-10 md:mb-0">
-                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Virtual Healthcare That Makes a Difference</h1>
-                    <p class="text-xl mb-6"><span class="highlight-text">Robinhood Health</span> is a virtual medical group focusing on population health programs.</p>
-                    <a href="#contact" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-md text-lg font-medium">Get Started</a>
-                </div>
-                <div class="md:w-1/2 flex justify-center">
-                    <div class="hero-circle-container">
-                        <div class="hero-circle">
-                            <!-- Fixed image path by removing ./ prefix -->
-                            <img src="RobinhoodHerov2.png" alt="Healthcare Illustration" width="400" height="400">
-                        </div>
-                    </div>
+<!-- Hero Section with Image in Front of Circle -->
+<section class="hero-section py-16 md:py-24">        
+    <div class="container mx-auto px-6 relative z-10">
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Virtual Healthcare That Makes a Difference</h1>
+                <p class="text-xl mb-6"><span class="highlight-text">Robinhood Health</span> is a virtual medical group focusing on population health programs.</p>
+                <a href="#contact" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-md text-lg font-medium">Get Started</a>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="hero-circle-container">
+                    <div class="hero-circle"></div>
+                    <img src="RobinhoodHerov2.png" alt="Healthcare Illustration" width="400" height="400">
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Services Section -->
     <section id="services" class="py-16 bg-gray-50 relative">
