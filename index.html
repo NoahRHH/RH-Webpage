@@ -199,6 +199,33 @@
             font-size: 0.9rem;
         }
         
+        /* Enter Website link styling */
+        .enter-website {
+            text-align: center;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .enter-button {
+            display: inline-block;
+            font-family: 'UnifrakturMaguntia', 'Old English Text MT', serif;
+            font-size: 1.4rem;
+            color: #fff;
+            background-color: var(--accent);
+            border: 2px solid var(--border);
+            padding: 0.8rem 2.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .enter-button:hover {
+            background-color: var(--heading);
+            transform: translateY(-2px);
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+        }
+        
         /* Media queries for responsive design */
         @media (max-width: 768px) {
             .book-page {
@@ -224,7 +251,7 @@
         <div class="book-page">
             <div class="book-title">
                 <h1>The Health Adventures of Robin Hood</h1>
-                <h2>Being the Tales of Good Deeds in Sherwood Health</h2>
+                <h2>Being the Tales of Good Deeds in Sherwood </h2>
             </div>
             
             <div id="storyContainer">
@@ -234,6 +261,10 @@
             <div class="divider">❧ ❧ ❧</div>
             
             <div class="page-number">— 1 —</div>
+            
+            <div class="enter-website">
+                <a href="https://robinhoodhealth.co/" class="enter-button">Enter Website</a>
+            </div>
         </div>
     </div>
 
@@ -312,7 +343,7 @@
                 <p>At first, they laughed. But when Friar Tuck raised his hand, declaring, "I've done it, and my bowels are as blessed as the Holy Grail," the people reconsidered.</p>
                 <p>And so, one by one, they took their boxes. Some returned with good news. Others were caught just in time.</p>
                 <p>Robinhood grinned.</p>
-                <p class="speech">"Sometimes the greatest act of courage... giving a sample."</p>`
+                <p class="speech">"Sometimes the greatest act of courage... is pooping in a box."</p>`
             }
         ];
 
