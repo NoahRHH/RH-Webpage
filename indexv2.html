@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robinhood Health - Virtual Medical Group</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --mint-green: #B8E6D0;
+            --light-pink: #F7D6F0;
+            --light-blue: #B8E6FF;
+            --tan: #F7E0B8;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background-color: #FFFCF8;
+        }
+        .hero-section {
+            background-color: #FFFCF8;
+            position: relative;
+            overflow: hidden;
+        }
+        .highlight-text {
+            background-color: var(--mint-green);
+            padding: 0 5px;
+        }
+        .robin-image {
+            max-width: 100px;
+            height: auto;
+            margin: 15px;
+        }
+        .robin-hat {
+            transform: rotate(10deg);
+        }
+        .robin-bow {
+            transform: rotate(-5deg);
+        }
+        .robin-arrow {
+            transform: rotate(35deg);
+        }
+        .image-float-right {
+            float: right;
+        }
+        .image-float-left {
+            float: left;
+        }
+        .decorative-image {
+            position: absolute;
+            z-index: 1;
+        }
+        .section-title {
+            color: #333;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+        }
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            position: relative;
+            z-index: 1;
+        }
+        .service-card {
+            background-color: var(--mint-green);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .icon-circle {
+            background-color: #E1F5ED;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+        }
+        .pricing-card {
+            background-color: var(--light-blue);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .benefits-card {
+            background-color: var(--light-pink);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .bandaid {
+            position: absolute;
+            width: 60px;
+            height: 40px;
+            background-color: var(--light-pink);
+            border-radius: 10px;
+            transform: rotate(15deg);
+            z-index: 0;
+        }
+        .leaf {
+            position: absolute;
+            width: 60px;
+            height: 80px;
+            background-color: var(--mint-green);
+            border-radius: 50% 10% 50% 10%;
+            transform: rotate(45deg);
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md py-4">
+        <div class="container mx-auto px-6 flex items-center justify-between">
+            <div class="flex items-center">
+                <img src="/api/placeholder/60/60" alt="Robinhood Health Logo" class="h-10 mr-3">
+                <span class="text-2xl font-bold">Robinhood Health</span>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#services" class="text-gray-700 hover:text-green-600">Services</a>
+                <a href="#approach" class="text-gray-700 hover:text-green-600">Our Approach</a>
+                <a href="#pricing" class="text-gray-700 hover:text-green-600">Pricing</a>
+                <a href="#benefits" class="text-gray-700 hover:text-green-600">Benefits</a>
+                <a href="#contact" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section py-16 md:py-24">        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Virtual Healthcare That Makes a Difference</h1>
+                    <p class="text-xl mb-6"><span class="highlight-text">Robinhood Health</span> is a virtual medical group focusing on population health programs.</p>
+                    <a href="#contact" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-md text-lg font-medium">Get Started</a>
+                    <img src="/api/placeholder/80/80" alt="Robin Hood Hat" class="robin-image robin-hat mt-6">
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="RobinhoodHero.png" alt="Healthcare Illustration" class="max-w-full h-auto rounded-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-gray-50 relative">
+        <img src="/api/placeholder/70/70" alt="Robin Hood Bow" class="robin-image robin-bow absolute top-20 right-10">
+        
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-3xl md:text-4xl text-center mb-12">At-Home Testing Services</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="service-card">
+                    <div class="icon-circle">
+                        <img src="/api/placeholder/40/40" alt="Diabetes icon">
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3">Diabetes (HbA1c)</h3>
+                    <p class="text-center">Finger-stick kits for monitoring blood sugar control</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="icon-circle">
+                        <img src="/api/placeholder/40/40" alt="Colorectal Cancer icon">
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3">Colorectal Cancer</h3>
+                    <p class="text-center">FIT kits for early detection in members 45+</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="icon-circle">
+                        <img src="/api/placeholder/40/40" alt="Kidney Health icon">
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3">Kidney Health</h3>
+                    <p class="text-center">Urine tests for albumin-creatinine ratio and kidney function</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-white p-6 rounded-lg shadow-sm">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-xl font-bold mb-4">Streamlined Process</h3>
+                    <img src="/api/placeholder/70/70" alt="Robin Hood Arrow" class="robin-image robin-arrow hidden md:block">
+                </div>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Direct-to-member kit distribution</li>
+                    <li>Clear instructions and virtual support</li>
+                    <li>Prepaid return packaging</li>
+                    <li>Results shared with PCPs for necessary follow-up</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Approach Section -->
+    <section id="approach" class="py-16 relative">
+        <img src="/api/placeholder/60/60" alt="Robin Hood Hat" class="robin-image robin-hat absolute bottom-10 left-10">
+        
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-3xl md:text-4xl text-center mb-12">Our Data-Driven Approach</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="card p-6">
+                    <h3 class="text-xl font-bold mb-4">Step 1: Analytics & Risk Stratification</h3>
+                    <p>Advanced analytics scan EMR and claims data to identify care gaps</p>
+                </div>
+                
+                <div class="card p-6">
+                    <h3 class="text-xl font-bold mb-4">Step 2: Clinical Review</h3>
+                    <p>Experienced clinicians validate gaps and prioritize outreach</p>
+                </div>
+                
+                <div class="card p-6">
+                    <h3 class="text-xl font-bold mb-4">Step 3: Targeted Member Outreach</h3>
+                    <p>Multi-channel approach (phone, email, text) to notify members</p>
+                </div>
+                
+                <div class="card p-6">
+                    <h3 class="text-xl font-bold mb-4">Step 4: Closing the Loop</h3>
+                    <p>Track each gap until it's closed with providers and labs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Services Section -->
+    <section class="py-16 bg-gray-50 relative">
+        <img src="/api/placeholder/80/80" alt="Robin Hood Arrow" class="robin-image robin-arrow absolute top-16 right-16">
+        
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-3xl md:text-4xl text-center mb-12">Additional Support Services</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card p-6 relative">
+                    <img src="/api/placeholder/60/60" alt="Robin Hood Bow" class="robin-image robin-bow absolute -top-8 -right-8 hidden md:block">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-green-100 p-3 rounded-full mr-4">
+                            <img src="/api/placeholder/30/30" alt="Immunization icon">
+                        </div>
+                        <h3 class="text-xl font-bold">Immunization Support</h3>
+                    </div>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Identify vaccine gaps through claims/EMR data</li>
+                        <li>Personalized outreach and education</li>
+                        <li>Assistance scheduling at in-network pharmacies</li>
+                        <li>Confirmation of completion</li>
+                    </ul>
+                </div>
+                
+                <div class="card p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-green-100 p-3 rounded-full mr-4">
+                            <img src="/api/placeholder/30/30" alt="Medication icon">
+                        </div>
+                        <h3 class="text-xl font-bold">Medication Management</h3>
+                    </div>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Transition from 30-day to 90-day prescription refills</li>
+                        <li>Identify cost-effective alternatives</li>
+                        <li>Regular medication reviews and reminders</li>
+                        <li>Coordination with pharmacies and physicians</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-16 relative">
+        <img src="/api/placeholder/70/70" alt="Robin Hood Hat" class="robin-image robin-hat absolute bottom-10 right-10">
+        
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-3xl md:text-4xl text-center mb-12">"Pay Only for Results" Bundled Model</h2>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="card p-6 mb-8">
+                    <h3 class="text-xl font-bold mb-4">Fixed Per-Completed-Test Pricing:</h3>
+                    <ul class="list-disc pl-6 space-y-2 mb-6">
+                        <li>No charges for kits that aren't processed</li>
+                        <li>Lower risk for your organization</li>
+                        <li>Transparent and predictable cost structure</li>
+                        <li>Only pay for results that provide clinical value</li>
+                    </ul>
+                </div>
+                
+                <div class="flex justify-center">
+                    <a href="#contact" class="inline-block bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-md text-lg font-medium">Contact us for pricing details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-16 bg-gray-50 relative">
+        <img src="/api/placeholder/70/70" alt="Robin Hood Bow" class="robin-image robin-bow absolute bottom-20 left-10">
+        
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-3xl md:text-4xl text-center mb-12">Benefits for Risk-Bearing Entities</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="benefits-card relative">
+                    <img src="/api/placeholder/50/50" alt="Robin Hood Arrow" class="robin-image robin-arrow absolute -top-5 -right-5 hidden md:block">
+                    <h3 class="text-xl font-bold text-center mb-4">Quality Improvement</h3>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Increased screening compliance for key measures</li>
+                        <li>Improved HEDIS/STARS scores</li>
+                        <li>Better chronic disease management</li>
+                    </ul>
+                </div>
+                
+                <div class="benefits-card">
+                    <h3 class="text-xl font-bold text-center mb-4">Financial Benefit</h3>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>50% overall cost reduction compared to traditional approach</li>
+                        <li>Lower high-cost claims through early intervention</li>
+                        <li>Reduced unnecessary office visits and ER utilization</li>
+                    </ul>
+                </div>
+                
+                <div class="benefits-card">
+                    <h3 class="text-xl font-bold text-center mb-4">Member Experience</h3>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>More convenient screening options</li>
+                        <li>Higher engagement in preventive care</li>
+                        <li>Improved health outcomes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="py-16 relative">
+        <img src="/api/placeholder/60/60" alt="Robin Hood Arrow" class="robin-image robin-arrow absolute top-10 right-10">
+        
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-3xl md:text-4xl text-center mb-12">Clinical Impact And Quality Improvement</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card p-6 relative">
+                    <img src="/api/placeholder/50/50" alt="Robin Hood Hat" class="robin-image robin-hat absolute -top-5 -left-5 hidden md:block">
+                    <h3 class="text-xl font-bold mb-4">FOBT Program Results</h3>
+                    <p class="text-sm text-gray-500 mb-4">(per 10,000 patients)</p>
+                    <ul class="space-y-2">
+                        <li>Early detection of 0.5-1 colorectal cancers annually</li>
+                        <li>Identification of 3-4 advanced adenomas</li>
+                        <li>Increased screening compliance rates by 35%</li>
+                    </ul>
+                </div>
+                
+                <div class="card p-6">
+                    <h3 class="text-xl font-bold mb-4">HbA1c Monitoring Benefits</h3>
+                    <p class="text-sm text-gray-500 mb-4">(per 10,000 patients)</p>
+                    <ul class="space-y-2">
+                        <li>Average reduction in HbA1c levels by 0.5-1.0%</li>
+                        <li>Improved control for 350-400 diabetic patients</li>
+                        <li>Decreased risk of diabetic complications</li>
+                        <li>Potential long-term cost avoidance: $960,000-1.92M</li>
+                    </ul>
+                </div>
+                
+                <div class="card p-6">
+                    <h3 class="text-xl font-bold mb-4">Kidney Health Outcomes</h3>
+                    <p class="text-sm text-gray-500 mb-4">(per 10,000 patients)</p>
+                    <ul class="space-y-2">
+                        <li>Early detection of 22-28 CKD cases</li>
+                        <li>Medication adjustments for 30-35 at-risk patients</li>
+                        <li>Timely nephrology referrals for 10-12 patients</li>
+                        <li>Potential cost avoidance: $110,000-140,000</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <p class="text-2xl font-medium mb-4">Total Cost Reduction: <span class="font-bold text-green-600">$241,948</span> per 10,000 patients</p>
+                <a href="#contact" class="inline-block bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-md text-lg font-medium">Schedule a Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50 relative">
+        <img src="/api/placeholder/75/75" alt="Robin Hood Hat" class="robin-image robin-hat absolute top-16 left-16">
+        
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-3xl md:text-4xl text-center mb-12">Get In Touch</h2>
+            
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-8">
+                    <div class="card p-6">
+                        <h3 class="text-xl font-bold mb-4">Contact Information</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <div class="bg-green-100 p-2 rounded-full mr-4">
+                                    <img src="/api/placeholder/20/20" alt="Person icon">
+                                </div>
+                                <div>
+                                    <p class="font-medium">Noah Weiner</p>
+                                    <p class="text-gray-600">Founder/CEO</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <div class="bg-green-100 p-2 rounded-full mr-4">
+                                    <img src="/api/placeholder/20/20" alt="Email icon">
+                                </div>
+                                <a href="mailto:Noah@robinhoodhealth.co" class="text-blue-600 hover:underline">Noah@robinhoodhealth.co</a>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <div class="bg-green-100 p-2 rounded-full mr-4">
+                                    <img src="/api/placeholder/20/20" alt="Phone icon">
+                                </div>
+                                <a href="tel:4108120940" class="text-blue-600 hover:underline">(410) 812-0940</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="card p-6">
+                        <h3 class="text-xl font-bold mb-4">Send Us a Message</h3>
+                        <form>
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 mb-2">Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 mb-2">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="organization" class="block text-gray-700 mb-2">Organization</label>
+                                <input type="text" id="organization" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="message" class="block text-gray-700 mb-2">Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-md">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-10">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center">
+                        <img src="/api/placeholder/50/50" alt="Robinhood Health Logo" class="h-10 mr-3">
+                        <span class="text-2xl font-bold">Robinhood Health</span>
+                    </div>
+                    <p class="mt-2 text-gray-400">Virtual medical group focusing on population health programs</p>
+                </div>
+                
+                <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-10">
+                    <div>
+                        <h4 class="text-lg font-semibold mb-3">Quick Links</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#services" class="text-gray-400 hover:text-white">Services</a></li>
+                            <li><a href="#approach" class="text-gray-400 hover:text-white">Our Approach</a></li>
+                            <li><a href="#pricing" class="text-gray-400 hover:text-white">Pricing</a></li>
+                            <li><a href="#benefits" class="text-gray-400 hover:text-white">Benefits</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-3">Contact</h4>
+                        <ul class="space-y-2">
+                            <li class="text-gray-400">Noah Weiner, Founder/CEO</li>
+                            <li><a href="mailto:Noah@robinhoodhealth.co" class="text-gray-400 hover:text-white">Noah@robinhoodhealth.co</a></li>
+                            <li><a href="tel:4108120940" class="text-gray-400 hover:text-white">(410) 812-0940</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center">
+                <p class="text-gray-400">&copy; 2025 Robinhood Health. All rights reserved.</p>
+                <div class="flex justify-center mt-4 space-x-6">
+                    <img src="/api/placeholder/50/50" alt="Robin Hood Hat" class="robin-image robin-hat">
+                    <img src="/api/placeholder/50/50" alt="Robin Hood Bow" class="robin-image robin-bow">
+                    <img src="/api/placeholder/50/50" alt="Robin Hood Arrow" class="robin-image robin-arrow">
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
