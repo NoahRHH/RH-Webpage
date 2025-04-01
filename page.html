@@ -75,7 +75,7 @@
             z-index: 1;
         }
         /* Improved Hero circle styling */
-   .hero-circle-container {
+ .hero-circle-container {
     position: relative;
     width: 400px;
     height: 400px;
@@ -89,16 +89,17 @@
     height: 400px;
     background-color: #2e8b57;
     border-radius: 50%;
-    z-index: 0; /* <- lower so it's behind */
+    z-index: 0;
 }
 
-.hero-circle img {
+.hero-img {
     position: relative;
     width: 400px;
     height: 400px;
     object-fit: contain;
-    z-index: 1; /* <- higher so it's in front */
+    z-index: 1;
 }
+
 
 
         /* Step circle for approach section */
@@ -175,9 +176,10 @@
             </div>
             <div class="md:w-1/2 flex justify-center">
                 <div class="hero-circle-container">
-                    <div class="hero-circle"></div>
-                    <img src="RobinhoodHerov2.png" alt="Healthcare Illustration" width="400" height="400">
-                </div>
+    <div class="hero-circle"></div>
+    <img src="RobinhoodHerov2.png" alt="Healthcare Illustration" class="hero-img">
+</div>
+
             </div>
         </div>
     </div>
