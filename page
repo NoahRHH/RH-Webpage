@@ -164,7 +164,7 @@
                 <span class="text-2xl font-bold">Robinhood Health</span>
             </div>
             <div class="hidden md:flex items-center space-x-8">
-                <a href="story.html" class="text-gray-700 hover:text-green-600">The Adventures of Robin Hood</a>
+                <a href="story" class="text-gray-700 hover:text-green-600">The Adventures of Robin Hood</a>
                 <a href="#services" class="text-gray-700 hover:text-green-600">Services</a>
                 <a href="#approach" class="text-gray-700 hover:text-green-600">Our Approach</a>
                 <a href="#pricing" class="text-gray-700 hover:text-green-600">Pricing</a>
