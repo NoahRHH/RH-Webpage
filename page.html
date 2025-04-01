@@ -89,7 +89,7 @@
     height: 400px;
     background-color: #2e8b57;
     border-radius: 50%;
-    z-index: 1; /* behind */
+    z-index: 0; /* <- lower so it's behind */
 }
 
 .hero-circle img {
@@ -97,8 +97,9 @@
     width: 400px;
     height: 400px;
     object-fit: contain;
-    z-index: 2; /* in front */
+    z-index: 1; /* <- higher so it's in front */
 }
+
 
         /* Step circle for approach section */
         .step-circle {
