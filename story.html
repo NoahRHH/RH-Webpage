@@ -13,10 +13,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Health Adventures of Robin Hood</title>
-    <!-- Import Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=IM+Fell+English:ital@0;1&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Import Google Fonts - Changed to more readable options -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        /* Howard Pyle's Robin Hood Book Style */
+        /* Howard Pyle's Robin Hood Book Style - Improved Readability */
         :root {
             --parchment: #f8f0d8;
             --ink: #2b1d0e;
@@ -80,7 +80,7 @@
             background-size: contain;
         }
         
-        /* Book title styling */
+        /* Book title styling - Changed font for better readability */
         .book-title {
             text-align: center;
             margin-bottom: 2rem;
@@ -89,23 +89,77 @@
         }
         
         h1 {
-            font-family: 'UnifrakturMaguntia', 'Old English Text MT', serif;
+            font-family: 'Cinzel Decorative', serif;
             font-size: 2.5rem;
             color: var(--heading);
             margin: 0.5rem 0;
-            font-weight: normal;
-            letter-spacing: 0.05em;
+            font-weight: 700;
+            letter-spacing: 0.03em;
             text-align: center;
         }
         
         h2 {
-            font-family: 'IM Fell English', 'Times New Roman', serif;
+            font-family: 'Crimson Pro', 'Times New Roman', serif;
             font-size: 1.4rem;
             color: var(--heading);
             font-weight: normal;
             font-style: italic;
             margin: 0.5rem 0;
             text-align: center;
+        }
+        
+        /* Table of contents styling */
+        .table-of-contents {
+            margin: 2rem 0;
+            padding: 1rem;
+            border: 1px solid var(--border);
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .toc-title {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 1.4rem;
+            color: var(--heading);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .toc-item {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .toc-item:hover {
+            color: var(--accent);
+        }
+        
+        .toc-number {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-right: 1rem;
+            color: var(--accent);
+        }
+        
+        .toc-link {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.1rem;
+            text-decoration: none;
+            color: var(--ink);
+            flex-grow: 1;
+        }
+        
+        .toc-link:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+        
+        .toc-page {
+            font-family: 'Crimson Pro', serif;
+            font-style: italic;
+            color: var(--heading);
         }
         
         /* Illustration styling */
@@ -124,9 +178,9 @@
             box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
         }
         
-        /* Chapter heading styling */
+        /* Chapter heading styling - Changed font for better readability */
         .chapter-title {
-            font-family: 'UnifrakturMaguntia', 'Old English Text MT', serif;
+            font-family: 'Cinzel Decorative', serif;
             font-size: 1.8rem;
             color: var(--accent);
             text-align: center;
@@ -154,22 +208,23 @@
             right: 1rem;
         }
         
-        /* Drop cap styling - First letter */
+        /* Drop cap styling - First letter - Changed font */
         .drop-cap {
             float: left;
-            font-family: 'UnifrakturMaguntia', 'Old English Text MT', serif;
+            font-family: 'Cinzel Decorative', serif;
             font-size: 3.5rem;
             line-height: 0.8;
             padding-top: 0.1em;
-            padding-right: 0.1em;
+            padding-right: 0.2em;
             padding-left: 0;
             color: var(--accent);
+            font-weight: bold;
         }
         
-        /* Text styling */
+        /* Text styling - Changed font for better readability */
         p {
-            font-family: 'IM Fell English', 'Georgia', serif;
-            font-size: 1.1rem;
+            font-family: 'Crimson Pro', 'Georgia', serif;
+            font-size: 1.2rem;
             margin-bottom: 1.2rem;
             text-align: justify;
             color: var(--ink);
@@ -202,37 +257,40 @@
         .page-number {
             text-align: center;
             margin-top: 2rem;
-            font-family: 'IM Fell English', 'Georgia', serif;
+            font-family: 'Crimson Pro', 'Georgia', serif;
             font-style: italic;
             color: var(--heading);
             font-size: 0.9rem;
         }
         
-        /* Enter Website link styling */
-        .enter-website {
-            text-align: center;
+        /* Story navigation */
+        .story-navigation {
+            display: flex;
+            justify-content: space-between;
             margin-top: 2rem;
-            margin-bottom: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
         }
         
-        .enter-button {
-            display: inline-block;
-            font-family: 'UnifrakturMaguntia', 'Old English Text MT', serif;
-            font-size: 1.4rem;
-            color: #fff;
-            background-color: var(--accent);
-            border: 2px solid var(--border);
-            padding: 0.8rem 2.5rem;
-            text-decoration: none;
-            border-radius: 5px;
-            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+        .nav-button {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1rem;
+            color: var(--accent);
+            background-color: transparent;
+            border: 1px solid var(--border);
+            padding: 0.5rem 1rem;
+            cursor: pointer;
             transition: all 0.3s ease;
         }
         
-        .enter-button:hover {
-            background-color: var(--heading);
-            transform: translateY(-2px);
-            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+        .nav-button:hover {
+            background-color: var(--accent);
+            color: #fff;
+        }
+        
+        .nav-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
         }
         
         /* Media queries for responsive design */
@@ -260,20 +318,28 @@
         <div class="book-page">
             <div class="book-title">
                 <h1>The Health Adventures of Robin Hood</h1>
-                <h2>Being the Tales of Good Deeds in Sherwood </h2>
+                <h2>Being the Tales of Good Deeds in Sherwood</h2>
+            </div>
+            
+            <div class="table-of-contents">
+                <h3 class="toc-title">Table of Contents</h3>
+                <div id="tocContainer">
+                    <!-- Table of contents will be loaded here -->
+                </div>
             </div>
             
             <div id="storyContainer">
-                <!-- Story will be loaded here -->
+                <!-- Current story will be loaded here -->
+            </div>
+            
+            <div class="story-navigation">
+                <button id="prevButton" class="nav-button">← Previous Tale</button>
+                <button id="nextButton" class="nav-button">Next Tale →</button>
             </div>
             
             <div class="divider">❧ ❧ ❧</div>
             
-            <div class="page-number">— 1 —</div>
-            
-            <div class="enter-website">
-               <a href="page.html" class="enter-button">Enter Website</a>
-            </div>
+            <div id="pageNumber" class="page-number">— 1 —</div>
         </div>
     </div>
 
@@ -356,10 +422,37 @@
             }
         ];
 
-        // Function to load a random story
-        function loadRandomStory() {
-            const randomIndex = Math.floor(Math.random() * stories.length);
-            const story = stories[randomIndex];
+        // Global variables
+        let currentStoryIndex = 0;
+
+        // Function to generate table of contents
+        function generateTableOfContents() {
+            const tocContainer = document.getElementById('tocContainer');
+            tocContainer.innerHTML = '';
+            
+            stories.forEach((story, index) => {
+                const tocItem = document.createElement('div');
+                tocItem.className = 'toc-item';
+                tocItem.innerHTML = `
+                    <span class="toc-number">${index + 1}.</span>
+                    <span class="toc-link">${story.title}</span>
+                    <span class="toc-page">${index + 1}</span>
+                `;
+                
+                tocItem.addEventListener('click', () => {
+                    loadStory(index);
+                });
+                
+                tocContainer.appendChild(tocItem);
+            });
+        }
+
+        // Function to load a specific story
+        function loadStory(index) {
+            if (index < 0 || index >= stories.length) return;
+            
+            currentStoryIndex = index;
+            const story = stories[index];
             
             const storyContainer = document.getElementById('storyContainer');
             storyContainer.innerHTML = `
@@ -369,10 +462,41 @@
                 </div>
                 <div class="story-content">${story.content}</div>
             `;
+            
+            // Update page number
+            document.getElementById('pageNumber').textContent = `— ${index + 1} —`;
+            
+            // Update navigation buttons
+            updateNavigationButtons();
         }
 
-        // Load a random story when the page loads
-        document.addEventListener('DOMContentLoaded', loadRandomStory);
+        // Function to update navigation buttons state
+        function updateNavigationButtons() {
+            const prevButton = document.getElementById('prevButton');
+            const nextButton = document.getElementById('nextButton');
+            
+            prevButton.disabled = currentStoryIndex === 0;
+            nextButton.disabled = currentStoryIndex === stories.length - 1;
+        }
+
+        // Event listeners for navigation buttons
+        document.getElementById('prevButton').addEventListener('click', () => {
+            if (currentStoryIndex > 0) {
+                loadStory(currentStoryIndex - 1);
+            }
+        });
+        
+        document.getElementById('nextButton').addEventListener('click', () => {
+            if (currentStoryIndex < stories.length - 1) {
+                loadStory(currentStoryIndex + 1);
+            }
+        });
+
+        // Initialize the page when loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            generateTableOfContents();
+            loadStory(0); // Load the first story by default
+        });
     </script>
 </body>
 </html>
