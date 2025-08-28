@@ -310,6 +310,7 @@
             border-radius: var(--radius);
             overflow: hidden;
             aspect-ratio: 1;
+            background-color: var(--mint-green);
         }
 
         .rounded-image img {
@@ -342,6 +343,19 @@
             grid-template-columns: 1fr 2fr;
             gap: 1.5rem;
             align-items: center;
+        }
+
+        .testimonial-image {
+            aspect-ratio: 0.75;
+            border-radius: var(--radius);
+            overflow: hidden;
+            background-color: white;
+        }
+
+        .testimonial-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* FAQ */
@@ -434,13 +448,13 @@
     <!-- Hero Section with Full Background -->
     <div class="hero-wrapper">
         <div class="hero-background">
-            <img src="HeroImage.jpg" alt="Happy seniors">
+            <img src="RobinhoodHerov2.png" alt="Healthcare Services">
         </div>
         <div class="hero-overlay"></div>
         <div class="page-wrapper">
             <div class="hero-content">
-                <h1>Empowering seniors to have more good days</h1>
-                <p class="body-large">Robinhood Health provides medical care and health services at our centers, extends care to the home, and offers additional services such as transportation and more.</p>
+                <h1>Healthcare for Every Community</h1>
+                <p class="body-large">Robinhood Health brings essential health screenings directly to your home, closing critical care gaps for those who need it most.</p>
                 <a href="#contact" class="button button-arrow">
                     <span>Get Started Today</span>
                     <svg width="23" height="15" viewBox="0 0 23 15" fill="none">
@@ -453,8 +467,159 @@
 
     <!-- Main content wrapper -->
     <div class="page-wrapper">
-        <!-- Rest of your sections go here -->
-        <!-- Services Section, FAQ, etc. -->
+        
+        <!-- Services Section with Icon Grid -->
+        <section class="section section-green">
+            <div class="eyebrow">Our Services</div>
+            <h2>Simple Health Screenings at Home</h2>
+            <p style="font-size: 1.25rem; max-width: 800px;">
+                We make it easy to stay on top of your health with free at-home test kits and support every step of the way.
+            </p>
+            
+            <div class="icon-grid">
+                <div class="icon-item">
+                    <div class="icon-circle">
+                        <img src="Hba1c.png" alt="Diabetes" style="width: 60px;">
+                    </div>
+                    <h4>Diabetes Care</h4>
+                    <p>Monitor blood sugar control</p>
+                </div>
+                <div class="icon-item">
+                    <div class="icon-circle">
+                        <img src="Colorectal Cancer.png" alt="Screening" style="width: 60px;">
+                    </div>
+                    <h4>Cancer Screening</h4>
+                    <p>Early detection saves lives</p>
+                </div>
+                <div class="icon-item">
+                    <div class="icon-circle">
+                        <img src="Kidney Health.png" alt="Kidney" style="width: 60px;">
+                    </div>
+                    <h4>Kidney Health</h4>
+                    <p>Prevent serious complications</p>
+                </div>
+                <div class="icon-item">
+                    <div class="icon-circle">
+                        <img src="Immunization.png" alt="Vaccines" style="width: 60px;">
+                    </div>
+                    <h4>Vaccine Support</h4>
+                    <p>Stay up to date on immunizations</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- What Makes Us Different -->
+        <div class="image-text-group">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <div class="eyebrow">What Makes Us Different</div>
+                <h2>Healthcare designed for you</h2>
+            </div>
+
+            <div class="image-text-section">
+                <div>
+                    <h3 style="font-weight: 600; margin-bottom: 1rem;">Community First</h3>
+                    <p style="font-size: 1.125rem;">We focus on serving communities that have been overlooked by traditional healthcare, ensuring everyone gets the care they deserve.</p>
+                </div>
+                <div class="rounded-image">
+                    <img src="https://via.placeholder.com/500x500/B8E6D0/2B5F3F?text=Community" alt="Community">
+                </div>
+            </div>
+
+            <div class="image-text-section">
+                <div>
+                    <h3 style="font-weight: 600; margin-bottom: 1rem;">Whole-Person Care</h3>
+                    <p style="font-size: 1.125rem;">Our approach considers your complete health picture, coordinating with your doctors to ensure nothing falls through the cracks.</p>
+                </div>
+                <div class="rounded-image">
+                    <img src="https://via.placeholder.com/500x500/FFE5F1/2B5F3F?text=Care" alt="Whole Care">
+                </div>
+            </div>
+
+            <div class="image-text-section">
+                <div>
+                    <h3 style="font-weight: 600; margin-bottom: 1rem;">No Cost to You</h3>
+                    <p style="font-size: 1.125rem;">If you're eligible through Medicaid or your health plan, all services are completely free. No hidden fees, ever.</p>
+                </div>
+                <div class="rounded-image">
+                    <img src="https://via.placeholder.com/500x500/E6F4F7/2B5F3F?text=Free" alt="No Cost">
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonials -->
+        <div class="testimonials">
+            <h2 style="color: white; text-align: center; margin-bottom: 1rem;">Community Stories</h2>
+            <p style="color: white; text-align: center; font-size: 1.25rem; font-weight: 600;">Hear from our members</p>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-image">
+                        <img src="https://via.placeholder.com/200x250/ffffff/2B5F3F?text=Member" alt="Member">
+                    </div>
+                    <div>
+                        <p style="margin-bottom: 1rem;">"The home test kit was so easy to use. I didn't have to take time off work or find transportation."</p>
+                        <p style="font-weight: 600;">Maria, Sacramento</p>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-image">
+                        <img src="https://via.placeholder.com/200x250/ffffff/2B5F3F?text=Member" alt="Member">
+                    </div>
+                    <div>
+                        <p style="margin-bottom: 1rem;">"They helped me understand my results and scheduled all my follow-up appointments."</p>
+                        <p style="font-weight: 600;">James, Oakland</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="faq" id="faq">
+            <p class="eyebrow">Frequently Asked Questions</p>
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <h4>Am I eligible for this program?<span>+</span></h4>
+                    <div class="faq-content">
+                        <p>If you have Medicaid or are part of a participating health plan, you may be eligible. Contact us to find out.</p>
+                    </div>
+                </div>
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <h4>How much does this cost?<span>+</span></h4>
+                    <div class="faq-content">
+                        <p>For eligible members, all services are completely free. We work with your health plan to cover all costs.</p>
+                    </div>
+                </div>
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <h4>How does the home testing work?<span>+</span></h4>
+                    <div class="faq-content">
+                        <p>We mail you a test kit with simple instructions. Complete the test at home and mail it back in the prepaid package. A doctor reviews your results within 24 hours.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#contact" class="button button-arrow">
+                    <span>More FAQ</span>
+                    <svg width="23" height="15" viewBox="0 0 23 15" fill="none">
+                        <path d="M22.7071 8.20711C23.0976 7.81658 23.0976 7.18342 22.7071 6.7929L16.3431 0.428934C15.9526 0.0384092 15.3195 0.0384091 14.9289 0.428933C14.5384 0.819458 14.5384 1.45262 14.9289 1.84315L20.5858 7.5L14.9289 13.1569C14.5384 13.5474 14.5384 14.1805 14.9289 14.5711C15.3195 14.9616 15.9526 14.9616 16.3431 14.5711L22.7071 8.20711ZM-8.74228e-08 8.5L22 8.5L22 6.5L8.74228e-08 6.5L-8.74228e-08 8.5Z" fill="currentColor"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div style="max-width: 1280px; margin: 0 auto;">
+                <h3 style="margin-bottom: 1rem;">Robinhood Health</h3>
+                <p style="opacity: 0.8;">© 2025 Robinhood Health. All rights reserved.</p>
+            </div>
+        </footer>
     </div>
+
+    <script>
+        function toggleFAQ(element) {
+            element.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
