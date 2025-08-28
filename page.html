@@ -1,27 +1,451 @@
 <!DOCTYPE html> 
 <html lang="en">
 <head>
-<!-- Keep existing head content -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HQ5GC9P1JN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HQ5GC9P1JN');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robinhood Health - Virtual Medical Group</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        
+        :root {
+            --green: #2B5F3F;
+            --fern-green: #4A7C59;
+            --mint-green: #B8E6D0;
+            --sky-blue: #E6F4F7;
+            --light-pink: #FFE5F1;
+            --cream: #FFF8F3;
+            --tan: #F5E6D3;
+            --white: #FFFFFF;
+            --text-green: #1A3A26;
+            --orange: #F97316;
+            --padding: 5rem;
+            --radius: 2rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-green);
+            background-color: #FFFCF8;
+            line-height: 1.6;
+            max-width: 100vw;
+            padding-left: var(--padding);
+            padding-right: var(--padding);
+            padding-bottom: var(--padding);
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --padding: 1.25rem;
+            }
+        }
+
+        /* Header with Habitat Health style */
+        .header {
+            background-color: var(--fern-green);
+            position: sticky;
+            top: 0;
+            z-index: 30;
+            margin-left: calc(-1 * var(--padding));
+            margin-right: calc(-1 * var(--padding));
+        }
+
+        .promo-bar {
+            color: white;
+            padding: 0.75rem;
+            font-size: 0.875rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .promo-bar a {
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .nav-container {
+            background-color: white;
+            border-radius: 2rem 2rem 0 0;
+            overflow: hidden;
+            margin-top: 1rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2.5rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-container span {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--text-green);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-green);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        /* Button styles from Habitat Health */
+        .button {
+            background-color: var(--fern-green);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            min-height: 2.5rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(43, 95, 63, 0.2);
+        }
+
+        .button-arrow {
+            background-color: var(--orange);
+        }
+
+        .button-arrow svg {
+            transition: transform 0.3s;
+        }
+
+        .button-arrow:hover svg {
+            transform: translateX(4px);
+        }
+
+        /* Hero Section - Habitat Health style */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin: 0 auto;
+            padding: 5rem 0;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--text-green);
+        }
+
+        .hero-text .body-large {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: var(--text-green);
+            font-weight: 500;
+        }
+
+        .hero-image {
+            position: relative;
+            aspect-ratio: 1;
+            background-color: var(--green);
+            border-radius: 0 0 2rem 2rem;
+            overflow: hidden;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Section styles */
+        .section {
+            padding: 5rem;
+            border-radius: var(--radius);
+            margin: var(--padding) 0;
+        }
+
+        .section-green {
+            background-color: var(--fern-green);
+            color: white;
+        }
+
+        .section-blue {
+            background-color: var(--sky-blue);
+            color: var(--text-green);
+        }
+
+        .section-cream {
+            background-color: var(--cream);
+            color: var(--text-green);
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
+        h2, h3 {
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Icon grid - Habitat Health style */
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .icon-item {
+            text-align: center;
+        }
+
+        .icon-circle {
+            width: 100px;
+            height: 100px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .icon-item h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Image with text sections */
+        .image-text-group {
+            padding: 5rem;
+            border-radius: var(--radius);
+            background-color: var(--cream);
+            margin: var(--padding) 0;
+        }
+
+        .image-text-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            margin: 4rem 0;
+        }
+
+        .image-text-section:nth-child(even) {
+            direction: rtl;
+        }
+
+        .image-text-section:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .rounded-image {
+            border-radius: var(--radius);
+            overflow: hidden;
+            aspect-ratio: 1;
+            background-color: var(--mint-green);
+        }
+
+        .rounded-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Testimonial cards */
+        .testimonials {
+            background-color: var(--fern-green);
+            padding: 5rem;
+            border-radius: var(--radius);
+            margin: var(--padding) 0;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background-color: var(--sky-blue);
+            padding: 2rem;
+            border-radius: var(--radius);
+            color: var(--text-green);
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .testimonial-image {
+            aspect-ratio: 0.75;
+            border-radius: var(--radius);
+            overflow: hidden;
+            background-color: white;
+        }
+
+        .testimonial-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* FAQ section */
+        .faq {
+            background-color: var(--sky-blue);
+            padding: 5rem;
+            border-radius: var(--radius);
+            margin: var(--padding) 0;
+        }
+
+        .faq-item {
+            border-top: 1px solid var(--text-green);
+            padding: 1.5rem 0;
+            cursor: pointer;
+        }
+
+        .faq-item h4 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            margin-top: 0;
+        }
+
+        .faq-item.active .faq-content {
+            max-height: 300px;
+            margin-top: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--fern-green);
+            color: white;
+            padding: 5rem;
+            border-radius: 2rem 2rem 0 0;
+            margin: 5rem calc(-1 * var(--padding)) calc(-1 * var(--padding));
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .image-text-section {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonial-card {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header - Keep existing but update tagline -->
+    <!-- Header -->
     <header class="header">
         <div class="promo-bar">
-            Making quality healthcare accessible to everyone | <a href="tel:1-844-664-2248">Call 1-844-664-2248</a>
+            <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
+            Making quality healthcare accessible | <a href="tel:1-844-664-2248">1-844-664-2248</a>
         </div>
-        <!-- Keep existing nav -->
+        <div class="nav-container">
+            <nav>
+                <div class="logo-container">
+                    <img src="RH-Logo.png" alt="Robinhood Health" style="height: 2.5rem;">
+                    <span>Robinhood Health</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#services">How It Works</a>
+                    <a href="#locations">Our Services</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="#contact" class="button">Get Started Today</a>
+                </div>
+            </nav>
+        </div>
     </header>
 
     <!-- Hero Section -->
     <main>
         <div class="hero">
             <div class="hero-text">
-                <h1>Quality Healthcare for Every Community</h1>
-                <p>Robinhood Health partners with healthcare organizations to bring essential health screenings and care coordination directly to you - at no cost for eligible members.</p>
+                <h1>Healthcare for Every Community</h1>
+                <p class="body-large">Robinhood Health brings essential health screenings directly to your home, closing critical care gaps for those who need it most.</p>
                 <a href="#contact" class="button button-arrow">
-                    Learn More
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    <span>Get Started Today</span>
+                    <svg width="23" height="15" viewBox="0 0 23 15" fill="none">
+                        <path d="M22.7071 8.20711C23.0976 7.81658 23.0976 7.18342 22.7071 6.7929L16.3431 0.428934C15.9526 0.0384092 15.3195 0.0384091 14.9289 0.428933C14.5384 0.819458 14.5384 1.45262 14.9289 1.84315L20.5858 7.5L14.9289 13.1569C14.5384 13.5474 14.5384 14.1805 14.9289 14.5711C15.3195 14.9616 15.9526 14.9616 16.3431 14.5711L22.7071 8.20711ZM-8.74228e-08 8.5L22 8.5L22 6.5L8.74228e-08 6.5L-8.74228e-08 8.5Z" fill="currentColor"/>
                     </svg>
                 </a>
             </div>
@@ -30,203 +454,158 @@
             </div>
         </div>
 
-        <!-- The Challenge Section -->
-        <section class="section section-cream">
-            <div style="text-align: center; margin-bottom: 3rem;">
-                <div class="eyebrow">The Healthcare Gap</div>
-                <h2>Too Many People Are Missing Essential Care</h2>
-                <p style="font-size: 1.25rem; max-width: 800px; margin: 2rem auto;">
-                    Millions of Americans skip important health screenings due to transportation issues, 
-                    time constraints, or difficulty navigating the healthcare system. We're here to change that.
-                </p>
-            </div>
-            
-            <div class="card-grid">
-                <div class="card">
-                    <h4>39% of Medicaid patients</h4>
-                    <p>Miss colorectal cancer screenings that could save lives</p>
-                </div>
-                <div class="card">
-                    <h4>48% with diabetes</h4>
-                    <p>Don't get regular monitoring to prevent complications</p>
-                </div>
-                <div class="card">
-                    <h4>71% at risk</h4>
-                    <p>Miss kidney health evaluations that catch problems early</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- How We Help Section -->
+        <!-- Services Section with Icon Grid -->
         <section class="section section-green">
-            <div class="eyebrow">How We Help</div>
-            <h2>Simple, Free Health Screenings at Home</h2>
-            <p style="font-size: 1.25rem; margin-bottom: 2rem; max-width: 800px;">
-                If you're eligible, we make it easy to stay on top of your health with free at-home test kits 
-                and support every step of the way.
+            <div class="eyebrow">Our Services</div>
+            <h2>Simple Health Screenings at Home</h2>
+            <p style="font-size: 1.25rem; max-width: 800px;">
+                We make it easy to stay on top of your health with free at-home test kits and support every step of the way.
             </p>
             
             <div class="icon-grid">
                 <div class="icon-item">
                     <div class="icon-circle">
-                        <img src="Hba1c.png" alt="Diabetes" style="width: 50px; height: 50px;">
+                        <img src="Hba1c.png" alt="Diabetes" style="width: 60px;">
                     </div>
-                    <h4>Diabetes Monitoring</h4>
-                    <p>Simple finger-stick test to track blood sugar control</p>
+                    <h4>Diabetes Care</h4>
+                    <p>Monitor blood sugar control</p>
                 </div>
                 <div class="icon-item">
                     <div class="icon-circle">
-                        <img src="Colorectal Cancer.png" alt="Cancer Screening" style="width: 50px; height: 50px;">
+                        <img src="Colorectal Cancer.png" alt="Screening" style="width: 60px;">
                     </div>
                     <h4>Cancer Screening</h4>
-                    <p>Early detection test for those 45 and older</p>
+                    <p>Early detection saves lives</p>
                 </div>
                 <div class="icon-item">
                     <div class="icon-circle">
-                        <img src="Kidney Health.png" alt="Kidney Health" style="width: 50px; height: 50px;">
+                        <img src="Kidney Health.png" alt="Kidney" style="width: 60px;">
                     </div>
                     <h4>Kidney Health</h4>
-                    <p>Check kidney function to prevent serious problems</p>
+                    <p>Prevent serious complications</p>
                 </div>
                 <div class="icon-item">
                     <div class="icon-circle">
-                        <img src="Immunization.png" alt="Immunizations" style="width: 50px; height: 50px;">
+                        <img src="Immunization.png" alt="Vaccines" style="width: 60px;">
                     </div>
                     <h4>Vaccine Support</h4>
-                    <p>Help scheduling important immunizations</p>
+                    <p>Stay up to date on immunizations</p>
                 </div>
             </div>
         </section>
 
-        <!-- How It Works Section -->
-        <section class="section section-blue">
-            <div style="text-align: center; margin-bottom: 3rem;">
-                <div class="eyebrow">Simple Process</div>
-                <h2>How Our Program Works</h2>
+        <!-- What Makes Us Different -->
+        <div class="image-text-group">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <div class="eyebrow">What Makes Us Different</div>
+                <h2>Healthcare designed for you</h2>
             </div>
-            
-            <div class="card-grid">
-                <div class="card" style="background: white;">
-                    <h4>1. We Identify Your Needs</h4>
-                    <p>Working with your healthcare provider, we identify which screenings you're due for</p>
-                </div>
-                <div class="card" style="background: white;">
-                    <h4>2. Kit Arrives at Home</h4>
-                    <p>Free test kit delivered to your door within 3 days with easy instructions</p>
-                </div>
-                <div class="card" style="background: white;">
-                    <h4>3. Doctor Reviews Results</h4>
-                    <p>Board-certified physicians review your results within 24 hours</p>
-                </div>
-                <div class="card" style="background: white;">
-                    <h4>4. We Coordinate Care</h4>
-                    <p>If follow-up is needed, we help schedule appointments and transfer records</p>
-                </div>
-            </div>
-        </section>
 
-        <!-- Why Choose Us -->
-        <section class="section section-cream">
-            <div style="text-align: center; margin-bottom: 3rem;">
-                <div class="eyebrow">Why Robinhood Health</div>
-                <h2>Healthcare That Works for You</h2>
-            </div>
-            
             <div class="image-text-section">
                 <div>
-                    <h3>No Cost to You</h3>
-                    <p>If you're eligible through Medicaid or your health plan, all services are completely free. No hidden fees, no surprises.</p>
+                    <h3 style="font-weight: 600; margin-bottom: 1rem;">Community First</h3>
+                    <p style="font-size: 1.125rem;">We focus on serving communities that have been overlooked by traditional healthcare, ensuring everyone gets the care they deserve.</p>
                 </div>
                 <div class="rounded-image">
-                    <img src="https://via.placeholder.com/500x500?text=Free+Care" alt="No Cost">
+                    <img src="https://via.placeholder.com/500x500/B8E6D0/2B5F3F?text=Community" alt="Community">
                 </div>
             </div>
+
+            <div class="image-text-section">
+                <div>
+                    <h3 style="font-weight: 600; margin-bottom: 1rem;">Whole-Person Care</h3>
+                    <p style="font-size: 1.125rem;">Our approach considers your complete health picture, coordinating with your doctors to ensure nothing falls through the cracks.</p>
+                </div>
+                <div class="rounded-image">
+                    <img src="https://via.placeholder.com/500x500/FFE5F1/2B5F3F?text=Care" alt="Whole Care">
+                </div>
+            </div>
+
+            <div class="image-text-section">
+                <div>
+                    <h3 style="font-weight: 600; margin-bottom: 1rem;">No Cost to You</h3>
+                    <p style="font-size: 1.125rem;">If you're eligible through Medicaid or your health plan, all services are completely free. No hidden fees, ever.</p>
+                </div>
+                <div class="rounded-image">
+                    <img src="https://via.placeholder.com/500x500/E6F4F7/2B5F3F?text=Free" alt="No Cost">
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonials -->
+        <div class="testimonials">
+            <h2 style="color: white; text-align: center; margin-bottom: 1rem;">Community Stories</h2>
+            <p style="color: white; text-align: center; font-size: 1.25rem; font-weight: 600;">Hear from our members</p>
             
-            <div class="image-text-section reverse" style="margin-top: 4rem;">
-                <div>
-                    <h3>Convenient and Private</h3>
-                    <p>Complete tests in the privacy of your home, on your schedule. No waiting rooms, no time off work, no transportation needed.</p>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-image">
+                        <img src="https://via.placeholder.com/200x250/ffffff/2B5F3F?text=Member" alt="Member">
+                    </div>
+                    <div>
+                        <p style="margin-bottom: 1rem;">"The home test kit was so easy to use. I didn't have to take time off work or find transportation."</p>
+                        <p style="font-weight: 600;">Maria, Sacramento</p>
+                    </div>
                 </div>
-                <div class="rounded-image">
-                    <img src="https://via.placeholder.com/500x500?text=At+Home" alt="Convenient">
+                <div class="testimonial-card">
+                    <div class="testimonial-image">
+                        <img src="https://via.placeholder.com/200x250/ffffff/2B5F3F?text=Member" alt="Member">
+                    </div>
+                    <div>
+                        <p style="margin-bottom: 1rem;">"They helped me understand my results and scheduled all my follow-up appointments."</p>
+                        <p style="font-weight: 600;">James, Oakland</p>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <div class="image-text-section" style="margin-top: 4rem;">
-                <div>
-                    <h3>Support Every Step</h3>
-                    <p>From reminders to result explanations to scheduling follow-ups, our care team is here to help you understand and act on your health information.</p>
-                </div>
-                <div class="rounded-image">
-                    <img src="https://via.placeholder.com/500x500?text=Support" alt="Support">
-                </div>
-            </div>
-        </section>
-
-        <!-- For Healthcare Partners (subtle mention) -->
-        <section class="section section-blue">
-            <div style="text-align: center; margin-bottom: 2rem;">
-                <div class="eyebrow">Working Together</div>
-                <h2>Partnering with Your Healthcare Providers</h2>
-                <p style="font-size: 1.125rem; max-width: 800px; margin: 2rem auto;">
-                    We work directly with health centers, health plans, and medical groups to ensure you get the screenings you need. 
-                    Our technology helps identify care gaps while our team ensures you get the support you deserve.
-                </p>
-            </div>
-        </section>
-
-        <!-- FAQ Section -->
-        <section class="section section-green">
-            <div class="eyebrow">Frequently Asked Questions</div>
+        <!-- FAQ -->
+        <div class="faq">
+            <p class="eyebrow">Frequently Asked Questions</p>
             <div style="max-width: 900px; margin: 0 auto;">
                 <div class="faq-item" onclick="toggleFAQ(this)">
-                    <h4 style="color: white;">Am I eligible for this program?<span>+</span></h4>
+                    <h4>Am I eligible for this program?<span>+</span></h4>
                     <div class="faq-content">
-                        <p>If you have Medicaid or are part of a participating health plan, you may be eligible for free at-home health screenings. Your healthcare provider can tell you if you qualify.</p>
+                        <p>If you have Medicaid or are part of a participating health plan, you may be eligible. Contact us to find out.</p>
                     </div>
                 </div>
                 <div class="faq-item" onclick="toggleFAQ(this)">
-                    <h4 style="color: white;">How much does this cost?<span>+</span></h4>
+                    <h4>How much does this cost?<span>+</span></h4>
                     <div class="faq-content">
                         <p>For eligible members, all services are completely free. We work with your health plan to cover all costs.</p>
                     </div>
                 </div>
                 <div class="faq-item" onclick="toggleFAQ(this)">
-                    <h4 style="color: white;">Is my information private?<span>+</span></h4>
+                    <h4>How does the home testing work?<span>+</span></h4>
                     <div class="faq-content">
-                        <p>Yes. We follow all HIPAA regulations and share your results only with your healthcare providers to ensure you get the best care possible.</p>
-                    </div>
-                </div>
-                <div class="faq-item" onclick="toggleFAQ(this)">
-                    <h4 style="color: white;">What happens after I take the test?<span>+</span></h4>
-                    <div class="faq-content">
-                        <p>A doctor reviews your results within 24 hours. We share the results with your primary care provider and help schedule any follow-up care you might need.</p>
+                        <p>We mail you a test kit with simple instructions. Complete the test at home and mail it back in the prepaid package. A doctor reviews your results within 24 hours.</p>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section class="section section-cream" id="contact">
-            <div style="text-align: center; margin-bottom: 3rem;">
-                <h2>Get Started or Learn More</h2>
-                <p style="font-size: 1.125rem;">
-                    Ask your healthcare provider about our program or contact us directly to see if you're eligible.
-                </p>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#contact" class="button button-arrow">
+                    <span>More FAQ</span>
+                    <svg width="23" height="15" viewBox="0 0 23 15" fill="none">
+                        <path d="M22.7071 8.20711C23.0976 7.81658 23.0976 7.18342 22.7071 6.7929L16.3431 0.428934C15.9526 0.0384092 15.3195 0.0384091 14.9289 0.428933C14.5384 0.819458 14.5384 1.45262 14.9289 1.84315L20.5858 7.5L14.9289 13.1569C14.5384 13.5474 14.5384 14.1805 14.9289 14.5711C15.3195 14.9616 15.9526 14.9616 16.3431 14.5711L22.7071 8.20711ZM-8.74228e-08 8.5L22 8.5L22 6.5L8.74228e-08 6.5L-8.74228e-08 8.5Z" fill="currentColor"/>
+                    </svg>
+                </a>
             </div>
-            <!-- Keep existing contact form -->
-        </section>
+        </div>
     </main>
 
-    <!-- Footer - Update to be patient-friendly -->
+    <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <div>
-                <h3 style="margin-bottom: 1rem;">Robinhood Health</h3>
-                <p style="opacity: 0.8;">Making quality healthcare accessible to everyone through innovative care delivery and technology.</p>
-            </div>
-            <!-- Keep rest of footer -->
+        <div style="max-width: 1280px; margin: 0 auto;">
+            <h3 style="margin-bottom: 1rem;">Robinhood Health</h3>
+            <p style="opacity: 0.8;">© 2025 Robinhood Health. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        function toggleFAQ(element) {
+            element.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
