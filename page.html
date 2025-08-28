@@ -156,8 +156,8 @@
             position: relative;
             background-color: white;
             overflow: hidden;
-            min-height: 600px;
-            height: 80vh;
+            min-height: 80vh;
+            margin-top: -1px; /* Remove any gap between nav and hero */
         }
 
         .hero-background {
@@ -189,14 +189,9 @@
         .hero-content {
             position: relative;
             z-index: 3;
-            padding: 6rem 3rem;
+            padding: 8rem 3rem;
             max-width: 600px;
             color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            min-height: 600px;
-            height: 80vh;
         }
 
         .hero-content h1 {
@@ -455,7 +450,7 @@
     <div class="page-wrapper">
         
         <!-- Hero Section -->
-        <div class="hero-wrapper" style="margin: 0 0 3rem 0; border-radius: 0 0 var(--radius) var(--radius); overflow: hidden;">
+        <div class="hero-wrapper" style="margin: -1px 0 3rem 0; border-radius: 0 0 var(--radius) var(--radius); overflow: hidden;">
             <div class="hero-background">
                 <img src="HeroImage.jpg" alt="Healthcare Services">
             </div>
