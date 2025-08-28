@@ -1,645 +1,232 @@
 <!DOCTYPE html> 
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HQ5GC9P1JN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-HQ5GC9P1JN');
-</script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robinhood Health - Virtual Medical Group</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --mint-green: #B8E6D0;
-            --light-pink: #F7D6F0;
-            --light-blue: #B8E6FF;
-            --tan: #F7E0B8;
-        }
-        body {
-            font-family: 'Lexend', sans-serif;
-            color: #333;
-            background-color: #FFFCF8;
-        }
-        .hero-section {
-            background-color: #FFFCF8;
-            position: relative;
-            overflow: hidden;
-        }
-        .highlight-text {
-            background-color: var(--mint-green);
-            padding: 0 5px;
-        }
-        .section-title {
-            color: #333;
-            font-weight: bold;
-            position: relative;
-            z-index: 1;
-        }
-        .card {
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            position: relative;
-            z-index: 1;
-        }
-        .service-card {
-            background-color: var(--mint-green);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
-        }
-        .icon-circle {
-            background-color: #E1F5ED;
-            border-radius: 50%;
-            width: 80px;
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 15px;
-        }
-        .pricing-card {
-            background-color: var(--light-blue);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
-        }
-        .benefits-card {
-            background-color: var(--light-pink);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
-        }
-        /* Improved Hero circle styling */
- .hero-circle-container {
-    position: relative;
-    width: 400px;
-    height: 400px;
-}
-
-.hero-circle {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 400px;
-    height: 400px;
-    background-color: #2e8b57;
-    border-radius: 50%;
-    z-index: 0;
-}
-
-.hero-img {
-    position: relative;
-    width: 400px;
-    height: 400px;
-    object-fit: contain;
-    z-index: 1;
-}
-
-
-
-        /* Step circle for approach section */
-        .step-circle {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background-color: var(--mint-green);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 15px;
-        }
-        .step-icon {
-            width: 50%;
-            height: 50%;
-        }
-        .bg-cream-50 {
-            background-color: #FFFCF8;
-        }
-
-
-         .decor-image {
-        position: absolute;
-        z-index: 0;
-        width: 60px;
-        opacity: 0.9;
-    }
-
-    .hat-top-left {
-        top: -20px;
-        left: -20px;
-    }
-
-    .bow-bottom-left {
-        bottom: -30px;
-        left: -30px;
-    }
-
-    .arrow-top-right {
-        top: 30px;
-        right: -20px;
-        transform: rotate(-15deg);
-    }
-    </style>
+<!-- Keep existing head content -->
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="bg-white shadow-md py-4">
-        <div class="container mx-auto px-6 flex items-center justify-between">
-            <div class="flex items-center">
-                <img src="RH-Logo.png" alt="Robinhood Health Logo" class="h-10 mr-3">
-                <span class="text-2xl font-bold">Robinhood Health</span>
+    <!-- Header - Keep existing but update tagline -->
+    <header class="header">
+        <div class="promo-bar">
+            Making quality healthcare accessible to everyone | <a href="tel:1-844-664-2248">Call 1-844-664-2248</a>
+        </div>
+        <!-- Keep existing nav -->
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+        <div class="hero">
+            <div class="hero-text">
+                <h1>Quality Healthcare for Every Community</h1>
+                <p>Robinhood Health partners with healthcare organizations to bring essential health screenings and care coordination directly to you - at no cost for eligible members.</p>
+                <a href="#contact" class="button button-arrow">
+                    Learn More
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
             </div>
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="story.html" class="text-gray-700 hover:text-green-600">The Adventures of Robin Hood</a>
-                <a href="#services" class="text-gray-700 hover:text-green-600">Services</a>
-                <a href="#approach" class="text-gray-700 hover:text-green-600">Our Approach</a>
-                <a href="#pricing" class="text-gray-700 hover:text-green-600">Pricing</a>
-                <a href="#benefits" class="text-gray-700 hover:text-green-600">Benefits</a>
-                <a href="#contact" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md">Contact Us</a>
+            <div class="hero-image">
+                <img src="RobinhoodHerov2.png" alt="Healthcare Services">
             </div>
         </div>
-    </nav>
 
-<!-- Hero Section with Image in Front of Circle -->
-<section class="hero-section py-16 md:py-24">        
-    <div class="container mx-auto px-6 relative z-10">
-        <div class="flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 mb-10 md:mb-0">
-                <h1 class="text-4xl md:text-5xl font-bold mb-4">Virtual Healthcare That Makes a Difference</h1>
-                <p class="text-xl mb-6"><span class="highlight-text">Robinhood Health</span> is a virtual medical group focusing on population health programs.</p>
-                <a href="#contact" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-md text-lg font-medium">Get Started</a>
+        <!-- The Challenge Section -->
+        <section class="section section-cream">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <div class="eyebrow">The Healthcare Gap</div>
+                <h2>Too Many People Are Missing Essential Care</h2>
+                <p style="font-size: 1.25rem; max-width: 800px; margin: 2rem auto;">
+                    Millions of Americans skip important health screenings due to transportation issues, 
+                    time constraints, or difficulty navigating the healthcare system. We're here to change that.
+                </p>
             </div>
-            <div class="md:w-1/2 flex justify-center">
-                <div class="hero-circle-container">
-    <div class="hero-circle"></div>
-    <img src="RobinhoodHerov2.png" alt="Healthcare Illustration" class="hero-img">
-</div>
-
-            </div>
-        </div>
-    </div>
-</section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-16 bg-gray-50 relative">
-        <div class="container mx-auto px-6">
-            <h2 class="section-title text-3xl md:text-4xl text-center mb-12">At-Home Testing Services</h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="service-card">
+            <div class="card-grid">
+                <div class="card">
+                    <h4>39% of Medicaid patients</h4>
+                    <p>Miss colorectal cancer screenings that could save lives</p>
+                </div>
+                <div class="card">
+                    <h4>48% with diabetes</h4>
+                    <p>Don't get regular monitoring to prevent complications</p>
+                </div>
+                <div class="card">
+                    <h4>71% at risk</h4>
+                    <p>Miss kidney health evaluations that catch problems early</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How We Help Section -->
+        <section class="section section-green">
+            <div class="eyebrow">How We Help</div>
+            <h2>Simple, Free Health Screenings at Home</h2>
+            <p style="font-size: 1.25rem; margin-bottom: 2rem; max-width: 800px;">
+                If you're eligible, we make it easy to stay on top of your health with free at-home test kits 
+                and support every step of the way.
+            </p>
+            
+            <div class="icon-grid">
+                <div class="icon-item">
                     <div class="icon-circle">
-                        <img src="Hba1c.png" alt="Diabetes icon">
+                        <img src="Hba1c.png" alt="Diabetes" style="width: 50px; height: 50px;">
                     </div>
-                    <h3 class="text-xl font-bold text-center mb-3">Diabetes (HbA1c)</h3>
-                    <p class="text-center">Finger-stick kits for monitoring blood sugar control</p>
+                    <h4>Diabetes Monitoring</h4>
+                    <p>Simple finger-stick test to track blood sugar control</p>
                 </div>
-                
-                <div class="service-card">
+                <div class="icon-item">
                     <div class="icon-circle">
-                        <img src="Colorectal Cancer.png" alt="Colorectal Cancer icon">
+                        <img src="Colorectal Cancer.png" alt="Cancer Screening" style="width: 50px; height: 50px;">
                     </div>
-                    <h3 class="text-xl font-bold text-center mb-3">Colorectal Cancer</h3>
-                    <p class="text-center">FIT kits for early detection in members 45+</p>
+                    <h4>Cancer Screening</h4>
+                    <p>Early detection test for those 45 and older</p>
                 </div>
-                
-                <div class="service-card">
+                <div class="icon-item">
                     <div class="icon-circle">
-                        <img src="Kidney Health.png" alt="Kidney Health icon">
+                        <img src="Kidney Health.png" alt="Kidney Health" style="width: 50px; height: 50px;">
                     </div>
-                    <h3 class="text-xl font-bold text-center mb-3">Kidney Health</h3>
-                    <p class="text-center">Urine tests for albumin-creatinine ratio and kidney function</p>
+                    <h4>Kidney Health</h4>
+                    <p>Check kidney function to prevent serious problems</p>
+                </div>
+                <div class="icon-item">
+                    <div class="icon-circle">
+                        <img src="Immunization.png" alt="Immunizations" style="width: 50px; height: 50px;">
+                    </div>
+                    <h4>Vaccine Support</h4>
+                    <p>Help scheduling important immunizations</p>
                 </div>
             </div>
-            
-         <div class="max-w-3xl mx-auto">
-    <div class="card p-6 rounded-lg shadow-sm mb-8">
-        <div class="flex justify-between items-center">
-            <h3 class="text-xl font-bold mb-4">Streamlined Process</h3>
-        </div>
-        <ul class="list-disc pl-6 space-y-2">
-            <li>Direct-to-member kit distribution</li>
-            <li>Clear instructions and virtual support</li>
-            <li>Prepaid return packaging</li>
-            <li>Results shared with PCPs for necessary follow-up</li>
-        </ul>
-    </div>
-</div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Our Approach Section - Redesigned -->
-<section id="approach" class="py-16 bg-cream-50 relative">
-    <div class="container mx-auto px-6">
-        <h2 class="section-title text-3xl md:text-4xl text-center mb-12">Our Solution – Data-Driven Approach</h2>
-        
-        <div class="max-w-5xl mx-auto">
-            <!-- Step Cards Container -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Step 1 -->
-                <div class="card p-6 bg-white shadow-sm hover:shadow-md transition-shadow duration-300">
-                    <div class="flex flex-col items-center mb-4">
-                        <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                            </svg>
-                        </div>
-                        <div class="text-center">
-                            <h3 class="text-xl font-bold mb-1">Step 1: Analytics & Risk Stratification</h3>
-                        </div>
-                    </div>
-                    <p class="text-center text-gray-700">Advanced analytics scan EMR and claims data to identify care gaps and risk factors for targeted interventions.</p>
+        <!-- How It Works Section -->
+        <section class="section section-blue">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <div class="eyebrow">Simple Process</div>
+                <h2>How Our Program Works</h2>
+            </div>
+            
+            <div class="card-grid">
+                <div class="card" style="background: white;">
+                    <h4>1. We Identify Your Needs</h4>
+                    <p>Working with your healthcare provider, we identify which screenings you're due for</p>
                 </div>
+                <div class="card" style="background: white;">
+                    <h4>2. Kit Arrives at Home</h4>
+                    <p>Free test kit delivered to your door within 3 days with easy instructions</p>
+                </div>
+                <div class="card" style="background: white;">
+                    <h4>3. Doctor Reviews Results</h4>
+                    <p>Board-certified physicians review your results within 24 hours</p>
+                </div>
+                <div class="card" style="background: white;">
+                    <h4>4. We Coordinate Care</h4>
+                    <p>If follow-up is needed, we help schedule appointments and transfer records</p>
+                </div>
+            </div>
+        </section>
 
-                <!-- Step 2 -->
-                <div class="card p-6 bg-white shadow-sm hover:shadow-md transition-shadow duration-300">
-                    <div class="flex flex-col items-center mb-4">
-                        <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                            </svg>
-                        </div>
-                        <div class="text-center">
-                            <h3 class="text-xl font-bold mb-1">Step 2: Clinical Review</h3>
-                        </div>
-                    </div>
-                    <p class="text-center text-gray-700">Experienced clinicians validate identified gaps and prioritize outreach based on clinical importance and impact.</p>
+        <!-- Why Choose Us -->
+        <section class="section section-cream">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <div class="eyebrow">Why Robinhood Health</div>
+                <h2>Healthcare That Works for You</h2>
+            </div>
+            
+            <div class="image-text-section">
+                <div>
+                    <h3>No Cost to You</h3>
+                    <p>If you're eligible through Medicaid or your health plan, all services are completely free. No hidden fees, no surprises.</p>
                 </div>
-                
-                <!-- Step 3 -->
-                <div class="card p-6 bg-white shadow-sm hover:shadow-md transition-shadow duration-300">
-                    <div class="flex flex-col items-center mb-4">
-                        <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                            </svg>
-                        </div>
-                        <div class="text-center">
-                            <h3 class="text-xl font-bold mb-1">Step 3: Targeted Member Outreach</h3>
-                        </div>
-                    </div>
-                    <p class="text-center text-gray-700">Multi-channel approach utilizing phone, email, and text messaging to notify and engage members in their care plan.</p>
-                </div>
-                
-                <!-- Step 4 -->
-                <div class="card p-6 bg-white shadow-sm hover:shadow-md transition-shadow duration-300">
-                    <div class="flex flex-col items-center mb-4">
-                        <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                            </svg>
-                        </div>
-                        <div class="text-center">
-                            <h3 class="text-xl font-bold mb-1">Step 4: Closing the Loop</h3>
-                        </div>
-                    </div>
-                    <p class="text-center text-gray-700">Track each gap until it's closed with providers and labs, ensuring complete documentation and follow-through.</p>
+                <div class="rounded-image">
+                    <img src="https://via.placeholder.com/500x500?text=Free+Care" alt="No Cost">
                 </div>
             </div>
             
-            <!-- Optional: Process Flow Diagram -->
-            <div class="mt-16 flex justify-center">
-                <div class="card p-6 bg-white max-w-4xl w-full">
-                    <h3 class="text-xl font-bold text-center mb-6">Our Continuous Improvement Process</h3>
-                    
-                    <div class="relative">
-                        <!-- Process Flow Line -->
-                        <div class="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-green-200 transform -translate-y-1/2"></div>
-                        
-                        <!-- Process Steps -->
-                        <div class="flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0">
-                            <!-- Identify -->
-                            <div class="flex flex-col items-center relative z-10 md:w-1/4">
-                                <div class="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center mb-2">
-                                    <span class="text-white font-bold">1</span>
-                                </div>
-                                <p class="text-center font-semibold">Identify Gaps</p>
-                            </div>
-                            
-                            <!-- Assess -->
-                            <div class="flex flex-col items-center relative z-10 md:w-1/4">
-                                <div class="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center mb-2">
-                                    <span class="text-white font-bold">2</span>
-                                </div>
-                                <p class="text-center font-semibold">Assess Priorities</p>
-                            </div>
-                            
-                            <!-- Intervene -->
-                            <div class="flex flex-col items-center relative z-10 md:w-1/4">
-                                <div class="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center mb-2">
-                                    <span class="text-white font-bold">3</span>
-                                </div>
-                                <p class="text-center font-semibold">Intervene</p>
-                            </div>
-                            
-                            <!-- Measure -->
-                            <div class="flex flex-col items-center relative z-10 md:w-1/4">
-                                <div class="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center mb-2">
-                                    <span class="text-white font-bold">4</span>
-                                </div>
-                                <p class="text-center font-semibold">Measure Results</p>
-                            </div>
-                        </div>
-                    </div>
+            <div class="image-text-section reverse" style="margin-top: 4rem;">
+                <div>
+                    <h3>Convenient and Private</h3>
+                    <p>Complete tests in the privacy of your home, on your schedule. No waiting rooms, no time off work, no transportation needed.</p>
+                </div>
+                <div class="rounded-image">
+                    <img src="https://via.placeholder.com/500x500?text=At+Home" alt="Convenient">
                 </div>
             </div>
-        </div>
-    </div>
-</section>
 
-    <!-- Additional Services Section -->
-<section class="py-16 bg-gray-50 relative">
-    <div class="container mx-auto px-6">
-        <h2 class="section-title text-3xl md:text-4xl text-center mb-12">Additional Support Services</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="card p-6 relative">
-                <div class="flex items-center mb-4">
-                    <div class="bg-green-100 p-3 rounded-full mr-4" style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;">
-                        <img src="Immunization.png" alt="Immunization icon" style="max-width: 30px; max-height: 30px;">
+            <div class="image-text-section" style="margin-top: 4rem;">
+                <div>
+                    <h3>Support Every Step</h3>
+                    <p>From reminders to result explanations to scheduling follow-ups, our care team is here to help you understand and act on your health information.</p>
+                </div>
+                <div class="rounded-image">
+                    <img src="https://via.placeholder.com/500x500?text=Support" alt="Support">
+                </div>
+            </div>
+        </section>
+
+        <!-- For Healthcare Partners (subtle mention) -->
+        <section class="section section-blue">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <div class="eyebrow">Working Together</div>
+                <h2>Partnering with Your Healthcare Providers</h2>
+                <p style="font-size: 1.125rem; max-width: 800px; margin: 2rem auto;">
+                    We work directly with health centers, health plans, and medical groups to ensure you get the screenings you need. 
+                    Our technology helps identify care gaps while our team ensures you get the support you deserve.
+                </p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section section-green">
+            <div class="eyebrow">Frequently Asked Questions</div>
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <h4 style="color: white;">Am I eligible for this program?<span>+</span></h4>
+                    <div class="faq-content">
+                        <p>If you have Medicaid or are part of a participating health plan, you may be eligible for free at-home health screenings. Your healthcare provider can tell you if you qualify.</p>
                     </div>
-                    <h3 class="text-xl font-bold">Immunization Support</h3>
                 </div>
-                <ul class="list-disc pl-6 space-y-2">
-                    <li>Identify vaccine gaps through claims/EMR data</li>
-                    <li>Personalized outreach and education</li>
-                    <li>Assistance scheduling at in-network pharmacies</li>
-                    <li>Confirmation of completion</li>
-                </ul>
-            </div>
-            
-            <div class="card p-6">
-                <div class="flex items-center mb-4">
-                    <div class="bg-green-100 p-3 rounded-full mr-4" style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;">
-                        <img src="Medication.png" alt="Medication icon" style="max-width: 30px; max-height: 30px;">
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <h4 style="color: white;">How much does this cost?<span>+</span></h4>
+                    <div class="faq-content">
+                        <p>For eligible members, all services are completely free. We work with your health plan to cover all costs.</p>
                     </div>
-                    <h3 class="text-xl font-bold">Medication Management</h3>
                 </div>
-                <ul class="list-disc pl-6 space-y-2">
-                    <li>Transition from 30-day to 90-day prescription refills</li>
-                    <li>Identify cost-effective alternatives</li>
-                    <li>Regular medication reviews and reminders</li>
-                    <li>Coordination with pharmacies and physicians</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="py-16 relative">
-            <img src="Robinhood_Bow.png" alt="Bow" class="decor-image bow-bottom-left">
-    <img src="Robinhood_Hat.png" alt="Hat" class="decor-image hat-top-left">
-        <div class="container mx-auto px-6">
-            <h2 class="section-title text-3xl md:text-4xl text-center mb-12">"Pay Only for Results" Bundled Model</h2>
-            
-            <div class="max-w-3xl mx-auto">
-                <div class="card p-6 mb-8">
-                    <h3 class="text-xl font-bold mb-4">Fixed Per-Completed-Test Pricing:</h3>
-                    <ul class="list-disc pl-6 space-y-2 mb-6">
-                        <li>No charges for kits that aren't processed</li>
-                        <li>Lower risk for your organization</li>
-                        <li>Transparent and predictable cost structure</li>
-                        <li>Only pay for results that provide clinical value</li>
-                    </ul>
-                </div>
-                
-                <div class="flex justify-center">
-                    <a href="#contact" class="inline-block bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-md text-lg font-medium">Contact us for pricing details</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Benefits Section -->
-    <section id="benefits" class="py-16 bg-gray-50 relative">
-        <div class="container mx-auto px-6">
-            <h2 class="section-title text-3xl md:text-4xl text-center mb-12">Benefits for Risk-Bearing Entities</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="benefits-card">
-                    <h3 class="text-xl font-bold text-center mb-4">Quality Improvement</h3>
-                    <ul class="list-disc pl-6 space-y-2">
-                        <li>Increased screening compliance for key measures</li>
-                        <li>Improved HEDIS/STARS scores</li>
-                        <li>Better chronic disease management</li>
-                    </ul>
-                </div>
-                
-                <div class="benefits-card">
-                    <h3 class="text-xl font-bold text-center mb-4">Financial Benefit</h3>
-                    <ul class="list-disc pl-6 space-y-2">
-                        <li>50% overall cost reduction compared to traditional approach</li>
-                        <li>Lower high-cost claims through early intervention</li>
-                        <li>Reduced unnecessary office visits and ER utilization</li>
-                    </ul>
-                </div>
-                
-                <div class="benefits-card">
-                    <h3 class="text-xl font-bold text-center mb-4">Member Experience</h3>
-                    <ul class="list-disc pl-6 space-y-2">
-                        <li>More convenient screening options</li>
-                        <li>Higher engagement in preventive care</li>
-                        <li>Improved health outcomes</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Impact Section -->
-    <section class="py-16 relative">
-        <div class="container mx-auto px-6">
-            <h2 class="section-title text-3xl md:text-4xl text-center mb-12">Clinical Impact And Quality Improvement</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="card p-6">
-                    <h3 class="text-xl font-bold mb-4">FOBT Program Results</h3>
-                    <p class="text-sm text-gray-500 mb-4">(per 10,000 patients)</p>
-                    <ul class="space-y-2">
-                        <li>Early detection of 0.5-1 colorectal cancers annually</li>
-                        <li>Identification of 3-4 advanced adenomas</li>
-                        <li>Increased screening compliance rates by 35%</li>
-                    </ul>
-                </div>
-                
-                <div class="card p-6">
-                    <h3 class="text-xl font-bold mb-4">HbA1c Monitoring Benefits</h3>
-                    <p class="text-sm text-gray-500 mb-4">(per 10,000 patients)</p>
-                    <ul class="space-y-2">
-                        <li>Average reduction in HbA1c levels by 0.5-1.0%</li>
-                        <li>Improved control for 350-400 diabetic patients</li>
-                        <li>Decreased risk of diabetic complications</li>
-                        <li>Potential long-term cost avoidance: $960,000-1.92M</li>
-                    </ul>
-                </div>
-                
-                <div class="card p-6">
-                    <h3 class="text-xl font-bold mb-4">Kidney Health Outcomes</h3>
-                    <p class="text-sm text-gray-500 mb-4">(per 10,000 patients)</p>
-                    <ul class="space-y-2">
-                        <li>Early detection of 22-28 CKD cases</li>
-                        <li>Medication adjustments for 30-35 at-risk patients</li>
-                        <li>Timely nephrology referrals for 10-12 patients</li>
-                        <li>Potential cost avoidance: $110,000-140,000</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-<!-- Contact Section -->
-<section id="contact" class="py-16 bg-gray-50 relative">
-    <div class="container mx-auto px-6">
-        <h2 class="section-title text-3xl md:text-4xl text-center mb-12">Get In Touch</h2>
-        
-        <!-- Added a flex container with centering -->
-        <div class="flex justify-center">
-            <!-- Changed from md:w-1/2 to max-w-2xl w-full for better responsive behavior -->
-            <div class="max-w-2xl w-full">
-                <div class="card p-6">
-                    <h3 class="text-xl font-bold mb-4">Send Us a Message</h3>
-                    
-                    <!-- Updated form with method, action and proper attributes -->
-                    <form method="POST" action="https://formsubmit.co/noah@robinhoodhealth.co" onsubmit="return validateForm()">
-                        <!-- Hidden input to prevent spam -->
-                        <input type="hidden" name="_subject" value="New Contact from Robinhood Health Website">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_next" value="https://noahrhh.github.io/RH-Webpage/thank-you.html">
-                        
-                        <div class="mb-4">
-                            <label for="name" class="block text-gray-700 mb-2">Name</label>
-                            <input type="text" id="name" name="name" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
-                        </div>
-                        
-                        <div class="mb-4">
-                            <label for="email" class="block text-gray-700 mb-2">Email</label>
-                            <input type="email" id="email" name="email" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
-                        </div>
-                        
-                        <div class="mb-4">
-                            <label for="organization" class="block text-gray-700 mb-2">Organization</label>
-                            <input type="text" id="organization" name="organization" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
-                        </div>
-                        
-                        <div class="mb-4">
-                            <label for="message" class="block text-gray-700 mb-2">Message</label>
-                            <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
-                        </div>
-                        
-                        <button type="submit" class="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-md">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Add form validation script -->
-    <script>
-        function validateForm() {
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            
-            if (name.trim() === "" || email.trim() === "" || message.trim() === "") {
-                alert("Please fill out all required fields.");
-                return false;
-            }
-            
-            // Basic email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                alert("Please enter a valid email address.");
-                return false;
-            }
-            
-            return true;
-        }
-    </script>
-</section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-10">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0">
-                    <div class="flex items-center">
-                        <img src="RH-Logo.png" alt="Robinhood Health Logo" class="h-10 mr-3">
-                        <span class="text-2xl font-bold">Robinhood Health</span>
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <h4 style="color: white;">Is my information private?<span>+</span></h4>
+                    <div class="faq-content">
+                        <p>Yes. We follow all HIPAA regulations and share your results only with your healthcare providers to ensure you get the best care possible.</p>
                     </div>
-                    <p class="mt-2 text-gray-400">Virtual medical group focusing on population health programs</p>
                 </div>
-                
-                <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-10">
-                    <div>
-                        <h4 class="text-lg font-semibold mb-3">Quick Links</h4>
-                        <ul class="space-y-2">
-                            <li><a href="#services" class="text-gray-400 hover:text-white">Services</a></li>
-                            <li><a href="#approach" class="text-gray-400 hover:text-white">Our Approach</a></li>
-                            <li><a href="#pricing" class="text-gray-400 hover:text-white">Pricing</a></li>
-                            <li><a href="#benefits" class="text-gray-400 hover:text-white">Benefits</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h4 class="text-lg font-semibold mb-3">Contact</h4>
-                        <ul class="space-y-2">
-                            <li><a href="mailto:info@robinhoodhealth.co" class="text-gray-400 hover:text-white">info@robinhoodhealth.co</a></li>
-                        </ul>
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <h4 style="color: white;">What happens after I take the test?<span>+</span></h4>
+                    <div class="faq-content">
+                        <p>A doctor reviews your results within 24 hours. We share the results with your primary care provider and help schedule any follow-up care you might need.</p>
                     </div>
                 </div>
             </div>
-            
-            <div class="border-t border-gray-700 mt-8 pt-6 text-center">
-                <p class="text-gray-400">&copy; 2025 Robinhood Health. All rights reserved.</p>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section section-cream" id="contact">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2>Get Started or Learn More</h2>
+                <p style="font-size: 1.125rem;">
+                    Ask your healthcare provider about our program or contact us directly to see if you're eligible.
+                </p>
             </div>
+            <!-- Keep existing contact form -->
+        </section>
+    </main>
+
+    <!-- Footer - Update to be patient-friendly -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3 style="margin-bottom: 1rem;">Robinhood Health</h3>
+                <p style="opacity: 0.8;">Making quality healthcare accessible to everyone through innovative care delivery and technology.</p>
+            </div>
+            <!-- Keep rest of footer -->
         </div>
     </footer>
-
-    <!-- Image Debug Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Get the hero image
-            const heroImg = document.querySelector('.hero-circle img');
-            
-            // Add event listeners to track loading status
-            heroImg.addEventListener('load', function() {
-                console.log('Hero image loaded successfully!');
-                console.log('Image dimensions:', this.naturalWidth, 'x', this.naturalHeight);
-                console.log('Image src:', this.src);
-            });
-            
-            heroImg.addEventListener('error', function() {
-                console.error('Failed to load hero image!');
-                console.error('Attempted image source:', this.src);
-                
-                // Try alternative paths if the initial path fails
-                if (this.src.includes('./RobinhoodHerov2.png')) {
-                    console.log('Trying alternate path: /RobinhoodHerov2.png');
-                    this.src = '/RobinhoodHerov2.png';
-                } else if (this.src.includes('/RobinhoodHerov2.png')) {
-                    console.log('Trying alternate path: RobinhoodHerov2.png');
-                    this.src = 'RobinhoodHerov2.png';
-                } else {
-                    // Display a placeholder if all attempts fail
-                    console.log('All image paths failed, using placeholder');
-                    this.src = 'https://via.placeholder.com/400x400?text=Robinhood+Health';
-                }
-            });
-        });
-    </script>
 </body>
 </html>
