@@ -279,18 +279,24 @@
             margin: 0 auto;
         }
 
-        .benefit-icon {
-            width: 6.25rem;
-            height: 6.25rem;
-            margin: 0 auto 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: rgba(74, 124, 89, 0.1);
-            border-radius: 50%;
-            color: var(--fern-green);
-            font-size: 2.5rem;
-        }
+     .benefit-icon {
+    width: 6.25rem;
+    height: 6.25rem;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border-radius: 0;
+    color: var(--fern-green);
+    font-size: 2.5rem;
+}
+
+.benefit-icon img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
 
         .benefit-title {
             font-size: 1.25rem;
@@ -563,11 +569,13 @@
             </div>
 
             <div class="benefits-grid">
-                <div class="benefit-item">
-                    <div class="benefit-icon">🏠</div>
-                    <div class="benefit-title">Convenience</div>
-                    <p class="benefit-description">Test from the comfort of your home, no travel or waiting rooms required.</p>
-                </div>
+             <div class="benefit-item">
+    <div class="benefit-icon">
+        <img src="Home.png" alt="Home icon">
+    </div>
+    <div class="benefit-title">Convenience</div>
+    <p class="benefit-description">Test from the comfort of your home, no travel or waiting rooms required.</p>
+</div>
                 <div class="benefit-item">
                     <div class="benefit-icon">⚡</div>
                     <div class="benefit-title">Fast Results</div>
