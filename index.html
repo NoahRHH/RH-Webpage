@@ -1,13 +1,582 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html> 
+<html lang="en">
 <head>
-    <meta http-equiv="refresh" content="0; url=page.html">
-    <title>Redirecting to Robin Hood Health</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HQ5GC9P1JN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HQ5GC9P1JN');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robinhood Health - Virtual Medical Group</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        
+        :root {
+            --green: #2B5F3F;
+            --fern-green: #4A7C59;
+            --mint-green: #B8E6D0;
+            --sky-blue: #E6F4F7;
+            --light-pink: #FFE5F1;
+            --cream: #FFF8F3;
+            --tan: #F5E6D3;
+            --white: #FFFFFF;
+            --text-green: #1A3A26;
+            --orange: #F97316;
+            --padding: 2rem;
+            --radius: 2rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-green);
+            background-color: var(--fern-green);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Content wrapper for consistent padding */
+        .page-wrapper {
+            background-color: var(--fern-green);
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--padding);
+        }
+
+        /* Header */
+        .header {
+            background-color: var(--fern-green);
+            position: relative;
+            z-index: 30;
+        }
+
+        .promo-bar {
+            color: white;
+            padding: 0.75rem;
+            font-size: 0.875rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .promo-bar a {
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .nav-container {
+            background-color: white;
+            border-radius: 2rem 2rem 0 0;
+            overflow: hidden;
+            margin-top: 1rem;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 3rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-container span {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--text-green);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-green);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        /* Button styles */
+        .button {
+            background-color: var(--fern-green);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            min-height: 2.5rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(43, 95, 63, 0.2);
+        }
+
+        .button-arrow {
+            background-color: var(--orange);
+        }
+
+        .button-arrow svg {
+            transition: transform 0.3s;
+        }
+
+        .button-arrow:hover svg {
+            transform: translateX(4px);
+        }
+
+        /* Hero Section with Full Background */
+        .hero-wrapper {
+            position: relative;
+            background-color: white;
+            overflow: hidden;
+            min-height: 80vh;
+            margin-top: -1px; /* Remove any gap between nav and hero */
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+
+        .hero-background img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            padding: 8rem 3rem;
+            max-width: 600px;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content .body-large {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            opacity: 0.95;
+        }
+
+        /* Section styles */
+        .section {
+            padding: 5rem 3rem;
+            border-radius: var(--radius);
+            margin: 3rem 0;
+        }
+
+        .section-green {
+            background-color: var(--fern-green);
+            color: white;
+        }
+
+        .section-blue {
+            background-color: var(--sky-blue);
+            color: var(--text-green);
+        }
+
+        .section-cream {
+            background-color: var(--cream);
+            color: var(--text-green);
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
+        h2, h3 {
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Icon grid */
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .icon-item {
+            text-align: center;
+        }
+
+        .icon-circle {
+            width: 100px;
+            height: 100px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .icon-item h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Image with text sections */
+        .image-text-group {
+            padding: 5rem 3rem;
+            border-radius: var(--radius);
+            background-color: var(--cream);
+            margin: 3rem 0;
+        }
+
+        .image-text-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            margin: 4rem 0;
+        }
+
+        .image-text-section:nth-child(even) {
+            direction: rtl;
+        }
+
+        .image-text-section:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .rounded-image {
+            border-radius: var(--radius);
+            overflow: hidden;
+            aspect-ratio: 1;
+            background-color: var(--mint-green);
+        }
+
+        .rounded-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--fern-green);
+            padding: 5rem 3rem;
+            border-radius: var(--radius);
+            margin: 3rem 0;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background-color: var(--sky-blue);
+            padding: 2rem;
+            border-radius: var(--radius);
+            color: var(--text-green);
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .testimonial-image {
+            aspect-ratio: 0.75;
+            border-radius: var(--radius);
+            overflow: hidden;
+            background-color: white;
+        }
+
+        .testimonial-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* FAQ */
+        .faq {
+            background-color: var(--sky-blue);
+            padding: 5rem 3rem;
+            border-radius: var(--radius);
+            margin: 3rem 0;
+        }
+
+        .faq-item {
+            border-top: 1px solid var(--text-green);
+            padding: 1.5rem 0;
+            cursor: pointer;
+        }
+
+        .faq-item h4 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            margin-top: 0;
+        }
+
+        .faq-item.active .faq-content {
+            max-height: 300px;
+            margin-top: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--fern-green);
+            color: white;
+            padding: 5rem 3rem;
+            border-radius: 2rem 2rem 0 0;
+            margin-top: 5rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .image-text-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonial-card {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
-    <p>If you are not redirected automatically, click <a href="page.html">here</a> to go to the Robin Hood Health adventure.</p>
+    <!-- Header -->
+    <header class="header">
+        <div class="promo-bar">
+            Making quality healthcare accessible 
+        </div>
+        <div class="nav-container">
+            <nav>
+                <div class="logo-container">
+                    <img src="RH-Logo.png" alt="Robinhood Health" style="height: 2.5rem;">
+                    <span>Robinhood Health</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#services">How It Works</a>
+                    <a href="#locations">Our Services</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="#contact" class="button">Get Started Today</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content wrapper -->
+    <div class="page-wrapper">
+        
+        <!-- Hero Section -->
+        <div class="hero-wrapper" style="margin: 0 calc(-1 * var(--padding)) 3rem calc(-1 * var(--padding)); border-radius: 0 0 var(--radius) var(--radius); overflow: hidden;">
+            <div class="hero-background">
+                <img src="HeroImage.jpg" alt="Healthcare Services">
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content" style="padding-top: 9rem;">
+                <h1>Healthcare for Every Community</h1>
+                <p class="body-large">Robinhood Health brings essential health screenings directly to your home, closing critical care gaps for those who need it most.</p>
+                <a href="#contact" class="button button-arrow">
+                    <span>Get Started Today</span>
+                    <svg width="23" height="15" viewBox="0 0 23 15" fill="none">
+                        <path d="M22.7071 8.20711C23.0976 7.81658 23.0976 7.18342 22.7071 6.7929L16.3431 0.428934C15.9526 0.0384092 15.3195 0.0384091 14.9289 0.428933C14.5384 0.819458 14.5384 1.45262 14.9289 1.84315L20.5858 7.5L14.9289 13.1569C14.5384 13.5474 14.5384 14.1805 14.9289 14.5711C15.3195 14.9616 15.9526 14.9616 16.3431 14.5711L22.7071 8.20711ZM-8.74228e-08 8.5L22 8.5L22 6.5L8.74228e-08 6.5L-8.74228e-08 8.5Z" fill="white"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        
+         <!-- Services Section with Icon Grid -->
+        <section class="section section-blue">
+            <div class="eyebrow">Our Services</div>
+            <h2>Simple Health Screenings at Home</h2>
+            <p style="font-size: 1.25rem; max-width: 800px;">
+                We make it easy to stay on top of your health with free at-home test kits and support every step of the way.
+            </p>
+            
+            <div class="icon-grid">
+                <div class="icon-item">
+                    <img src="TestTube.png" alt="Diabetes" style="width: 160px; height: 160px; margin-bottom: 1rem;">
+                    <h4>Diabetes Care</h4>
+                    <p>Monitor blood sugar control</p>
+                </div>
+                <div class="icon-item">
+                    <img src="Microscope.png" alt="Screening" style="width: 160px; height: 160px; margin-bottom: 1rem;">
+                    <h4>Cancer Screening</h4>
+                    <p>Early detection saves lives</p>
+                </div>
+                <div class="icon-item">
+                    <img src="Kidney.png" alt="Kidney" style="width: 160px; height: 160px; margin-bottom: 1rem;">
+                    <h4>Kidney Health</h4>
+                    <p>Prevent serious complications</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- What Makes Us Different -->
+        <div class="image-text-group">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <div class="eyebrow">What Makes Us Different</div>
+                <h2>Healthcare designed for you</h2>
+            </div>
+
+            <div class="image-text-section">
+                <div>
+                    <h3 style="font-weight: 600; margin-bottom: 1rem;">Community First</h3>
+                    <p style="font-size: 1.125rem;">We focus on serving communities that have been overlooked by traditional healthcare, ensuring everyone gets the care they deserve.</p>
+                </div>
+                <div class="rounded-image">
+                    <img src="Community.png" alt="Community">
+                </div>
+            </div>
+
+            <div class="image-text-section">
+                <div>
+                    <h3 style="font-weight: 600; margin-bottom: 1rem;">Whole-Person Care</h3>
+                    <p style="font-size: 1.125rem;">Our approach considers your complete health picture, coordinating with your doctors to ensure nothing falls through the cracks.</p>
+                </div>
+                <div class="rounded-image">
+                    <img src="Walking.jpg" alt="Whole Care">
+                </div>
+            </div>
+
+            <div class="image-text-section">
+                <div>
+                    <h3 style="font-weight: 600; margin-bottom: 1rem;">No Cost to You</h3>
+                    <p style="font-size: 1.125rem;">If you're eligible through Medicaid or your health plan, all services are completely free. No hidden fees, ever.</p>
+                </div>
+                <div class="rounded-image">
+                    <img src="Swinging.jpg" alt="No Cost">
+                </div>
+            </div>
+        </div>
+
+
+        <!-- FAQ -->
+        <div class="faq" id="faq">
+            <p class="eyebrow">Frequently Asked Questions</p>
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <h4>Am I eligible for this program?<span>+</span></h4>
+                    <div class="faq-content">
+                        <p>If you have Medicaid or are part of a participating health plan, you may be eligible. Contact us to find out.</p>
+                    </div>
+                </div>
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <h4>How much does this cost?<span>+</span></h4>
+                    <div class="faq-content">
+                        <p>For eligible members, all services are completely free. We work with your health plan to cover all costs.</p>
+                    </div>
+                </div>
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <h4>How does the home testing work?<span>+</span></h4>
+                    <div class="faq-content">
+                        <p>We mail you a test kit with simple instructions. Complete the test at home and mail it back in the prepaid package. A doctor reviews your results within 24 hours.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#contact" class="button button-arrow">
+                    <span>More FAQ</span>
+                    <svg width="23" height="15" viewBox="0 0 23 15" fill="none">
+                        <path d="M22.7071 8.20711C23.0976 7.81658 23.0976 7.18342 22.7071 6.7929L16.3431 0.428934C15.9526 0.0384092 15.3195 0.0384091 14.9289 0.428933C14.5384 0.819458 14.5384 1.45262 14.9289 1.84315L20.5858 7.5L14.9289 13.1569C14.5384 13.5474 14.5384 14.1805 14.9289 14.5711C15.3195 14.9616 15.9526 14.9616 16.3431 14.5711L22.7071 8.20711ZM-8.74228e-08 8.5L22 8.5L22 6.5L8.74228e-08 6.5L-8.74228e-08 8.5Z" fill="currentColor"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div style="max-width: 1280px; margin: 0 auto;">
+                <h3 style="margin-bottom: 1rem;">Robinhood Health</h3>
+                <p style="opacity: 0.8;">© 2025 Robinhood Health. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
     <script>
-        window.location.href = "page.html";
+        function toggleFAQ(element) {
+            element.classList.toggle('active');
+        }
     </script>
 </body>
 </html>
