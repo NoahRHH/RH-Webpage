@@ -1,1 +1,536 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HQ5GC9P1JN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HQ5GC9P1JN');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FQHC Partners - Robinhood Health</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        
+        :root {
+            --green: #2B5F3F;
+            --fern-green: #4A7C59;
+            --mint-green: #B8E6D0;
+            --sky-blue: #E6F4F7;
+            --light-pink: #FFE5F1;
+            --cream: #FFF8F3;
+            --tan: #F5E6D3;
+            --white: #FFFFFF;
+            --text-green: #1A3A26;
+            --orange: #F97316;
+            --padding: 2rem;
+            --radius: 2rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-green);
+            background-color: var(--fern-green);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .page-wrapper {
+            background-color: var(--fern-green);
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--padding);
+        }
+
+        /* Header */
+        .header {
+            background-color: var(--fern-green);
+            position: relative;
+            z-index: 30;
+        }
+
+        .promo-bar {
+            color: white;
+            padding: 0.75rem;
+            font-size: 0.875rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-container {
+            background-color: white;
+            border-radius: 2rem 2rem 0 0;
+            overflow: hidden;
+            margin-top: 1rem;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 3rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-container span {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--text-green);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-green);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        /* Button styles */
+        .button {
+            background-color: var(--fern-green);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            min-height: 2.5rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(43, 95, 63, 0.2);
+        }
+
+        .button-arrow {
+            background-color: var(--orange);
+        }
+
+        .button-arrow svg {
+            transition: transform 0.3s;
+        }
+
+        .button-arrow:hover svg {
+            transform: translateX(4px);
+        }
+
+        /* Hero Section */
+        .hero-wrapper {
+            background-color: white;
+            margin: 0 calc(-1 * var(--padding)) 3rem calc(-1 * var(--padding));
+            border-radius: 0 0 var(--radius) var(--radius);
+            overflow: hidden;
+            position: relative;
+            padding: 5rem 3rem;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--text-green);
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: var(--text-green);
+        }
+
+        /* Section styles */
+        .section {
+            padding: 5rem 3rem;
+            border-radius: var(--radius);
+            margin: 3rem 0;
+        }
+
+        .section-green {
+            background-color: var(--fern-green);
+            color: white;
+        }
+
+        .section-blue {
+            background-color: var(--sky-blue);
+            color: var(--text-green);
+        }
+
+        .section-cream {
+            background-color: var(--cream);
+            color: var(--text-green);
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
+        h2, h3 {
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--fern-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        /* Value Props */
+        .value-props {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .value-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: start;
+        }
+
+        .value-icon {
+            background-color: var(--mint-green);
+            width: 60px;
+            height: 60px;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .value-content h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ROI Section */
+        .roi-calculator {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 3rem;
+            border-radius: 1rem;
+            margin-top: 3rem;
+        }
+
+        .roi-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .roi-item {
+            text-align: center;
+        }
+
+        .roi-item .amount {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .value-props {
+                grid-template-columns: 1fr;
+            }
+
+            .roi-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="promo-bar">
+            Partner with us to improve HEDIS scores and patient outcomes
+        </div>
+        <div class="nav-container">
+            <nav>
+                <div class="logo-container">
+                    <img src="RH-Logo.png" alt="Robinhood Health" style="height: 2.5rem;">
+                    <span>Robinhood Health</span>
+                </div>
+                <div class="nav-links">
+                    <a href="/how-it-works">How It Works</a>
+                    <a href="/fqhc" style="color: var(--fern-green); font-weight: 700;">For FQHCs</a>
+                    <a href="/mco">For MCOs</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content wrapper -->
+    <div class="page-wrapper">
+        
+        <!-- Hero Section -->
+        <div class="hero-wrapper">
+            <div class="hero-content">
+                <div class="eyebrow">FOR FEDERALLY QUALIFIED HEALTH CENTERS</div>
+                <h1>Finally Close Those Care Gaps Without Adding to Your Workload</h1>
+                <p class="subtitle">Your patients are missing critical screenings. Your staff is overwhelmed. Your HEDIS scores are suffering. We handle everything—from patient outreach to clinical follow-up—so you can focus on what you do best.</p>
+                <a href="#contact" class="button button-arrow">
+                    <span>See How It Works for FQHCs</span>
+                    <svg width="23" height="15" viewBox="0 0 23 15" fill="none">
+                        <path d="M22.7071 8.20711C23.0976 7.81658 23.0976 7.18342 22.7071 6.7929L16.3431 0.428934C15.9526 0.0384092 15.3195 0.0384091 14.9289 0.428933C14.5384 0.819458 14.5384 1.45262 14.9289 1.84315L20.5858 7.5L14.9289 13.1569C14.5384 13.5474 14.5384 14.1805 14.9289 14.5711C15.3195 14.9616 15.9526 14.9616 16.3431 14.5711L22.7071 8.20711ZM-8.74228e-08 8.5L22 8.5L22 6.5L8.74228e-08 6.5L-8.74228e-08 8.5Z" fill="white"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Current Challenge Section -->
+        <section class="section section-blue">
+            <h2>You Know These Problems Too Well</h2>
+            <p style="font-size: 1.25rem; margin-bottom: 2rem;">Every day, your team struggles with the same challenges that keep you from achieving the quality scores you deserve.</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">61%</div>
+                    <div class="stat-label">of your eligible patients are overdue for colorectal cancer screening</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">48%</div>
+                    <div class="stat-label">of your diabetic patients have uncontrolled HbA1c levels</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">71%</div>
+                    <div class="stat-label">of your patients need kidney health evaluations they're not getting</div>
+                </div>
+            </div>
+            
+            <p style="text-align: center; margin-top: 2rem; font-size: 1.125rem;">
+                <strong>You're not alone.</strong> Every FQHC faces these gaps—but now there's a solution that actually works.
+            </p>
+        </section>
+
+        <!-- Our Solution Section -->
+        <section class="section section-cream">
+            <div class="eyebrow">HERE'S WHAT WE DO FOR YOU</div>
+            <h2>We Handle Everything So You Don't Have To</h2>
+            <p style="font-size: 1.25rem; margin-bottom: 3rem;">While you focus on seeing patients, we work behind the scenes to close your care gaps and boost your scores.</p>
+            
+            <div class="value-props">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="var(--fern-green)">
+                            <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
+                        </svg>
+                    </div>
+                    <div class="value-content">
+                        <h4>We Find Your Care Gaps Automatically</h4>
+                        <p>No more manual chart reviews. Our AI scans your entire patient panel daily and identifies every missing screening.</p>
+                    </div>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="var(--fern-green)">
+                            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                        </svg>
+                    </div>
+                    <div class="value-content">
+                        <h4>We Get Your Patients Tested at Home</h4>
+                        <p>Your patients receive test kits at home within 3 days. No transportation issues. No missed appointments. 70% completion rate guaranteed.</p>
+                    </div>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="var(--fern-green)">
+                            <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+                        </svg>
+                    </div>
+                    <div class="value-content">
+                        <h4>Results Flow Directly to Your EMR</h4>
+                        <p>Every result is reviewed by our physicians and automatically documented in your Epic or athena system. You get full credit for the care.</p>
+                    </div>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="var(--fern-green)">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <div class="value-content">
+                        <h4>You Only Pay When Gaps Close</h4>
+                        <p>Zero upfront costs. Zero risk. You only pay us when we successfully complete a screening. If we don't deliver, you don't pay.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ROI Section -->
+        <section class="section section-green">
+            <h2 style="text-align: center;">Your Return on Investment</h2>
+            <p style="text-align: center; font-size: 1.25rem; margin-bottom: 2rem;">For a typical FQHC with 10,000 patients</p>
+            
+            <div class="roi-calculator">
+                <h3 style="text-align: center; margin-bottom: 2rem;">Annual Financial Impact</h3>
+                <div class="roi-grid">
+                    <div class="roi-item">
+                        <div class="amount">$380,000</div>
+                        <div>Additional Quality Incentive Payments</div>
+                    </div>
+                    <div class="roi-item">
+                        <div class="amount">$95,000</div>
+                        <div>Your Investment (Success-Based)</div>
+                    </div>
+                    <div class="roi-item">
+                        <div class="amount">4x ROI</div>
+                        <div>Net Return on Investment</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <p style="font-size: 1.125rem; margin-bottom: 2rem;">Plus: Improved HEDIS scores, better patient outcomes, reduced staff burden</p>
+            </div>
+        </section>
+
+        <!-- Partnership Benefits -->
+        <section class="section section-blue">
+            <div class="eyebrow">WHY PARTNER WITH US</div>
+            <h2>Built Specifically for FQHCs</h2>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem;">
+                <div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">What We Handle</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.1);">✓ Patient identification and outreach</li>
+                        <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.1);">✓ Test kit logistics and distribution</li>
+                        <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.1);">✓ Clinical interpretation of results</li>
+                        <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.1);">✓ Patient follow-up and care coordination</li>
+                        <li style="padding: 0.75rem 0;">✓ Quality reporting and documentation</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Your Benefits</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.1);">✓ Improved HEDIS and UDS scores</li>
+                        <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.1);">✓ Increased quality incentive payments</li>
+                        <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.1);">✓ Better patient health outcomes</li>
+                        <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.1);">✓ Reduced staff workload</li>
+                        <li style="padding: 0.75rem 0;">✓ Zero financial risk</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- CTA Section -->
+   <section class="section section-green" style="text-align: center;">
+    <h2 style="margin-bottom: 1.5rem;">Ready to Transform Your Quality Metrics?</h2>
+    <p style="font-size: 1.25rem; margin-bottom: 2rem;">Join leading FQHCs already partnering with Robinhood Health</p>
+    <a href="mailto:info@robinhoodhealth.co?subject=FQHC%20inquirer" class="button button-arrow">
+        <span>Schedule a Partnership Discussion</span>
+        <svg width="23" height="15" viewBox="0 0 23 15" fill="none">
+            <path d="M22.7071 8.20711C23.0976 7.81658 23.0976 7.18342 22.7071 6.7929L16.3431 0.428934C15.9526 0.0384092 15.3195 0.0384091 14.9289 0.428933C14.5384 0.819458 14.5384 1.45262 14.9289 1.84315L20.5858 7.5L14.9289 13.1569C14.5384 13.5474 14.5384 14.1805 14.9289 14.5711C15.3195 14.9616 15.9526 14.9616 16.3431 14.5711L22.7071 8.20711ZM-8.74228e-08 8.5L22 8.5L22 6.5L8.74228e-08 6.5L-8.74228e-08 8.5Z" fill="white"/>
+        </svg>
+    </a>
+    <p style="margin-top: 2rem; opacity: 0.9;">Or call us directly: (410) 812-0940</p>
+</section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer style="background-color: var(--fern-green); color: white; padding: 3rem; text-align: center;">
+        <p style="opacity: 0.7; font-size: 0.875rem;">© 2025 Robinhood Health - Virtual Medical Group</p>
+    </footer>
+
+</body>
+</html>
