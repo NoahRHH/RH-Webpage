@@ -1,1 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HQ5GC9P1JN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HQ5GC9P1JN');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCO Partners - Robinhood Health</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        
+        :root {
+            --green: #2B5F3F;
+            --fern-green: #4A7C59;
+            --mint-green: #B8E6D0;
+            --sky-blue: #E6F4F7;
+            --light-pink: #FFE5F1;
+            --cream: #FFF8F3;
+            --tan: #F5E6D3;
+            --white: #FFFFFF;
+            --text-green: #1A3A26;
+            --orange: #F97316;
+            --padding: 2rem;
+            --radius: 2rem;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-green);
+            background-color: var(--fern-green);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .page-wrapper {
+            background-color: var(--fern-green);
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--padding);
+        }
+
+        /* Header */
+        .header {
+            background-color: var(--fern-green);
+            position: relative;
+            z-index: 30;
+        }
+
+        .promo-bar {
+            color: white;
+            padding: 0.75rem;
+            font-size: 0.875rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-container {
+            background-color: white;
+            border-radius: 2rem 2rem 0 0;
+            overflow: hidden;
+            margin-top: 1rem;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 3rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-container span {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--text-green);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-green);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        /* Button styles */
+        .button {
+            background-color: var(--fern-green);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            min-height: 2.5rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(43, 95, 63, 0.2);
+        }
+
+        .button-arrow {
+            background-color: var(--orange);
+        }
+
+        .button-arrow svg {
+            transition: transform 0.3s;
+        }
+
+        .button-arrow:hover svg {
+            transform: translateX(4px);
+        }
+
+        /* Hero Section */
+        .hero-wrapper {
+            background-color: white;
+            margin: 0 calc(-1 * var(--padding)) 3rem calc(-1 * var(--padding));
+            border-radius: 0 0 var(--radius) var(--radius);
+            overflow: hidden;
+            position: relative;
+            padding: 5rem 3rem;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--text-green);
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: var(--text-green);
+        }
+
+        /* Section styles */
+        .section {
+            padding: 5rem 3rem;
+            border-radius: var(--radius);
+            margin: 3rem 0;
+        }
+
+        .section-green {
+            background-color: var(--fern-green);
+            color: white;
+        }
+
+        .section-blue {
+            background-color: var(--sky-blue);
+            color: var(--text-green);
+        }
+
+        .section-cream {
+            background-color: var(--cream);
+            color: var(--text-green);
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
+        h2, h3 {
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Cost Comparison */
+        .cost-comparison {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .cost-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+        }
+
+        .cost-card .test-name {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+        }
+
+        .current-cost {
+            color: #999;
+            text-decoration: line-through;
+            font-size: 1.25rem;
+        }
+
+        .our-cost {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--fern-green);
+            margin: 0.5rem 0;
+        }
+
+        .savings {
+            background-color: var(--mint-green);
+            color: var(--text-green);
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: start;
+        }
+
+        .feature-icon {
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 60px;
+            height: 60px;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .feature-content h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Impact Metrics */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .impact-metric {
+            text-align: center;
+        }
+
+        .impact-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--fern-green);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .cost-comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .impact-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="promo-bar">
+            Reduce costs by 47-59% while improving HEDIS scores
+        </div>
+        <div class="nav-container">
+            <nav>
+                <div class="logo-container">
+                    <img src="RH-Logo.png" alt="Robinhood Health" style="height: 2.5rem;">
+                    <span>Robinhood Health</span>
+                </div>
+                <div class="nav-links">
+                    <a href="/index">Home</a>
+                    <a href="/how-it-works">How It Works</a>
+                    <a href="/about">About</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content wrapper -->
+    <div class="page-wrapper">
+        
+        <!-- Hero Section -->
+        <div class="hero-wrapper">
+            <div class="hero-content">
+                <div class="eyebrow">FOR MANAGED CARE ORGANIZATIONS</div>
+                <h1>Cut Care Gap Costs by 50% While Doubling Completion Rates</h1>
+                <p class="subtitle">Our AI-powered virtual medical group closes critical HEDIS gaps for your Medicaid population at half the cost with 2x the success rate of traditional programs.</p>
+                <a href="#contact" class="button button-arrow">
+                    <span>See the ROI Calculator</span>
+                    <svg width="23" height="15" viewBox="0 0 23 15" fill="none">
+                        <path d="M22.7071 8.20711C23.0976 7.81658 23.0976 7.18342 22.7071 6.7929L16.3431 0.428934C15.9526 0.0384092 15.3195 0.0384091 14.9289 0.428933C14.5384 0.819458 14.5384 1.45262 14.9289 1.84315L20.5858 7.5L14.9289 13.1569C14.5384 13.5474 14.5384 14.1805 14.9289 14.5711C15.3195 14.9616 15.9526 14.9616 16.3431 14.5711L22.7071 8.20711ZM-8.74228e-08 8.5L22 8.5L22 6.5L8.74228e-08 6.5L-8.74228e-08 8.5Z" fill="white"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Cost Savings Section -->
+        <section class="section section-blue">
+            <h2 style="text-align: center;">Dramatic Cost Reduction Per Gap Closed</h2>
+            <p style="text-align: center; font-size: 1.25rem;">Your current vendor costs vs. Robinhood Health pricing</p>
+            
+            <div class="cost-comparison">
+                <div class="cost-card">
+                    <div class="test-name">Colorectal Cancer Screening</div>
+                    <div class="current-cost">$182 current cost</div>
+                    <div class="our-cost">$95</div>
+                    <div class="savings">48% SAVINGS</div>
+                </div>
+                <div class="cost-card">
+                    <div class="test-name">Diabetes HbA1c Testing</div>
+                    <div class="current-cost">$142 current cost</div>
+                    <div class="our-cost">$75</div>
+                    <div class="savings">47% SAVINGS</div>
+                </div>
+                <div class="cost-card">
+                    <div class="test-name">Kidney Health Evaluation</div>
+                    <div class="current-cost">$282 current cost</div>
+                    <div class="our-cost">$115</div>
+                    <div class="savings">59% SAVINGS</div>
+                </div>
+            </div>
+            
+            <p style="text-align: center; margin-top: 2rem; font-size: 1.125rem;">
+                <strong>Plus:</strong> We achieve 70% completion rates vs. industry average of 35%
+            </p>
+        </section>
+
+        <!-- Value Proposition Section -->
+        <section class="section section-green">
+            <div class="eyebrow">WHY ROBINHOOD HEALTH</div>
+            <h2>The Only Solution Built for Medicaid's Unique Challenges</h2>
+            <p style="font-size: 1.25rem; margin-bottom: 3rem;">Traditional vendors fail because they don't understand Medicaid populations. We're different.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                            <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
+                        </svg>
+                    </div>
+                    <div class="feature-content">
+                        <h4>100% Daily Scanning</h4>
+                        <p>AI algorithms identify every care gap in real-time, no manual chart reviews needed.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                            <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                        </svg>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Complete Clinical Ownership</h4>
+                        <p>Board-certified physicians review every result within 24 hours and handle all follow-up care.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                        </svg>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Zero-Friction Testing</h4>
+                        <p>At-home kits delivered in 3 days with smart nudges achieving 2x industry completion rates.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Guaranteed HEDIS Impact</h4>
+                        <p>Direct reporting to NCQA with documented improvements in CRC, diabetes, and kidney measures.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ROI Calculator Section -->
+        <section class="section section-cream">
+            <h2 style="text-align: center;">Your Annual ROI</h2>
+            <p style="text-align: center; font-size: 1.25rem; margin-bottom: 3rem;">For 100,000 Medicaid members</p>
+            
+            <div style="background-color: var(--sky-blue); padding: 3rem; border-radius: var(--radius);">
+                <div class="impact-grid">
+                    <div class="impact-metric">
+                        <div class="impact-number">15,000</div>
+                        <div>Care Gaps Closed</div>
+                    </div>
+                    <div class="impact-metric">
+                        <div class="impact-number">$1.4M</div>
+                        <div>Your Investment</div>
+                    </div>
+                    <div class="impact-metric">
+                        <div class="impact-number">$1.3M</div>
+                        <div>Cost Savings vs. Current</div>
+                    </div>
+                    <div class="impact-metric">
+                        <div class="impact-number">$3.2M</div>
+                        <div>HEDIS Bonus Capture</div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 2px solid var(--fern-green);">
+                    <p style="font-size: 2rem; font-weight: 700; color: var(--fern-green);">Total Annual Value: $4.5M</p>
+                    <p style="font-size: 1.25rem; margin-top: 0.5rem;">3.2x Return on Investment</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Integration Section -->
+        <section class="section section-blue">
+            <div class="eyebrow">SEAMLESS INTEGRATION</div>
+            <h2>Works With Your Existing Infrastructure</h2>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3rem; margin-top: 3rem;">
+                <div style="text-align: center;">
+                    <div style="background-color: white; padding: 2rem; border-radius: 1rem; margin-bottom: 1rem;">
+                        <img src="Epic-Logo.png" alt="Epic" style="height: 40px;">
+                    </div>
+                    <p>Direct FHIR integration</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="background-color: white; padding: 2rem; border-radius: 1rem; margin-bottom: 1rem;">
+                        <img src="Athena-Logo.png" alt="athenahealth" style="height: 40px;">
+                    </div>
+                    <p>Real-time data sync</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="background-color: white; padding: 2rem; border-radius: 1rem; margin-bottom: 1rem;">
+                        <img src="NCQA-Logo.png" alt="NCQA" style="height: 40px;">
+                    </div>
+                    <p>HEDIS-compliant reporting</p>
+                </div>
+            </div>
+            
+            <p style="text-align: center; margin-top: 2rem; font-size: 1.125rem;">
+                Deploy in 30 days with zero IT burden on your team
+            </p>
+        </section>
+
+        <!-- Success Metrics Section -->
+        <section class="section section-green">
+            <h2 style="text-align: center;">Proven Results at Scale</h2>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3rem;">
+                <div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 2rem;">Traditional Vendor Performance</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.2);">
+                            <span style="opacity: 0.7;">Completion Rate:</span> <strong>35%</strong>
+                        </li>
+                        <li style="padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.2);">
+                            <span style="opacity: 0.7;">Time to Results:</span> <strong>7-10 days</strong>
+                        </li>
+                        <li style="padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.2);">
+                            <span style="opacity: 0.7;">Follow-up Rate:</span> <strong>45%</strong>
+                        </li>
+                        <li style="padding: 1rem 0;">
+                            <span style="opacity: 0.7;">Cost per Gap:</span> <strong>$182-282</strong>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 2rem;">Robinhood Health Performance</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.2);">
+                            <span style="opacity: 0.7;">Completion Rate:</span> <strong>70%</strong>
+                        </li>
+                        <li style="padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.2);">
+                            <span style="opacity: 0.7;">Time to Results:</span> <strong>24-48 hours</strong>
+                        </li>
+                        <li style="padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.2);">
+                            <span style="opacity: 0.7;">Follow-up Rate:</span> <strong>95%</strong>
+                        </li>
+                        <li style="padding: 1rem 0;">
+                            <span style="opacity: 0.7;">Cost per Gap:</span> <strong>$75-115</strong>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contract Terms Section -->
+        <section class="section section-cream">
+            <div class="eyebrow">PARTNERSHIP TERMS</div>
+            <h2>Flexible Contracting Options</h2>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; margin-top: 3rem;">
+                <div style="background-color: white; padding: 2rem; border-radius: 1rem;">
+                    <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">Per-Member-Per-Month</h3>
+                    <p style="font-size: 2rem; font-weight: 700; color: var(--fern-green); margin: 1rem 0;">$0.85 PMPM</p>
+                    <p>Full population coverage with predictable costs</p>
+                </div>
+                
+                <div style="background-color: white; padding: 2rem; border-radius: 1rem;">
+                    <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">Fee-for-Service</h3>
+                    <p style="font-size: 2rem; font-weight: 700; color: var(--fern-green); margin: 1rem 0;">$75-115</p>
+                    <p>Pay only for completed gaps, zero upfront costs</p>
+                </div>
+                
+                <div style="background-color: white; padding: 2rem; border-radius: 1rem;">
+                    <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">Shared Savings</h3>
+                    <p style="font-size: 2rem; font-weight: 700; color: var(--fern-green); margin: 1rem 0;">50/50 Split</p>
+                    <p>Share in HEDIS bonus improvements</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section section-green" style="text-align: center;">
+            <h2 style="margin-bottom: 1.5rem;">Ready to Transform Your HEDIS Performance?</h2>
+            <p style="font-size: 1.25rem; margin-bottom: 2rem;">Join leading MCOs saving millions while improving member outcomes</p>
+            
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="#calculator" class="button" style="background-color: white; color: var(--fern-green);">
+                    <span>Download ROI Calculator</span>
+                </a>
+                <a href="mailto:partnerships@robinhoodhealth.co?subject=MCO%20Partnership%20Inquiry&body=Organization:%0D%0AMedicaid%20Members:%0D%0ACurrent%20HEDIS%20Gaps:%0D%0A%0D%0AI'd%20like%20to%20schedule%20a%20discussion%20about%20partnering%20with%20Robinhood%20Health." class="button button-arrow">
+                    <span>Schedule Executive Briefing</span>
+                    <svg width="23" height="15" viewBox="0 0 23 15" fill="none">
+                        <path d="M22.7071 8.20711C23.0976 7.81658 23.0976 7.18342 22.7071 6.7929L16.3431 0.428934C15.9526 0.0384092 15.3195 0.0384091 14.9289 0.428933C14.5384 0.819458 14.5384 1.45262 14.9289 1.84315L20.5858 7.5L14.9289 13.1569C14.5384 13.5474 14.5384 14.1805 14.9289 14.5711C15.3195 14.9616 15.9526 14.9616 16.3431 14.5711L22.7071 8.20711ZM-8.74228e-08 8.5L22 8.5L22 6.5L8.74228e-08 6.5L-8.74228e-08 8.5Z" fill="white"/>
+                    </svg>
+                </a>
+            </div>
+            
+            <p style="margin-top: 2rem; opacity: 0.9;">Or call our MCO partnership team: (410) 812-0940</p>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer style="background-color: var(--fern-green); color: white; padding: 3rem; text-align: center;">
+        <p style="opacity: 0.7; font-size: 0.875rem;">© 2025 Robinhood Health - Virtual Medical Group | NCQA Certified</p>
+    </footer>
+
+</body>
+</html>
