@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,6 +67,12 @@
             justify-content: center;
             align-items: center;
             gap: 0.5rem;
+        }
+
+        .promo-bar a {
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
         }
 
         .nav-container {
@@ -279,29 +284,13 @@
             margin-bottom: 0.5rem;
         }
 
-        /* ROI Section */
-        .roi-calculator {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 3rem;
-            border-radius: 1rem;
-            margin-top: 3rem;
-        }
-
-        .roi-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .roi-item {
-            text-align: center;
-        }
-
-        .roi-item .amount {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
+        /* Footer */
+        footer {
+            background-color: var(--fern-green);
+            color: white;
+            padding: 5rem 3rem 3rem;
+            border-radius: 2rem 2rem 0 0;
+            margin-top: 5rem;
         }
 
         /* Mobile Styles */
@@ -318,16 +307,31 @@
                 grid-template-columns: 1fr;
             }
 
-            .roi-grid {
-                grid-template-columns: 1fr;
-            }
-
             h2 {
                 font-size: 2rem;
             }
 
             .nav-links {
                 display: none;
+            }
+
+            footer > div > div:first-child {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            footer > div > div:last-child > div:first-child {
+                grid-template-columns: 1fr;
+            }
+            
+            footer ul {
+                flex-direction: column;
+                gap: 1rem !important;
+            }
+            
+            footer > div > div:last-child p {
+                text-align: left !important;
+                margin-top: 1rem;
             }
         }
     </style>
@@ -345,9 +349,9 @@
                     <span>Robinhood Health</span>
                 </div>
                 <div class="nav-links">
-                    <a href="/how-it-works">How It Works</a>
                     <a href="/FQHC" style="color: var(--fern-green); font-weight: 700;">For FQHCs</a>
                     <a href="/MCO">For MCOs</a>
+                    <a href="/how-it-works">How It Works</a>
                 </div>
             </nav>
         </div>
@@ -447,7 +451,6 @@
             </div>
         </section>
 
-       
         <!-- Partnership Benefits -->
         <section class="section section-blue">
             <div class="eyebrow">WHY PARTNER WITH US</div>
@@ -478,24 +481,103 @@
             </div>
         </section>
 
-
         <!-- CTA Section -->
-   <section class="section section-green" style="text-align: center;">
-    <h2 style="margin-bottom: 1.5rem;">Ready to Transform Your Quality Metrics?</h2>
-    <p style="font-size: 1.25rem; margin-bottom: 2rem;">Join leading FQHCs already partnering with Robinhood Health</p>
-    <a href="mailto:info@robinhoodhealth.co?subject=FQHC%20inquirer" class="button button-arrow">
-        <span>Schedule a Partnership Discussion</span>
-        <svg width="23" height="15" viewBox="0 0 23 15" fill="none">
-            <path d="M22.7071 8.20711C23.0976 7.81658 23.0976 7.18342 22.7071 6.7929L16.3431 0.428934C15.9526 0.0384092 15.3195 0.0384091 14.9289 0.428933C14.5384 0.819458 14.5384 1.45262 14.9289 1.84315L20.5858 7.5L14.9289 13.1569C14.5384 13.5474 14.5384 14.1805 14.9289 14.5711C15.3195 14.9616 15.9526 14.9616 16.3431 14.5711L22.7071 8.20711ZM-8.74228e-08 8.5L22 8.5L22 6.5L8.74228e-08 6.5L-8.74228e-08 8.5Z" fill="white"/>
-        </svg>
-    </a>
-</section>
+        <section class="section section-green" style="text-align: center;">
+            <h2 style="margin-bottom: 1.5rem;">Ready to Transform Your Quality Metrics?</h2>
+            <p style="font-size: 1.25rem; margin-bottom: 2rem;">Join leading FQHCs already partnering with Robinhood Health</p>
+            <a href="mailto:info@robinhoodhealth.co?subject=FQHC%20inquirer" class="button button-arrow">
+                <span>Schedule a Partnership Discussion</span>
+                <svg width="23" height="15" viewBox="0 0 23 15" fill="none">
+                    <path d="M22.7071 8.20711C23.0976 7.81658 23.0976 7.18342 22.7071 6.7929L16.3431 0.428934C15.9526 0.0384092 15.3195 0.0384091 14.9289 0.428933C14.5384 0.819458 14.5384 1.45262 14.9289 1.84315L20.5858 7.5L14.9289 13.1569C14.5384 13.5474 14.5384 14.1805 14.9289 14.5711C15.3195 14.9616 15.9526 14.9616 16.3431 14.5711L22.7071 8.20711ZM-8.74228e-08 8.5L22 8.5L22 6.5L8.74228e-08 6.5L-8.74228e-08 8.5Z" fill="white"/>
+                </svg>
+            </a>
+        </section>
 
     </div>
 
     <!-- Footer -->
-    <footer style="background-color: var(--fern-green); color: white; padding: 3rem; text-align: center;">
-        <p style="opacity: 0.7; font-size: 0.875rem;">© 2025 Robinhood Health - Virtual Medical Group</p>
+    <footer style="background-color: var(--fern-green); color: white; padding: 5rem 3rem 3rem; border-radius: 2rem 2rem 0 0; margin-top: 5rem;">
+        <div style="max-width: 1280px; margin: 0 auto;">
+            <!-- Top Section -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.2);">
+                <!-- Logo Column -->
+                <div>
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <img src="RH-Logo.png" alt="Robinhood Health" style="height: 2.5rem; filter: brightness(0) invert(1);">
+                        <span style="font-size: 1.5rem; font-weight: 700;">Robinhood Health</span>
+                    </div>
+                </div>
+                
+                <!-- Services Column -->
+                <div>
+                    <h4 style="font-weight: 600; margin-bottom: 1.5rem; font-size: 1.125rem;">Our Services</h4>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
+                        <li><a href="/how-it-works" style="color: white; text-decoration: none; opacity: 0.9;">How It Works</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Company Column -->
+                <div>
+                    <h4 style="font-weight: 600; margin-bottom: 1.5rem; font-size: 1.125rem;">Company</h4>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
+                        <li><a href="/about" style="color: white; text-decoration: none; opacity: 0.9;">About</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Column -->
+                <div>
+                    <h4 style="font-weight: 600; margin-bottom: 1.5rem; font-size: 1.125rem;">Contact</h4>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <a href="mailto:info@robinhoodhealth.co" style="display: flex; align-items: center; gap: 0.5rem; color: white; text-decoration: none; background-color: rgba(255,255,255,0.1); padding: 0.75rem 1rem; border-radius: 0.5rem;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M3.87868 6.037C3 6.91568 3 8.3299 3 11.1583V13.1583C3 15.9868 3 17.401 3.87868 18.2796C4.75736 19.1583 6.17157 19.1583 9 19.1583H15C17.8284 19.1583 19.2426 19.1583 20.1213 18.2796C21 17.401 21 15.9868 21 13.1583V11.1583C21 8.3299 21 6.91568 20.1213 6.037C19.2426 5.15833 17.8284 5.15833 15 5.15833H9C6.17157 5.15833 4.75736 5.15833 3.87868 6.037ZM6.5547 8.32627C6.09517 8.01992 5.4743 8.1441 5.16795 8.60363C4.8616 9.06315 4.98577 9.68402 5.4453 9.99038L10.8906 13.6206C11.5624 14.0684 12.4376 14.0684 13.1094 13.6206L18.5547 9.99038C19.0142 9.68402 19.1384 9.06315 18.8321 8.60363C18.5257 8.1441 17.9048 8.01992 17.4453 8.32627L12 11.9565L6.5547 8.32627Z" fill="white"/>
+                            </svg>
+                            <span>info@robinhoodhealth.co</span>
+                        </a>
+                    </div>
+                    
+                    <!-- Social Links -->
+                    <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                        <a href="#" style="width: 40px; height: 40px; background-color: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" style="width: 40px; height: 40px; background-color: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="#" style="width: 40px; height: 40px; background-color: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Section -->
+            <div style="padding-top: 3rem;">
+                <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; align-items: start;">
+                    <ul style="list-style: none; display: flex; gap: 2rem; flex-wrap: wrap;">
+                        <li><a href="#privacy" style="color: white; text-decoration: none; opacity: 0.7; font-size: 0.875rem;">Privacy Policy</a></li>
+                        <li><a href="#terms" style="color: white; text-decoration: none; opacity: 0.7; font-size: 0.875rem;">Terms of Service</a></li>
+                        <li><a href="#hipaa" style="color: white; text-decoration: none; opacity: 0.7; font-size: 0.875rem;">HIPAA Notice</a></li>
+                        <li><a href="#accessibility" style="color: white; text-decoration: none; opacity: 0.7; font-size: 0.875rem;">Accessibility</a></li>
+                    </ul>
+                    <p style="text-align: right; opacity: 0.7; font-size: 0.875rem;">© 2025 Robinhood Health</p>
+                </div>
+                
+                <!-- Compliance Notice -->
+                <div style="background-color: var(--green); padding: 1.25rem; border-radius: 1rem; margin-top: 3rem;">
+                    <p style="font-size: 0.75rem; line-height: 1.6; opacity: 0.9; margin: 0;">
+                        Robinhood Health is a virtual medical group providing health screening services. Services are provided at no cost to eligible members through participating health plans. 
+                        All medical services are provided by licensed healthcare professionals. Your privacy is protected under HIPAA regulations.
+                    </p>
+                </div>
+            </div>
+        </div>
     </footer>
 
 </body>
