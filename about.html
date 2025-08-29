@@ -1,233 +1,493 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HQ5GC9P1JN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HQ5GC9P1JN');
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Robinhood Health</title>
     <style>
-        /* Include your existing styles here */
-        /* Additional styles for About page */
-        .about-hero {
-            background: linear-gradient(135deg, #E6F4F7 0%, #FFF8F3 100%);
-            padding: 80px 0;
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        
+        :root {
+            --green: #2B5F3F;
+            --fern-green: #4A7C59;
+            --mint-green: #B8E6D0;
+            --sky-blue: #E6F4F7;
+            --light-pink: #FFE5F1;
+            --cream: #FFF8F3;
+            --tan: #F5E6D3;
+            --white: #FFFFFF;
+            --text-green: #1A3A26;
+            --orange: #F97316;
+            --padding: 2rem;
+            --radius: 2rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-green);
+            background-color: var(--fern-green);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .page-wrapper {
+            background-color: var(--fern-green);
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--padding);
+        }
+
+        /* Header styles - reuse from main page */
+        .header {
+            background-color: var(--fern-green);
+            position: relative;
+            z-index: 30;
+        }
+
+        .promo-bar {
+            color: white;
+            padding: 0.75rem;
+            font-size: 0.875rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-container {
+            background-color: white;
+            border-radius: 2rem 2rem 0 0;
+            overflow: hidden;
+            margin-top: 1rem;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 3rem;
+        }
+
+        /* Button styles */
+        .button {
+            background-color: var(--fern-green);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            min-height: 2.5rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(43, 95, 63, 0.2);
+        }
+
+        .button-arrow {
+            background-color: var(--orange);
+        }
+
+        /* Hero Section */
+        .hero-wrapper {
+            background-color: white;
+            margin: 0 calc(-1 * var(--padding)) 3rem calc(-1 * var(--padding));
+            border-radius: 0 0 var(--radius) var(--radius);
+            overflow: hidden;
+            position: relative;
+            padding: 6rem 3rem;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
             text-align: center;
         }
-        
-        .mission-section {
-            background: #2B5F3F;
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--text-green);
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: var(--text-green);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Section styles */
+        .section {
+            padding: 5rem 3rem;
+            border-radius: var(--radius);
+            margin: 3rem 0;
+        }
+
+        .section-green {
+            background-color: var(--fern-green);
             color: white;
-            padding: 60px 20px;
-            border-radius: 2rem;
-            margin: 40px auto;
-            max-width: 1200px;
         }
-        
-        .story-section {
-            max-width: 1200px;
-            margin: 60px auto;
-            padding: 0 20px;
+
+        .section-blue {
+            background-color: var(--sky-blue);
+            color: var(--text-green);
         }
-        
+
+        .section-cream {
+            background-color: var(--cream);
+            color: var(--text-green);
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
+        h2, h3 {
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Story Section */
+        .story-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .story-text {
+            font-size: 1.125rem;
+            line-height: 1.8;
+        }
+
+        .stat-box {
+            background-color: var(--mint-green);
+            padding: 2rem;
+            border-radius: var(--radius);
+            text-align: center;
+            color: var(--text-green);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Values Grid */
         .values-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
         }
-        
+
         .value-card {
-            background: #E6F4F7;
-            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
             border-radius: 1rem;
+        }
+
+        .value-card h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* Process Steps */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .process-step {
             text-align: center;
         }
-        
-        .team-section {
-            background: #FFF8F3;
-            padding: 60px 20px;
-            border-radius: 2rem;
-            margin: 40px auto;
-            max-width: 1200px;
+
+        .step-number {
+            background-color: var(--fern-green);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1rem;
         }
-        
+
+        /* Team Grid */
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 3rem;
         }
-        
+
         .team-member {
             text-align: center;
         }
-        
+
         .team-photo {
-            width: 120px;
-            height: 120px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            background: #4A7C59;
-            margin: 0 auto 15px;
+            background-color: var(--mint-green);
+            margin: 0 auto 1rem;
+        }
+
+        .team-member h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-member p {
+            color: var(--text-green);
+            opacity: 0.8;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .story-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Include your existing header here -->
-    
-    <main class="about">
+    <!-- Header (matching your existing pages) -->
+    <header class="header">
+        <div class="promo-bar">
+            Making quality healthcare accessible 
+        </div>
+        <div class="nav-container">
+            <nav>
+                <div class="logo-container">
+                    <img src="RH-Logo.png" alt="Robinhood Health" style="height: 2.5rem;">
+                    <span style="font-size: 1.75rem; font-weight: 800; color: var(--text-green);">Robinhood Health</span>
+                </div>
+                <div class="nav-links" style="display: flex; gap: 2rem; align-items: center;">
+                    <a href="index.html" style="color: var(--text-green); text-decoration: none; font-weight: 500;">Home</a>
+                    <a href="how-it-works.html" style="color: var(--text-green); text-decoration: none; font-weight: 500;">How It Works</a>
+                    <a href="about.html" style="color: var(--text-green); text-decoration: none; font-weight: 700;">About</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content wrapper -->
+    <div class="page-wrapper">
+        
         <!-- Hero Section -->
-        <div class="about-hero">
-            <div class="container">
-                <h1 style="font-size: 3rem; color: #1A3A26; margin-bottom: 20px;">
-                    Healthcare That Comes to You
-                </h1>
-                <p style="font-size: 1.25rem; color: #1A3A26; max-width: 800px; margin: 0 auto;">
-                    We're closing healthcare gaps for Medicaid members by bringing essential health screenings directly to your home.
-                </p>
+        <div class="hero-wrapper">
+            <div class="hero-content">
+                <h1>Healthcare That Comes to You</h1>
+                <p class="subtitle">We're closing healthcare gaps for Medicaid members by bringing essential health screenings directly to your home.</p>
             </div>
         </div>
 
         <!-- Our Story Section -->
-        <div class="story-section">
-            <div style="max-width: 800px; margin: 0 auto;">
-                <h2 style="color: #2B5F3F; margin-bottom: 30px;">Why We Started Robinhood Health</h2>
-                
-                <div style="background: #E6F4F7; padding: 30px; border-radius: 1rem; margin-bottom: 30px;">
-                    <p style="font-size: 1.125rem; line-height: 1.8; color: #1A3A26;">
-                        We saw a troubling reality: Medicaid members consistently receive lower quality care than those with commercial insurance. Whether it's cancer screenings, diabetes management, or kidney health, the gaps are real and they're costing lives.
-                    </p>
+        <section class="section section-blue">
+            <div class="eyebrow">Our Story</div>
+            <h2>Why Robinhood Health Exists</h2>
+            <div class="story-content">
+                <div class="story-text">
+                    <p style="margin-bottom: 1.5rem;">We discovered a troubling truth: Medicaid members consistently receive lower quality preventive care than those with commercial insurance. The numbers speak for themselves.</p>
+                    <p style="margin-bottom: 1.5rem;">This isn't just about statistics – it's about real people missing critical health screenings that could save their lives.</p>
+                    <p>We founded Robinhood Health to change this. By combining smart technology with compassionate care, we're ensuring every Medicaid member gets the preventive care they deserve.</p>
                 </div>
-                
-                <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
-                    That's not right. Everyone deserves access to quality healthcare, regardless of their insurance type or where they live.
-                </p>
-                
-                <p style="font-size: 1.125rem; line-height: 1.8;">
-                    We founded Robinhood Health to change this. By combining smart technology with genuine human care, we're making it easier than ever for Medicaid members to get the preventive care they need – right from home.
-                </p>
+                <div>
+                    <div class="stat-box" style="margin-bottom: 2rem;">
+                        <div class="stat-number">44%</div>
+                        <p>Gap in colorectal cancer screening between commercial and Medicaid patients</p>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">30%</div>
+                        <p>Gap in kidney health evaluations for chronic conditions</p>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
 
         <!-- Mission Section -->
-        <div class="mission-section">
-            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-                <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Our Mission</h2>
-                <p style="font-size: 1.5rem; line-height: 1.6;">
-                    To ensure every Medicaid member gets the same quality of preventive care as anyone else – 
-                    delivered with dignity, convenience, and zero cost.
-                </p>
-            </div>
-        </div>
+        <section class="section section-green">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Our Mission</h2>
+            <p style="font-size: 1.5rem; text-align: center; max-width: 800px; margin: 0 auto;">
+                To ensure every Medicaid member gets the same quality of preventive care as anyone else – delivered with dignity, convenience, and zero cost.
+            </p>
+        </section>
 
         <!-- What Makes Us Different -->
-        <div class="story-section">
-            <h2 style="color: #2B5F3F; text-align: center; margin-bottom: 40px;">What Makes Us Different</h2>
-            
+        <section class="section section-cream">
+            <div class="eyebrow">What Makes Us Different</div>
+            <h2>Built for You, Not Around You</h2>
             <div class="values-grid">
                 <div class="value-card">
-                    <h3 style="color: #2B5F3F; margin-bottom: 15px;">Zero Cost to You</h3>
-                    <p>If you have Medicaid, all our services are completely free. No hidden fees, no surprises.</p>
+                    <h4>Zero Cost, Zero Hassle</h4>
+                    <p>If you have Medicaid, everything is completely free. No copays, no hidden fees, no surprises.</p>
                 </div>
-                
                 <div class="value-card">
-                    <h3 style="color: #2B5F3F; margin-bottom: 15px;">Healthcare at Home</h3>
-                    <p>No transportation needed. No time off work. We bring essential health screenings directly to you.</p>
+                    <h4>Your Home, Your Schedule</h4>
+                    <p>No transportation needed. No time off work. Complete tests when it's convenient for you.</p>
                 </div>
-                
                 <div class="value-card">
-                    <h3 style="color: #2B5F3F; margin-bottom: 15px;">Real Doctors, Real Care</h3>
-                    <p>Board-certified physicians review every test result and provide personalized follow-up within 24 hours.</p>
+                    <h4>Real Doctors, Real Results</h4>
+                    <p>Board-certified physicians review every test and provide personalized guidance within 24 hours.</p>
                 </div>
-                
                 <div class="value-card">
-                    <h3 style="color: #2B5F3F; margin-bottom: 15px;">Complete Support</h3>
-                    <p>We don't just send a test and disappear. We coordinate with your doctor and help you get any follow-up care you need.</p>
+                    <h4>Complete Care Coordination</h4>
+                    <p>We handle everything – from scheduling follow-ups to transferring records to your doctor.</p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Our Approach -->
-        <div style="background: #FFF8F3; padding: 60px 20px; border-radius: 2rem; max-width: 1200px; margin: 40px auto;">
-            <h2 style="color: #2B5F3F; text-align: center; margin-bottom: 40px;">How We Help You Stay Healthy</h2>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto;">
-                <div style="text-align: center;">
-                    <div style="background: #4A7C59; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.5rem;">1</div>
+        <!-- How We Help Section -->
+        <section class="section section-blue">
+            <h2 style="text-align: center;">How We Keep You Healthy</h2>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">1</div>
                     <h4>We Identify</h4>
-                    <p>Our system automatically identifies when you're due for important health screenings</p>
+                    <p>Our system knows when you're due for important screenings</p>
                 </div>
-                
-                <div style="text-align: center;">
-                    <div style="background: #4A7C59; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.5rem;">2</div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
                     <h4>We Reach Out</h4>
-                    <p>We contact you to schedule a convenient time for your free at-home test kit</p>
+                    <p>We contact you to offer free at-home testing</p>
                 </div>
-                
-                <div style="text-align: center;">
-                    <div style="background: #4A7C59; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.5rem;">3</div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
                     <h4>You Test</h4>
-                    <p>Complete the simple test at home with our easy-to-follow instructions</p>
+                    <p>Complete simple tests at home on your schedule</p>
                 </div>
-                
-                <div style="text-align: center;">
-                    <div style="background: #4A7C59; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.5rem;">4</div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
                     <h4>We Follow Up</h4>
-                    <p>Get your results from a real doctor and any needed follow-up care coordination</p>
+                    <p>Get results and any needed care coordination</p>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- Leadership Team -->
-        <div class="team-section">
-            <h2 style="color: #2B5F3F; text-align: center; margin-bottom: 20px;">Led by Healthcare Experts Who Care</h2>
-            <p style="text-align: center; max-width: 600px; margin: 0 auto 40px;">
-                Our team combines decades of experience serving Medicaid populations with innovative technology to deliver better care.
+        <section class="section section-cream">
+            <div class="eyebrow" style="text-align: center;">Leadership</div>
+            <h2 style="text-align: center;">Healthcare Experts Who Care</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 3rem;">
+                Our team brings decades of experience serving Medicaid populations, combining medical expertise with innovative technology.
             </p>
-            
             <div class="team-grid">
                 <div class="team-member">
                     <div class="team-photo"></div>
                     <h4>Noah Weiner</h4>
-                    <p style="font-size: 0.9rem; color: #666;">Founder & CEO</p>
+                    <p>Founder & CEO</p>
+                    <p style="font-size: 0.875rem; margin-top: 0.5rem;">Previously scaled healthcare to 180+ medical groups</p>
                 </div>
-                
                 <div class="team-member">
                     <div class="team-photo"></div>
                     <h4>Dr. Naman Shah</h4>
-                    <p style="font-size: 0.9rem; color: #666;">Medical Director</p>
+                    <p>Medical Director</p>
+                    <p style="font-size: 0.875rem; margin-top: 0.5rem;">LA County Public Health Director, 40+ publications</p>
                 </div>
-                
                 <div class="team-member">
                     <div class="team-photo"></div>
                     <h4>Dr. Andrew Herzik</h4>
-                    <p style="font-size: 0.9rem; color: #666;">President of Clinical Services</p>
+                    <p>President of Clinical Services</p>
+                    <p style="font-size: 0.875rem; margin-top: 0.5rem;">USC Emergency Medicine, safety-net experience</p>
                 </div>
             </div>
-        </div>
-
-        <!-- Partnership Section -->
-        <div style="max-width: 1200px; margin: 60px auto; padding: 0 20px; text-align: center;">
-            <h2 style="color: #2B5F3F; margin-bottom: 30px;">Working with Trusted Partners</h2>
-            <p style="font-size: 1.125rem; max-width: 700px; margin: 0 auto 40px;">
-                We partner with Federally Qualified Health Centers and health plans across the country to ensure you get the care you deserve.
-            </p>
-            <!-- Partner logos could go here -->
-        </div>
+        </section>
 
         <!-- CTA Section -->
-        <div style="background: #2B5F3F; color: white; padding: 60px 20px; text-align: center; border-radius: 2rem; max-width: 1000px; margin: 40px auto;">
-            <h2 style="margin-bottom: 20px;">Ready to Take Control of Your Health?</h2>
-            <p style="font-size: 1.25rem; margin-bottom: 30px;">
-                If you have Medicaid, you may be eligible for free at-home health screenings.
-            </p>
-            <a href="#contact" class="button button-arrow" style="background: #F97316; color: white; padding: 15px 30px; border-radius: 0.5rem; text-decoration: none; display: inline-flex; align-items: center; gap: 10px;">
+        <section class="section section-green" style="text-align: center;">
+            <h2 style="margin-bottom: 1.5rem;">Ready to Take Control of Your Health?</h2>
+            <p style="font-size: 1.25rem; margin-bottom: 2rem;">If you have Medicaid, you may be eligible for free at-home health screenings.</p>
+            <a href="#contact" class="button button-arrow">
                 <span>Check Your Eligibility</span>
                 <svg width="23" height="15" viewBox="0 0 23 15" fill="none">
                     <path d="M22.7071 8.20711C23.0976 7.81658 23.0976 7.18342 22.7071 6.7929L16.3431 0.428934C15.9526 0.0384092 15.3195 0.0384091 14.9289 0.428933C14.5384 0.819458 14.5384 1.45262 14.9289 1.84315L20.5858 7.5L14.9289 13.1569C14.5384 13.5474 14.5384 14.1805 14.9289 14.5711C15.3195 14.9616 15.9526 14.9616 16.3431 14.5711L22.7071 8.20711ZM-8.74228e-08 8.5L22 8.5L22 6.5L8.74228e-08 6.5L-8.74228e-08 8.5Z" fill="white"/>
                 </svg>
             </a>
-        </div>
-    </main>
-    
-    <!-- Include your existing footer here -->
+        </section>
+
+    </div>
+
+    <!-- Footer (matching your existing pages) -->
+    <footer style="background-color: var(--fern-green); color: white; padding: 5rem 3rem 3rem; border-radius: 2rem 2rem 0 0; margin-top: 5rem;">
+        <!-- Include your existing footer content here -->
+    </footer>
+
 </body>
 </html>
