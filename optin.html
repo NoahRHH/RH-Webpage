@@ -1,33 +1,327 @@
-Proof of Consent (Opt-In) Collected
-RH Health Inc receives patient contact information through contracted healthcare providers, facilities, and partner organizations who have obtained patient consent for care coordination and service delivery.
-Opt-In Method:
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS Terms & Consent - Robinhood Health</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        
+        :root {
+            --green: #2B5F3F;
+            --fern-green: #4A7C59;
+            --mint-green: #B8E6D0;
+            --sky-blue: #E6F4F7;
+            --light-pink: #FFE5F1;
+            --cream: #FFF8F3;
+            --tan: #F5E6D3;
+            --white: #FFFFFF;
+            --text-green: #1A3A26;
+            --orange: #F97316;
+            --padding: 2rem;
+            --radius: 2rem;
+        }
 
-Patients provide consent to their primary healthcare provider/facility for care coordination services
-Contact information is shared with RH Health Inc under Business Associate Agreements (BAA) and service contracts
-Patients are informed that RH Health Inc may contact them regarding their care as part of the services provided by their healthcare provider
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-Consent Framework:
-Patients receiving care through our partner organizations consent to:
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-green);
+            background-color: var(--fern-green);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-Care coordination communications from RH Health Inc as part of their treatment plan
-Appointment scheduling and reminders for services delivered by RH Health Inc
-Health updates, medication reminders, and service notifications related to their care
-Communications necessary for treatment, payment, and healthcare operations (TPO) under HIPAA
+        .page-wrapper {
+            background-color: var(--fern-green);
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--padding);
+        }
 
-Types of Messages:
+        .header {
+            background-color: var(--fern-green);
+            position: relative;
+            z-index: 30;
+        }
 
-Appointment reminders and confirmations
-Test results and care updates
-Medication reminders
-Care coordination and follow-up notifications
-Service-related communications
+        .promo-bar {
+            color: white;
+            padding: 0.75rem;
+            font-size: 0.875rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+        }
 
-Opt-Out Process:
-Patients can opt out of SMS communications by:
+        .nav-container {
+            background-color: white;
+            border-radius: 2rem 2rem 0 0;
+            overflow: hidden;
+            margin-top: 1rem;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-Replying "STOP" to any message
-Contacting RH Health Inc directly at [support contact]
-Requesting opt-out through their primary care provider
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 3rem;
+        }
 
-Legal Basis:
-Communications are conducted under HIPAA Treatment, Payment, and Healthcare Operations (TPO) provisions, with proper Business Associate Agreements in place with referring providers and facilities.
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-container span {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--text-green);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-green);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .main-content {
+            background-color: white;
+            border-radius: 0 0 var(--radius) var(--radius);
+            padding: 5rem 3rem;
+            margin: 0 calc(-1 * var(--padding)) 3rem calc(-1 * var(--padding));
+            min-height: 70vh;
+        }
+
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--text-green);
+        }
+
+        .intro-text {
+            font-size: 1.25rem;
+            color: var(--text-green);
+            margin-bottom: 3rem;
+            opacity: 0.8;
+        }
+
+        .consent-box {
+            background-color: var(--sky-blue);
+            padding: 2.5rem;
+            border-radius: var(--radius);
+            margin-bottom: 2rem;
+        }
+
+        .consent-box h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-green);
+        }
+
+        .consent-box p {
+            font-size: 1.05rem;
+            margin-bottom: 1.25rem;
+            line-height: 1.7;
+        }
+
+        .consent-box strong {
+            font-weight: 600;
+        }
+
+        .info-section {
+            background-color: var(--cream);
+            padding: 2.5rem;
+            border-radius: var(--radius);
+            margin-bottom: 2rem;
+        }
+
+        .info-section h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-green);
+        }
+
+        .info-section ul {
+            margin-left: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .info-section li {
+            margin-bottom: 0.75rem;
+            font-size: 1.05rem;
+        }
+
+        .opt-out-box {
+            background-color: var(--mint-green);
+            padding: 2rem;
+            border-radius: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .opt-out-box h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--green);
+        }
+
+        footer {
+            background-color: var(--fern-green);
+            color: white;
+            padding: 3rem;
+            border-radius: 2rem 2rem 0 0;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .main-content {
+                padding: 3rem 1.5rem;
+            }
+
+            .consent-box, .info-section {
+                padding: 1.5rem;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="promo-bar">
+            Making quality healthcare accessible 
+        </div>
+        <div class="nav-container">
+            <nav>
+                <div class="logo-container">
+                    <img src="RH-Logo.png" alt="Robinhood Health" style="height: 2.5rem;">
+                    <span>Robinhood Health</span>
+                </div>
+                <div class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="/FQHC">For FQHCs</a>
+                    <a href="/MCO">For MCOs</a>
+                    <a href="/how-it-works">How It Works</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-wrapper">
+        <div class="main-content">
+            <div class="content-container">
+                <h1>SMS Terms & Consent</h1>
+                <p class="intro-text">
+                    Information about how RH Health Inc uses text messaging to communicate with patients about their care.
+                </p>
+
+                <div class="consent-box">
+                    <h2>Consent to Receive SMS Messages</h2>
+                    <p>
+                        RH Health Inc receives patient contact information through contracted healthcare providers, facilities, and partner organizations who have obtained patient consent for care coordination and service delivery.
+                    </p>
+                    <p>
+                        <strong>How We Obtain Consent:</strong> Patients provide consent to their primary healthcare provider or facility for care coordination services. Contact information is shared with RH Health Inc under Business Associate Agreements (BAA) and service contracts. Patients are informed that RH Health Inc may contact them regarding their care as part of the services provided by their healthcare provider.
+                    </p>
+                    <p>
+                        <strong>Consent Framework:</strong> By receiving care through our partner organizations, patients consent to care coordination communications from RH Health Inc as part of their treatment plan, including appointment scheduling and reminders, health updates, medication reminders, and communications necessary for treatment, payment, and healthcare operations (TPO) under HIPAA.
+                    </p>
+                </div>
+
+                <div class="info-section">
+                    <h3>Types of Messages You May Receive</h3>
+                    <ul>
+                        <li><strong>Appointment Reminders and Confirmations:</strong> Notifications about scheduled visits and care appointments</li>
+                        <li><strong>Test Results and Care Updates:</strong> Important information about your lab results and health status</li>
+                        <li><strong>Medication Reminders:</strong> Alerts to help you stay on track with your prescriptions and refills</li>
+                        <li><strong>Care Coordination and Follow-up Notifications:</strong> Messages to ensure continuity of your care</li>
+                        <li><strong>Service-Related Communications:</strong> Important updates about your healthcare services</li>
+                    </ul>
+
+                    <h3 style="margin-top: 2.5rem;">Message Frequency & Rates</h3>
+                    <p>
+                        Message frequency varies based on your care needs and appointments. Message and data rates may apply based on your mobile carrier's plan. RH Health Inc does not charge for messages, but your carrier's standard rates apply.
+                    </p>
+                </div>
+
+                <div class="opt-out-box">
+                    <h3>How to Opt Out</h3>
+                    <p>
+                        You can opt out of SMS communications at any time by:
+                    </p>
+                    <ul style="margin-left: 1.5rem; margin-top: 0.75rem;">
+                        <li>Replying <strong>STOP</strong> to any text message from RH Health Inc</li>
+                        <li>Contacting RH Health Inc directly at <strong>info@robinhoodhealth.co</strong></li>
+                        <li>Requesting opt-out through your primary care provider</li>
+                    </ul>
+                    <p style="margin-top: 1rem;">
+                        For help or questions, reply <strong>HELP</strong> to any message or contact our support team.
+                    </p>
+                </div>
+
+                <div class="info-section">
+                    <h3>Privacy & Legal Basis</h3>
+                    <p>
+                        <strong>Your Privacy Matters:</strong> Your phone number will only be used for care-related communications from RH Health Inc. We follow strict HIPAA guidelines to protect your health information. Your contact information is never sold or shared with third parties for marketing purposes.
+                    </p>
+                    <p style="margin-top: 1.5rem;">
+                        <strong>Legal Basis:</strong> Communications are conducted under HIPAA Treatment, Payment, and Healthcare Operations (TPO) provisions, with proper Business Associate Agreements in place with referring providers and facilities. We maintain records of all communications for HIPAA and TCPA compliance purposes.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="logo-container" style="justify-content: center; margin-bottom: 1rem;">
+            <img src="RH-Logo.png" alt="Robinhood Health" style="height: 2rem; filter: brightness(0) invert(1);">
+            <span style="font-size: 1.25rem;">Robinhood Health</span>
+        </div>
+        <p style="opacity: 0.8; font-size: 0.875rem;">© 2025 RH Health Inc. All rights reserved.</p>
+        <p style="opacity: 0.7; font-size: 0.75rem; margin-top: 1rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+            RH Health Inc is a virtual medical group providing health screening services. Services are provided at no cost to eligible members through participating health plans. All medical services are provided by licensed healthcare professionals.
+        </p>
+    </footer>
+</body>
+</html>
