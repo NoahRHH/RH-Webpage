@@ -19,6 +19,7 @@
             --white: #FFFFFF;
             --text-green: #1A3A26;
             --orange: #F97316;
+            --warning-yellow: #FEF3C7;
             --padding: 2rem;
             --radius: 2rem;
         }
@@ -130,6 +131,27 @@
             opacity: 0.8;
         }
 
+        .warning-box {
+            background-color: var(--warning-yellow);
+            border-left: 4px solid var(--orange);
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .warning-box h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-green);
+        }
+
+        .warning-box p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 0.75rem;
+        }
+
         .consent-box {
             background-color: var(--sky-blue);
             padding: 2.5rem;
@@ -210,7 +232,7 @@
                 padding: 3rem 1.5rem;
             }
 
-            .consent-box, .info-section {
+            .consent-box, .info-section, .warning-box {
                 padding: 1.5rem;
             }
 
@@ -255,24 +277,43 @@
                     Information about how RH Health Inc uses text messaging to communicate with patients about their care.
                 </p>
 
+                <div class="warning-box">
+                    <h2>Important Security Notice</h2>
+                    <p>
+                        <strong>Standard SMS text messages are not encrypted and may not be completely secure.</strong> Text messages could potentially be seen by anyone with access to your phone, your mobile carrier, or through interception. While we take precautions to protect your information, you should be aware of these privacy risks.
+                    </p>
+                    <p>
+                        By consenting to receive SMS communications from RH Health Inc, you acknowledge and accept these security limitations. You are responsible for securing your mobile device with a password or biometric lock and should not share your device with others.
+                    </p>
+                    <p>
+                        <strong>If your phone is lost or stolen, please contact us immediately at info@robinhoodhealth.co or call your healthcare provider.</strong>
+                    </p>
+                </div>
+
                 <div class="consent-box">
                     <h2>Consent to Receive SMS Messages</h2>
                     <p>
                         RH Health Inc receives patient contact information through contracted healthcare providers, facilities, and partner organizations who have obtained patient consent for care coordination and service delivery.
                     </p>
                     <p>
-                        <strong>How We Obtain Consent:</strong> Patients provide consent to their primary healthcare provider or facility for care coordination services. Contact information is shared with RH Health Inc under Business Associate Agreements (BAA) and service contracts. Patients are informed that RH Health Inc may contact them regarding their care as part of the services provided by their healthcare provider.
+                        <strong>How We Obtain Consent:</strong> When you provide your contact information to your healthcare provider or facility for care coordination services, you authorize them to share this information with RH Health Inc under Business Associate Agreements (BAA) and service contracts. Your healthcare provider will inform you that RH Health Inc may contact you regarding your care as part of the services they provide.
                     </p>
                     <p>
-                        <strong>Consent Framework:</strong> By receiving care through our partner organizations, patients consent to care coordination communications from RH Health Inc as part of their treatment plan, including appointment scheduling and reminders, health updates, medication reminders, and communications necessary for treatment, payment, and healthcare operations (TPO) under HIPAA.
+                        <strong>What You're Consenting To:</strong> By providing your mobile phone number to our partner healthcare organizations for care coordination purposes, you consent to receive text messages from RH Health Inc related to your care, including appointment scheduling and reminders, health updates, medication reminders, and other communications necessary for treatment, payment, and healthcare operations (TPO) under HIPAA.
+                    </p>
+                    <p>
+                        <strong>Consent is Optional:</strong> Consent to receive text messages is not required as a condition of receiving healthcare services. You may decline to receive SMS communications or opt out at any time without affecting the quality of your care. If you prefer not to receive text messages, please inform your healthcare provider or contact us directly to arrange alternative communication methods.
                     </p>
                 </div>
 
                 <div class="info-section">
                     <h3>Types of Messages You May Receive</h3>
+                    <p style="margin-bottom: 1rem;">
+                        We limit the health information included in text messages to what is necessary for the purpose of the communication. Messages may include:
+                    </p>
                     <ul>
                         <li><strong>Appointment Reminders and Confirmations:</strong> Notifications about scheduled visits and care appointments</li>
-                        <li><strong>Test Results and Care Updates:</strong> Important information about your lab results and health status</li>
+                        <li><strong>Test Results and Care Updates:</strong> Important information about your lab results and health status (general notifications, with details available through secure patient portal)</li>
                         <li><strong>Medication Reminders:</strong> Alerts to help you stay on track with your prescriptions and refills</li>
                         <li><strong>Care Coordination and Follow-up Notifications:</strong> Messages to ensure continuity of your care</li>
                         <li><strong>Service-Related Communications:</strong> Important updates about your healthcare services</li>
@@ -282,30 +323,69 @@
                     <p>
                         Message frequency varies based on your care needs and appointments. Message and data rates may apply based on your mobile carrier's plan. RH Health Inc does not charge for messages, but your carrier's standard rates apply.
                     </p>
+
+                    <h3 style="margin-top: 2.5rem;">SMS Delivery Platform</h3>
+                    <p>
+                        SMS messages are delivered through our HIPAA-compliant partner platform with HiTrust certification, which operates under a Business Associate Agreement with RH Health Inc. Our partner is contractually required to protect your health information and use it only for the purpose of delivering our messages to you. All messages are encrypted in transit and at rest using industry-standard encryption protocols.
+                    </p>
                 </div>
 
                 <div class="opt-out-box">
                     <h3>How to Opt Out</h3>
                     <p>
-                        You can opt out of SMS communications at any time by:
+                        You can opt out of SMS communications at any time without affecting your care by:
                     </p>
                     <ul style="margin-left: 1.5rem; margin-top: 0.75rem;">
                         <li>Replying <strong>STOP</strong> to any text message from RH Health Inc</li>
-                        <li>Contacting RH Health Inc directly at <strong>info@robinhoodhealth.co</strong></li>
+                        <li>Contacting RH Health Inc directly at <strong>info@robinhoodhealth.co</strong> or by phone at <strong>(866) 961-9977</strong></li>
                         <li>Requesting opt-out through your primary care provider</li>
                     </ul>
                     <p style="margin-top: 1rem;">
-                        For help or questions, reply <strong>HELP</strong> to any message or contact our support team.
+                        For help or questions, reply <strong>HELP</strong> to any message to receive information about our SMS program, or contact our support team using the contact information above.
+                    </p>
+                    <p style="margin-top: 1rem; font-size: 0.95rem; opacity: 0.9;">
+                        <strong>Note:</strong> Some mobile carriers may block or filter messages. If you are not receiving expected messages, please contact your carrier or reach out to us directly.
                     </p>
                 </div>
 
                 <div class="info-section">
-                    <h3>Privacy & Legal Basis</h3>
+                    <h3>Your Rights</h3>
+                    <ul>
+                        <li>You may opt out of text messages at any time without affecting the quality of your healthcare services</li>
+                        <li>You can request alternative communication methods (such as phone calls, email, or patient portal messages)</li>
+                        <li>You have the right to access records of SMS communications sent to you by contacting us</li>
+                        <li>You have the right to file a complaint if you believe your privacy rights have been violated</li>
+                    </ul>
+                </div>
+
+                <div class="info-section">
+                    <h3>Privacy & Data Protection</h3>
                     <p>
-                        <strong>Your Privacy Matters:</strong> Your phone number will only be used for care-related communications from RH Health Inc. We follow strict HIPAA guidelines to protect your health information. Your contact information is never sold or shared with third parties for marketing purposes.
+                        <strong>Your Privacy Matters:</strong> Your phone number and health information will only be used for care-related communications from RH Health Inc. We follow strict HIPAA guidelines to protect your health information. Your contact information is never sold or shared with third parties for marketing purposes.
                     </p>
                     <p style="margin-top: 1.5rem;">
-                        <strong>Legal Basis:</strong> Communications are conducted under HIPAA Treatment, Payment, and Healthcare Operations (TPO) provisions, with proper Business Associate Agreements in place with referring providers and facilities. We maintain records of all communications for HIPAA and TCPA compliance purposes.
+                        <strong>Data Retention:</strong> We retain SMS communication records for six years in compliance with HIPAA requirements and applicable state regulations. These records include the content of messages sent, delivery status, and opt-in/opt-out requests.
+                    </p>
+                    <p style="margin-top: 1.5rem;">
+                        <strong>Legal Basis:</strong> Communications are conducted under HIPAA Treatment, Payment, and Healthcare Operations (TPO) provisions, with proper Business Associate Agreements in place with referring providers and facilities. We maintain records of all communications for HIPAA and TCPA (Telephone Consumer Protection Act) compliance purposes.
+                    </p>
+                    <p style="margin-top: 1.5rem;">
+                        <strong>Your Responsibilities:</strong> Please ensure your mobile device is password-protected or secured with biometric authentication. Do not share your device with others who should not have access to your health information. Notify us immediately if your phone number changes or if your device is lost or stolen.
+                    </p>
+                </div>
+
+                <div class="info-section">
+                    <h3>Questions or Concerns?</h3>
+                    <p>
+                        If you have questions about our SMS communications, privacy practices, or wish to exercise any of your rights, please contact us:
+                    </p>
+                    <ul style="margin-top: 1rem;">
+                        <li><strong>Email:</strong> info@robinhoodhealth.co</li>
+                        <li><strong>Phone:</strong> (866) 961-9977</li>
+                        <li><strong>Mail:</strong> 800 South Figueroa St., Suite 680, Los Angeles, CA 90017</li>
+                    </ul>
+                    <p style="margin-top: 1.5rem;">
+                        To file a complaint about our privacy practices, you may also contact the U.S. Department of Health and Human Services Office for Civil Rights.
                     </p>
                 </div>
 
