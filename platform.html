@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HQ5GC9P1JN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HQ5GC9P1JN');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Platform - Robinhood Health</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --green: #2B5F3F;
+            --fern-green: #4A7C59;
+            --mint-green: #B8E6D0;
+            --sky-blue: #E6F4F7;
+            --light-pink: #FFE5F1;
+            --cream: #FFF8F3;
+            --tan: #F5E6D3;
+            --white: #FFFFFF;
+            --text-green: #1A3A26;
+            --orange: #F97316;
+            --padding: 2rem;
+            --radius: 2rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-green);
+            background-color: var(--fern-green);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .page-wrapper {
+            background-color: var(--fern-green);
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--padding);
+        }
+
+        .header {
+            background-color: var(--fern-green);
+            position: relative;
+            z-index: 30;
+        }
+
+        .promo-bar {
+            color: white;
+            padding: 0.75rem;
+            font-size: 0.875rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-container {
+            background-color: white;
+            border-radius: 2rem 2rem 0 0;
+            overflow: hidden;
+            margin-top: 1rem;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 3rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-green);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .button {
+            background-color: var(--fern-green);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            min-height: 2.5rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(43, 95, 63, 0.2);
+        }
+
+        .button-arrow {
+            background-color: var(--orange);
+        }
+
+        .hero-wrapper {
+            background-color: white;
+            margin: 0 calc(-1 * var(--padding)) 3rem calc(-1 * var(--padding));
+            border-radius: 0 0 var(--radius) var(--radius);
+            overflow: hidden;
+            position: relative;
+            padding: 5rem 3rem;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--text-green);
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: var(--text-green);
+        }
+
+        .section {
+            padding: 5rem 3rem;
+            border-radius: var(--radius);
+            margin: 3rem 0;
+        }
+
+        .section-green {
+            background-color: var(--fern-green);
+            color: white;
+        }
+
+        .section-blue {
+            background-color: var(--sky-blue);
+            color: var(--text-green);
+        }
+
+        .section-cream {
+            background-color: var(--cream);
+            color: var(--text-green);
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
+        h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        /* Platform Flow */
+        .flow-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin-top: 3rem;
+            position: relative;
+        }
+
+        .flow-step {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 2rem;
+            position: relative;
+        }
+
+        .flow-number {
+            width: 60px;
+            height: 60px;
+            background-color: var(--mint-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-green);
+            position: relative;
+            z-index: 2;
+        }
+
+        .flow-step:not(:last-child) .flow-number::after {
+            content: '';
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: calc(100% + 2rem);
+            background-color: var(--mint-green);
+            z-index: 1;
+        }
+
+        .flow-content {
+            padding-bottom: 3rem;
+        }
+
+        .flow-content h4 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Mariann Section */
+        .chat-demo {
+            background-color: white;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            max-width: 500px;
+            margin: 2rem auto;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .chat-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 1.5rem;
+        }
+
+        .chat-avatar {
+            width: 50px;
+            height: 50px;
+            background-color: var(--mint-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .chat-name {
+            font-weight: 700;
+            font-size: 1.125rem;
+        }
+
+        .chat-status {
+            font-size: 0.875rem;
+            color: var(--fern-green);
+        }
+
+        .chat-messages {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .message {
+            max-width: 85%;
+            padding: 1rem 1.25rem;
+            border-radius: 1.25rem;
+            font-size: 0.9375rem;
+            line-height: 1.5;
+        }
+
+        .message-patient {
+            background-color: var(--fern-green);
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 0.25rem;
+        }
+
+        .message-mariann {
+            background-color: var(--sky-blue);
+            color: var(--text-green);
+            align-self: flex-start;
+            border-bottom-left-radius: 0.25rem;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            text-align: center;
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background-color: var(--mint-green);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .feature-card h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Two Column */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+
+            .flow-step {
+                grid-template-columns: 50px 1fr;
+                gap: 1rem;
+            }
+
+            .flow-number {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+
+            footer > div > div:first-child {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            footer ul {
+                flex-direction: column;
+                gap: 1rem !important;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Header -->
+<header class="header">
+    <div class="promo-bar">
+        AI-powered care delivery infrastructure for Medicaid
+    </div>
+    <div class="nav-container">
+        <nav>
+            <a href="/" style="text-decoration: none; display: flex; align-items: center; gap: 1rem;">
+                <img src="RH-Logo.png" alt="Robinhood Health" style="height: 2.5rem;">
+                <span style="font-size: 1.75rem; font-weight: 800; color: var(--text-green);">Robinhood Health</span>
+            </a>
+            <div class="nav-links">
+                <a href="/story">Robinhood Tales</a>
+                <a href="/FQHC">For FQHCs</a>
+                <a href="/MCO">For MCOs</a>
+                <a href="/how-it-works">How It Works</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- Main content wrapper -->
+<div class="page-wrapper">
+
+    <!-- Hero Section -->
+    <div class="hero-wrapper">
+        <div class="hero-content">
+            <div class="eyebrow">OUR TECHNOLOGY</div>
+            <h1>Autopilot for Preventive Care</h1>
+            <p class="subtitle">Sherwood is our clinical engine that monitors your patient population 24/7, identifies care gaps the moment they occur, and closes them automatically through AI-powered outreach.</p>
+        </div>
+    </div>
+
+    <!-- The Problem -->
+    <section class="section section-blue">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <h2>The Data Exists. No One Acts On It.</h2>
+            <p style="font-size: 1.25rem; margin-top: 1.5rem;">
+                Your EMR knows who is overdue for a colonoscopy. Who missed their HbA1c test. Whose kidney function hasn't been checked. The data exists in every system. The problem is no one has the bandwidth to act on it systematically.
+            </p>
+            <p style="font-size: 1.25rem; margin-top: 1.5rem;">
+                <strong>Until now.</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- Sherwood Platform -->
+    <section class="section section-cream">
+        <div class="eyebrow">SHERWOOD PLATFORM</div>
+        <h2>Full-Stack Care Delivery</h2>
+        <p style="font-size: 1.25rem; margin-bottom: 2rem;">Think of it like aviation autopilot. The system handles routine work. Your physicians keep authority over clinical decisions.</p>
+
+        <div class="flow-container">
+            <div class="flow-step">
+                <div class="flow-number">1</div>
+                <div class="flow-content">
+                    <h4>Detection</h4>
+                    <p>Our algorithms scan your entire patient panel daily, identifying every care gap in real-time. No manual chart reviews. No patients falling through the cracks.</p>
+                </div>
+            </div>
+
+            <div class="flow-step">
+                <div class="flow-number">2</div>
+                <div class="flow-content">
+                    <h4>Protection</h4>
+                    <p>Automatic nudges reach patients before care is missed. SMS, email, and AI-powered conversations that feel personal because they know each patient's history.</p>
+                </div>
+            </div>
+
+            <div class="flow-step">
+                <div class="flow-number">3</div>
+                <div class="flow-content">
+                    <h4>Coordination</h4>
+                    <p>At-home test kits ship automatically. Results come back. Our physicians review within 24 hours. Everything flows directly to your EMR.</p>
+                </div>
+            </div>
+
+            <div class="flow-step">
+                <div class="flow-number">4</div>
+                <div class="flow-content">
+                    <h4>Resolution</h4>
+                    <p>We maintain accountability until treatment is complete. Specialist appointments, follow-ups, prescriptions handled. The gap doesn't close until the patient gets care.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mariann Section -->
+    <section class="section section-green">
+        <div class="two-col">
+            <div>
+                <div class="eyebrow" style="color: var(--mint-green);">MARIANN AI AGENT</div>
+                <h2>Your 24/7 Patient Care Coordinator</h2>
+                <p style="font-size: 1.125rem; margin-bottom: 1.5rem;">
+                    Mariann is our AI agent that handles patient communication via SMS. She knows each patient's medical history, lab results, medications, and appointments and responds in seconds with personalized, medically-informed answers.
+                </p>
+                <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem;">
+                    <li style="display: flex; align-items: start; gap: 0.75rem;">
+                        <span style="color: var(--mint-green); font-size: 1.25rem;">&#10003;</span>
+                        <span>Answers patient questions about labs, medications, appointments</span>
+                    </li>
+                    <li style="display: flex; align-items: start; gap: 0.75rem;">
+                        <span style="color: var(--mint-green); font-size: 1.25rem;">&#10003;</span>
+                        <span>Sends proactive screening reminders and follow-ups</span>
+                    </li>
+                    <li style="display: flex; align-items: start; gap: 0.75rem;">
+                        <span style="color: var(--mint-green); font-size: 1.25rem;">&#10003;</span>
+                        <span>Coordinates at-home test kit delivery and returns</span>
+                    </li>
+                    <li style="display: flex; align-items: start; gap: 0.75rem;">
+                        <span style="color: var(--mint-green); font-size: 1.25rem;">&#10003;</span>
+                        <span>Escalates urgent matters to your care team instantly</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="chat-demo">
+                <div class="chat-header">
+                    <div class="chat-avatar">M</div>
+                    <div>
+                        <div class="chat-name">Mariann</div>
+                        <div class="chat-status">Robinhood Health</div>
+                    </div>
+                </div>
+                <div class="chat-messages">
+                    <div class="message message-patient">Are my lab results ready?</div>
+                    <div class="message message-mariann">Hi Maria! Yes, your results from 12/01 are in. Your HbA1c is 6.8%, which is well-controlled. Your kidney function looks good too. Would you like details on any specific result?</div>
+                    <div class="message message-patient">What about my cholesterol?</div>
+                    <div class="message message-mariann">Your total cholesterol is 195 mg/dL (healthy is under 200). Your LDL is 118, which is borderline. Dr. Smith may discuss diet changes at your next visit on 12/15.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Capabilities -->
+    <section class="section section-blue">
+        <div style="text-align: center;">
+            <div class="eyebrow">BUILT FOR HEALTHCARE</div>
+            <h2>Enterprise-Grade Infrastructure</h2>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="var(--fern-green)">
+                        <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
+                    </svg>
+                </div>
+                <h4>HIPAA Compliant</h4>
+                <p>Deployed on Aptible's SOC 2 certified infrastructure. All data encrypted at rest and in transit.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="var(--fern-green)">
+                        <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
+                    </svg>
+                </div>
+                <h4>EMR Integration</h4>
+                <p>Seamless FHIR integration with Epic, athena, and other major systems. Results flow directly to patient charts.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="var(--fern-green)">
+                        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                    </svg>
+                </div>
+                <h4>Quality Reporting</h4>
+                <p>Automated HEDIS measure tracking. Real-time dashboards for care gap closure rates and outcomes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section section-green" style="text-align: center;">
+        <h2 style="margin-bottom: 1.5rem;">Ready to Put Your Care Gaps on Autopilot?</h2>
+        <p style="font-size: 1.25rem; margin-bottom: 2rem;">See how Sherwood can transform your quality metrics</p>
+        <a href="mailto:info@robinhoodhealth.co?subject=Platform%20Demo%20Request" class="button button-arrow">
+            <span>Request a Demo</span>
+            <svg width="23" height="15" viewBox="0 0 23 15" fill="none">
+                <path d="M22.7071 8.20711C23.0976 7.81658 23.0976 7.18342 22.7071 6.7929L16.3431 0.428934C15.9526 0.0384092 15.3195 0.0384091 14.9289 0.428933C14.5384 0.819458 14.5384 1.45262 14.9289 1.84315L20.5858 7.5L14.9289 13.1569C14.5384 13.5474 14.5384 14.1805 14.9289 14.5711C15.3195 14.9616 15.9526 14.9616 16.3431 14.5711L22.7071 8.20711ZM-8.74228e-08 8.5L22 8.5L22 6.5L8.74228e-08 6.5L-8.74228e-08 8.5Z" fill="white"/>
+            </svg>
+        </a>
+    </section>
+
+</div>
+
+<!-- Footer -->
+<footer style="background-color: var(--fern-green); color: white; padding: 5rem 3rem 3rem; border-radius: 2rem 2rem 0 0; margin-top: 5rem;">
+    <div style="max-width: 1280px; margin: 0 auto;">
+        <!-- Top Section -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.2);">
+            <!-- Logo Column -->
+            <div>
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                    <img src="RH-Logo.png" alt="Robinhood Health" style="height: 2.5rem; filter: brightness(0) invert(1);">
+                    <span style="font-size: 1.5rem; font-weight: 700;">Robinhood Health</span>
+                </div>
+            </div>
+
+            <!-- Services Column -->
+            <div>
+                <h4 style="font-weight: 600; margin-bottom: 1.5rem; font-size: 1.125rem;">Our Services</h4>
+                <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
+                    <li><a href="/how-it-works" style="color: white; text-decoration: none; opacity: 0.9;">How It Works</a></li>
+                    <li><a href="/platform" style="color: white; text-decoration: none; opacity: 0.9;">Our Platform</a></li>
+                    <li><a href="/FQHC" style="color: white; text-decoration: none; opacity: 0.9;">For FQHCs</a></li>
+                    <li><a href="/MCO" style="color: white; text-decoration: none; opacity: 0.9;">For MCOs</a></li>
+                </ul>
+            </div>
+
+            <!-- Company Column -->
+            <div>
+                <h4 style="font-weight: 600; margin-bottom: 1.5rem; font-size: 1.125rem;">Company</h4>
+                <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
+                    <li><a href="/about" style="color: white; text-decoration: none; opacity: 0.9;">About</a></li>
+                    <li><a href="/story" style="color: white; text-decoration: none; opacity: 0.9;">Robinhood Tales</a></li>
+                    <li><a href="/letters" style="color: white; text-decoration: none; opacity: 0.9;">Founder's Letters</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Column -->
+            <div>
+                <h4 style="font-weight: 600; margin-bottom: 1.5rem; font-size: 1.125rem;">Contact</h4>
+                <div style="display: flex; flex-direction: column; gap: 1rem;">
+                    <a href="mailto:info@robinhoodhealth.co" style="display: flex; align-items: center; gap: 0.5rem; color: white; text-decoration: none; background-color: rgba(255,255,255,0.1); padding: 0.75rem 1rem; border-radius: 0.5rem;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.87868 6.037C3 6.91568 3 8.3299 3 11.1583V13.1583C3 15.9868 3 17.401 3.87868 18.2796C4.75736 19.1583 6.17157 19.1583 9 19.1583H15C17.8284 19.1583 19.2426 19.1583 20.1213 18.2796C21 17.401 21 15.9868 21 13.1583V11.1583C21 8.3299 21 6.91568 20.1213 6.037C19.2426 5.15833 17.8284 5.15833 15 5.15833H9C6.17157 5.15833 4.75736 5.15833 3.87868 6.037ZM6.5547 8.32627C6.09517 8.01992 5.4743 8.1441 5.16795 8.60363C4.8616 9.06315 4.98577 9.68402 5.4453 9.99038L10.8906 13.6206C11.5624 14.0684 12.4376 14.0684 13.1094 13.6206L18.5547 9.99038C19.0142 9.68402 19.1384 9.06315 18.8321 8.60363C18.5257 8.1441 17.9048 8.01992 17.4453 8.32627L12 11.9565L6.5547 8.32627Z" fill="white"/>
+                        </svg>
+                        <span>info@robinhoodhealth.co</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Section -->
+        <div style="padding-top: 3rem;">
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; align-items: start;">
+                <ul style="list-style: none; display: flex; gap: 2rem; flex-wrap: wrap;">
+                    <li><a href="/privacy" style="color: white; text-decoration: none; opacity: 0.7; font-size: 0.875rem;">Privacy Policy</a></li>
+                    <li><a href="/terms" style="color: white; text-decoration: none; opacity: 0.7; font-size: 0.875rem;">Terms of Service</a></li>
+                    <li><a href="/hipaa" style="color: white; text-decoration: none; opacity: 0.7; font-size: 0.875rem;">HIPAA Notice</a></li>
+                    <li><a href="/accessibility" style="color: white; text-decoration: none; opacity: 0.7; font-size: 0.875rem;">Accessibility</a></li>
+                </ul>
+                <p style="text-align: right; opacity: 0.7; font-size: 0.875rem;">© 2025 Robinhood Health</p>
+            </div>
+
+            <!-- Compliance Notice -->
+            <div style="background-color: var(--green); padding: 1.25rem; border-radius: 1rem; margin-top: 3rem;">
+                <p style="font-size: 0.75rem; line-height: 1.6; opacity: 0.9; margin: 0;">
+                    Robinhood Health is a virtual medical group providing health screening services. Services are provided at no cost to eligible members through participating health plans.
+                    All medical services are provided by licensed healthcare professionals. Your privacy is protected under HIPAA regulations.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
