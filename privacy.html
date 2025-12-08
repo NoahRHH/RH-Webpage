@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <!-- Google tag (gtag.js) -->
@@ -11,11 +11,11 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Founder's Letters - Robinhood Health</title>
+    <title>Privacy Policy - Robinhood Health</title>
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-        
+
         :root {
             --green: #2B5F3F;
             --fern-green: #4A7C59;
@@ -50,7 +50,6 @@
             padding: 0 var(--padding);
         }
 
-        /* Header */
         .header {
             background-color: var(--fern-green);
             position: relative;
@@ -97,7 +96,6 @@
             font-size: 1rem;
         }
 
-        /* Hero Section */
         .hero-wrapper {
             background-color: white;
             margin: 0 calc(-1 * var(--padding)) 3rem calc(-1 * var(--padding));
@@ -127,86 +125,52 @@
             opacity: 0.8;
         }
 
-        /* Letters Section */
-        .letters-section {
+        .content-section {
             background-color: var(--sky-blue);
             padding: 4rem 3rem;
             border-radius: var(--radius);
             margin: 3rem 0;
         }
 
-        .letters-container {
-            max-width: 500px;
+        .content-container {
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        .letters-table {
-            width: 100%;
-            border: 2px solid var(--text-green);
-            border-radius: 1rem;
-            overflow: hidden;
-            background-color: white;
-        }
-
-        .letters-header {
-            background-color: var(--mint-green);
-            padding: 1rem;
-            text-align: center;
+        .content-container h2 {
+            font-size: 1.5rem;
             font-weight: 700;
-            font-size: 1.125rem;
-            border-bottom: 2px solid var(--text-green);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-green);
         }
 
-        .letters-list {
-            padding: 1.5rem 2rem;
+        .content-container h2:first-child {
+            margin-top: 0;
         }
 
-        .letter-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.5rem 0;
+        .content-container p {
+            margin-bottom: 1rem;
+            color: var(--text-green);
         }
 
-        .letter-item::before {
-            content: "❧";
-            color: var(--fern-green);
-            font-size: 1rem;
+        .content-container ul {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
         }
 
-        .letter-item a {
-            color: var(--fern-green);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.125rem;
+        .content-container li {
+            margin-bottom: 0.5rem;
         }
 
-        .letter-item a:hover {
-            text-decoration: underline;
-        }
-
-        .copyright-notice {
-            max-width: 500px;
-            margin: 2rem auto 0;
-            background-color: white;
-            border: 2px solid var(--text-green);
-            border-radius: 1rem;
-            padding: 1rem 1.5rem;
-            text-align: center;
+        .last-updated {
             font-size: 0.875rem;
-            font-weight: 600;
+            opacity: 0.7;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--text-green);
         }
 
-        /* Footer */
-        footer {
-            background-color: var(--fern-green);
-            color: white;
-            padding: 5rem 3rem 3rem;
-            border-radius: 2rem 2rem 0 0;
-            margin-top: 5rem;
-        }
-
-        /* Mobile Styles */
         @media (max-width: 768px) {
             .hero-content h1 {
                 font-size: 2rem;
@@ -220,7 +184,7 @@
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
-            
+
             footer ul {
                 flex-direction: column;
                 gap: 1rem !important;
@@ -252,36 +216,83 @@
 
 <!-- Main content wrapper -->
 <div class="page-wrapper">
-    
+
     <!-- Hero Section -->
     <div class="hero-wrapper">
         <div class="hero-content">
-            <h1>Founder's Letters</h1>
-            <p class="subtitle">Annual reflections on healthcare, policy, and the road ahead.</p>
+            <h1>Privacy Policy</h1>
+            <p class="subtitle">How we collect, use, and protect your information.</p>
         </div>
     </div>
 
-    <!-- Letters Section -->
-    <section class="letters-section">
-        <div class="letters-container">
-            <div class="letters-table">
-                <div class="letters-header">Annual Letters</div>
-                <div class="letters-list">
-                    <div class="letter-item">
-                        <a href="/2025Letter.pdf">2025</a>
-                    </div>
-                    <!-- Future years will be added here -->
-                    <!--
-                    <div class="letter-item">
-                        <a href="/letters/2026.pdf">2026</a>
-                    </div>
-                    -->
-                </div>
-            </div>
-            
-            <div class="copyright-notice">
-                © 2025 RH Health Inc. All rights reserved.
-            </div>
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="content-container">
+            <h2>Introduction</h2>
+            <p>RH Health Inc. (dba Robinhood Health) ("we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our services.</p>
+
+            <h2>Information We Collect</h2>
+            <p>We may collect the following types of information:</p>
+            <ul>
+                <li><strong>Personal Information:</strong> Name, date of birth, address, phone number, email address, and Social Security Number (when required for insurance verification).</li>
+                <li><strong>Health Information:</strong> Medical history, test results, diagnoses, medications, and other protected health information (PHI) as defined by HIPAA.</li>
+                <li><strong>Insurance Information:</strong> Health plan details, member ID, and eligibility information.</li>
+                <li><strong>Usage Data:</strong> Information about how you interact with our website and services.</li>
+            </ul>
+
+            <h2>How We Use Your Information</h2>
+            <p>We use your information to:</p>
+            <ul>
+                <li>Provide healthcare services, including at-home health screenings</li>
+                <li>Coordinate care with your healthcare providers</li>
+                <li>Process insurance claims and verify eligibility</li>
+                <li>Communicate with you about your health and our services</li>
+                <li>Comply with legal and regulatory requirements</li>
+                <li>Improve our services and develop new offerings</li>
+            </ul>
+
+            <h2>How We Protect Your Information</h2>
+            <p>We implement robust security measures to protect your information, including:</p>
+            <ul>
+                <li>Encryption of data in transit and at rest</li>
+                <li>Access controls and authentication requirements</li>
+                <li>Regular security assessments and audits</li>
+                <li>Employee training on privacy and security</li>
+                <li>Business Associate Agreements with all vendors who handle PHI</li>
+            </ul>
+
+            <h2>Information Sharing</h2>
+            <p>We may share your information with:</p>
+            <ul>
+                <li><strong>Healthcare Providers:</strong> Your primary care physician and other providers involved in your care</li>
+                <li><strong>Health Plans:</strong> Your insurance company for claims processing and care coordination</li>
+                <li><strong>Business Associates:</strong> Third-party vendors who help us provide services, under strict contractual protections</li>
+                <li><strong>Legal Requirements:</strong> When required by law or to protect rights and safety</li>
+            </ul>
+
+            <h2>Your Rights</h2>
+            <p>You have the right to:</p>
+            <ul>
+                <li>Access your health information</li>
+                <li>Request corrections to your records</li>
+                <li>Request restrictions on certain uses of your information</li>
+                <li>Receive an accounting of disclosures</li>
+                <li>Receive a copy of this Privacy Policy</li>
+                <li>File a complaint if you believe your privacy rights have been violated</li>
+            </ul>
+
+            <h2>California Privacy Rights</h2>
+            <p>If you are a California resident, you have additional rights under the California Consumer Privacy Act (CCPA) and California Privacy Rights Act (CPRA), including the right to know what personal information we collect, request deletion, and opt out of the sale of personal information. Note that health information governed by HIPAA is exempt from certain CCPA/CPRA requirements.</p>
+
+            <h2>Contact Us</h2>
+            <p>If you have questions about this Privacy Policy or our privacy practices, please contact us at:</p>
+            <p>
+                <strong>Robinhood Health</strong><br>
+                Email: privacy@robinhoodhealth.co<br>
+                Phone: (866) 961-9977
+            </p>
+
+            <p class="last-updated">Last Updated: December 2025</p>
         </div>
     </section>
 
@@ -299,7 +310,7 @@
                     <span style="font-size: 1.5rem; font-weight: 700;">Robinhood Health</span>
                 </div>
             </div>
-            
+
             <!-- Services Column -->
             <div>
                 <h4 style="font-weight: 600; margin-bottom: 1.5rem; font-size: 1.125rem;">Our Services</h4>
@@ -309,7 +320,7 @@
                      <li><a href="/MCO" style="color: white; text-decoration: none; opacity: 0.9;">For MCOs</a></li>
                 </ul>
             </div>
-            
+
             <!-- Company Column -->
             <div>
                 <h4 style="font-weight: 600; margin-bottom: 1.5rem; font-size: 1.125rem;">Company</h4>
@@ -319,7 +330,7 @@
                     <li><a href="/letters" style="color: white; text-decoration: none; opacity: 0.9;">Founder's Letters</a></li>
                 </ul>
             </div>
-            
+
             <!-- Contact Column -->
             <div>
                 <h4 style="font-weight: 600; margin-bottom: 1.5rem; font-size: 1.125rem;">Contact</h4>
@@ -333,7 +344,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Bottom Section -->
         <div style="padding-top: 3rem;">
             <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; align-items: start;">
@@ -345,11 +356,11 @@
                 </ul>
                 <p style="text-align: right; opacity: 0.7; font-size: 0.875rem;">© 2025 Robinhood Health</p>
             </div>
-            
+
             <!-- Compliance Notice -->
             <div style="background-color: var(--green); padding: 1.25rem; border-radius: 1rem; margin-top: 3rem;">
                 <p style="font-size: 0.75rem; line-height: 1.6; opacity: 0.9; margin: 0;">
-                    Robinhood Health is a virtual medical group providing health screening services. Services are provided at no cost to eligible members through participating health plans. 
+                    Robinhood Health is a virtual medical group providing health screening services. Services are provided at no cost to eligible members through participating health plans.
                     All medical services are provided by licensed healthcare professionals. Your privacy is protected under HIPAA regulations.
                 </p>
             </div>

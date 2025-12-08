@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <!-- Google tag (gtag.js) -->
@@ -11,11 +11,11 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Founder's Letters - Robinhood Health</title>
+    <title>Accessibility - Robinhood Health</title>
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-        
+
         :root {
             --green: #2B5F3F;
             --fern-green: #4A7C59;
@@ -50,7 +50,6 @@
             padding: 0 var(--padding);
         }
 
-        /* Header */
         .header {
             background-color: var(--fern-green);
             position: relative;
@@ -97,7 +96,6 @@
             font-size: 1rem;
         }
 
-        /* Hero Section */
         .hero-wrapper {
             background-color: white;
             margin: 0 calc(-1 * var(--padding)) 3rem calc(-1 * var(--padding));
@@ -127,86 +125,60 @@
             opacity: 0.8;
         }
 
-        /* Letters Section */
-        .letters-section {
+        .content-section {
             background-color: var(--sky-blue);
             padding: 4rem 3rem;
             border-radius: var(--radius);
             margin: 3rem 0;
         }
 
-        .letters-container {
-            max-width: 500px;
+        .content-container {
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        .letters-table {
-            width: 100%;
-            border: 2px solid var(--text-green);
-            border-radius: 1rem;
-            overflow: hidden;
-            background-color: white;
-        }
-
-        .letters-header {
-            background-color: var(--mint-green);
-            padding: 1rem;
-            text-align: center;
+        .content-container h2 {
+            font-size: 1.5rem;
             font-weight: 700;
-            font-size: 1.125rem;
-            border-bottom: 2px solid var(--text-green);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-green);
         }
 
-        .letters-list {
-            padding: 1.5rem 2rem;
+        .content-container h2:first-child {
+            margin-top: 0;
         }
 
-        .letter-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.5rem 0;
+        .content-container p {
+            margin-bottom: 1rem;
+            color: var(--text-green);
         }
 
-        .letter-item::before {
-            content: "❧";
-            color: var(--fern-green);
-            font-size: 1rem;
+        .content-container ul {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
         }
 
-        .letter-item a {
-            color: var(--fern-green);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.125rem;
+        .content-container li {
+            margin-bottom: 0.5rem;
         }
 
-        .letter-item a:hover {
-            text-decoration: underline;
-        }
-
-        .copyright-notice {
-            max-width: 500px;
-            margin: 2rem auto 0;
-            background-color: white;
-            border: 2px solid var(--text-green);
+        .commitment-box {
+            background-color: var(--mint-green);
+            padding: 1.5rem;
             border-radius: 1rem;
-            padding: 1rem 1.5rem;
-            text-align: center;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--fern-green);
+        }
+
+        .last-updated {
             font-size: 0.875rem;
-            font-weight: 600;
+            opacity: 0.7;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--text-green);
         }
 
-        /* Footer */
-        footer {
-            background-color: var(--fern-green);
-            color: white;
-            padding: 5rem 3rem 3rem;
-            border-radius: 2rem 2rem 0 0;
-            margin-top: 5rem;
-        }
-
-        /* Mobile Styles */
         @media (max-width: 768px) {
             .hero-content h1 {
                 font-size: 2rem;
@@ -220,7 +192,7 @@
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
-            
+
             footer ul {
                 flex-direction: column;
                 gap: 1rem !important;
@@ -252,36 +224,82 @@
 
 <!-- Main content wrapper -->
 <div class="page-wrapper">
-    
+
     <!-- Hero Section -->
     <div class="hero-wrapper">
         <div class="hero-content">
-            <h1>Founder's Letters</h1>
-            <p class="subtitle">Annual reflections on healthcare, policy, and the road ahead.</p>
+            <h1>Accessibility</h1>
+            <p class="subtitle">Our commitment to making healthcare accessible to everyone.</p>
         </div>
     </div>
 
-    <!-- Letters Section -->
-    <section class="letters-section">
-        <div class="letters-container">
-            <div class="letters-table">
-                <div class="letters-header">Annual Letters</div>
-                <div class="letters-list">
-                    <div class="letter-item">
-                        <a href="/2025Letter.pdf">2025</a>
-                    </div>
-                    <!-- Future years will be added here -->
-                    <!--
-                    <div class="letter-item">
-                        <a href="/letters/2026.pdf">2026</a>
-                    </div>
-                    -->
-                </div>
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="content-container">
+            <div class="commitment-box">
+                <strong>Our Mission:</strong> Robinhood Health is committed to ensuring that our website and services are accessible to all individuals, including those with disabilities. We believe everyone deserves equal access to healthcare information and services.
             </div>
-            
-            <div class="copyright-notice">
-                © 2025 RH Health Inc. All rights reserved.
-            </div>
+
+            <h2>Our Accessibility Commitment</h2>
+            <p>At Robinhood Health, accessibility is core to our mission of making quality healthcare accessible to underserved communities. We are committed to providing a website and digital services that are usable by all people, regardless of ability.</p>
+
+            <h2>Accessibility Standards</h2>
+            <p>We strive to conform to the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA standards. These guidelines help make web content more accessible to people with disabilities, including those who:</p>
+            <ul>
+                <li>Use screen readers or other assistive technologies</li>
+                <li>Have visual impairments, including color blindness</li>
+                <li>Have hearing impairments</li>
+                <li>Have motor impairments that affect their ability to use a mouse</li>
+                <li>Have cognitive or learning disabilities</li>
+            </ul>
+
+            <h2>Accessibility Features</h2>
+            <p>Our website includes the following accessibility features:</p>
+            <ul>
+                <li><strong>Keyboard Navigation:</strong> All functionality is available using a keyboard</li>
+                <li><strong>Alt Text:</strong> Images include descriptive alternative text</li>
+                <li><strong>Color Contrast:</strong> Text has sufficient contrast against backgrounds</li>
+                <li><strong>Resizable Text:</strong> Text can be resized without loss of functionality</li>
+                <li><strong>Clear Headings:</strong> Content is organized with descriptive headings</li>
+                <li><strong>Form Labels:</strong> Form fields have clear, associated labels</li>
+                <li><strong>Focus Indicators:</strong> Visible focus indicators for keyboard navigation</li>
+                <li><strong>Responsive Design:</strong> Content adapts to different screen sizes and devices</li>
+            </ul>
+
+            <h2>Accessible Healthcare Services</h2>
+            <p>Beyond our website, we are committed to making our healthcare services accessible:</p>
+            <ul>
+                <li><strong>Multilingual Support:</strong> Services available in English and Spanish, with additional languages upon request</li>
+                <li><strong>At-Home Testing:</strong> Our at-home test kits eliminate transportation barriers</li>
+                <li><strong>SMS Communication:</strong> Text-based communication for those who prefer not to use apps</li>
+                <li><strong>Phone Support:</strong> Live phone support available for those who need assistance</li>
+                <li><strong>Large Print Materials:</strong> Available upon request</li>
+                <li><strong>TTY/TDD Services:</strong> Available for deaf or hard-of-hearing individuals</li>
+            </ul>
+
+            <h2>Ongoing Efforts</h2>
+            <p>Accessibility is an ongoing effort. We regularly:</p>
+            <ul>
+                <li>Review and test our website for accessibility</li>
+                <li>Train our team on accessibility best practices</li>
+                <li>Incorporate accessibility into our development process</li>
+                <li>Update our practices based on user feedback</li>
+            </ul>
+
+            <h2>Feedback and Assistance</h2>
+            <p>We welcome your feedback on the accessibility of our website and services. If you encounter any accessibility barriers or need assistance, please contact us:</p>
+            <p>
+                <strong>Robinhood Health</strong><br>
+                Email: accessibility@robinhoodhealth.co<br>
+                Phone: (866) 961-9977<br>
+                TTY: Available upon request
+            </p>
+            <p>When contacting us, please describe the specific accessibility issue you encountered, including the page URL and any assistive technology you are using. We will work to address the issue and provide the information or service you need in an accessible format.</p>
+
+            <h2>Third-Party Content</h2>
+            <p>Our website may link to third-party websites or include third-party content. While we encourage our partners to follow accessibility best practices, we cannot guarantee the accessibility of third-party content.</p>
+
+            <p class="last-updated">Last Updated: December 2025</p>
         </div>
     </section>
 
@@ -299,7 +317,7 @@
                     <span style="font-size: 1.5rem; font-weight: 700;">Robinhood Health</span>
                 </div>
             </div>
-            
+
             <!-- Services Column -->
             <div>
                 <h4 style="font-weight: 600; margin-bottom: 1.5rem; font-size: 1.125rem;">Our Services</h4>
@@ -309,7 +327,7 @@
                      <li><a href="/MCO" style="color: white; text-decoration: none; opacity: 0.9;">For MCOs</a></li>
                 </ul>
             </div>
-            
+
             <!-- Company Column -->
             <div>
                 <h4 style="font-weight: 600; margin-bottom: 1.5rem; font-size: 1.125rem;">Company</h4>
@@ -319,7 +337,7 @@
                     <li><a href="/letters" style="color: white; text-decoration: none; opacity: 0.9;">Founder's Letters</a></li>
                 </ul>
             </div>
-            
+
             <!-- Contact Column -->
             <div>
                 <h4 style="font-weight: 600; margin-bottom: 1.5rem; font-size: 1.125rem;">Contact</h4>
@@ -333,7 +351,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Bottom Section -->
         <div style="padding-top: 3rem;">
             <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; align-items: start;">
@@ -345,11 +363,11 @@
                 </ul>
                 <p style="text-align: right; opacity: 0.7; font-size: 0.875rem;">© 2025 Robinhood Health</p>
             </div>
-            
+
             <!-- Compliance Notice -->
             <div style="background-color: var(--green); padding: 1.25rem; border-radius: 1rem; margin-top: 3rem;">
                 <p style="font-size: 0.75rem; line-height: 1.6; opacity: 0.9; margin: 0;">
-                    Robinhood Health is a virtual medical group providing health screening services. Services are provided at no cost to eligible members through participating health plans. 
+                    Robinhood Health is a virtual medical group providing health screening services. Services are provided at no cost to eligible members through participating health plans.
                     All medical services are provided by licensed healthcare professionals. Your privacy is protected under HIPAA regulations.
                 </p>
             </div>

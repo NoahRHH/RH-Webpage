@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <!-- Google tag (gtag.js) -->
@@ -11,11 +11,11 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Founder's Letters - Robinhood Health</title>
+    <title>Terms of Service - Robinhood Health</title>
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-        
+
         :root {
             --green: #2B5F3F;
             --fern-green: #4A7C59;
@@ -50,7 +50,6 @@
             padding: 0 var(--padding);
         }
 
-        /* Header */
         .header {
             background-color: var(--fern-green);
             position: relative;
@@ -97,7 +96,6 @@
             font-size: 1rem;
         }
 
-        /* Hero Section */
         .hero-wrapper {
             background-color: white;
             margin: 0 calc(-1 * var(--padding)) 3rem calc(-1 * var(--padding));
@@ -127,86 +125,52 @@
             opacity: 0.8;
         }
 
-        /* Letters Section */
-        .letters-section {
+        .content-section {
             background-color: var(--sky-blue);
             padding: 4rem 3rem;
             border-radius: var(--radius);
             margin: 3rem 0;
         }
 
-        .letters-container {
-            max-width: 500px;
+        .content-container {
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        .letters-table {
-            width: 100%;
-            border: 2px solid var(--text-green);
-            border-radius: 1rem;
-            overflow: hidden;
-            background-color: white;
-        }
-
-        .letters-header {
-            background-color: var(--mint-green);
-            padding: 1rem;
-            text-align: center;
+        .content-container h2 {
+            font-size: 1.5rem;
             font-weight: 700;
-            font-size: 1.125rem;
-            border-bottom: 2px solid var(--text-green);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-green);
         }
 
-        .letters-list {
-            padding: 1.5rem 2rem;
+        .content-container h2:first-child {
+            margin-top: 0;
         }
 
-        .letter-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.5rem 0;
+        .content-container p {
+            margin-bottom: 1rem;
+            color: var(--text-green);
         }
 
-        .letter-item::before {
-            content: "❧";
-            color: var(--fern-green);
-            font-size: 1rem;
+        .content-container ul {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
         }
 
-        .letter-item a {
-            color: var(--fern-green);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.125rem;
+        .content-container li {
+            margin-bottom: 0.5rem;
         }
 
-        .letter-item a:hover {
-            text-decoration: underline;
-        }
-
-        .copyright-notice {
-            max-width: 500px;
-            margin: 2rem auto 0;
-            background-color: white;
-            border: 2px solid var(--text-green);
-            border-radius: 1rem;
-            padding: 1rem 1.5rem;
-            text-align: center;
+        .last-updated {
             font-size: 0.875rem;
-            font-weight: 600;
+            opacity: 0.7;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--text-green);
         }
 
-        /* Footer */
-        footer {
-            background-color: var(--fern-green);
-            color: white;
-            padding: 5rem 3rem 3rem;
-            border-radius: 2rem 2rem 0 0;
-            margin-top: 5rem;
-        }
-
-        /* Mobile Styles */
         @media (max-width: 768px) {
             .hero-content h1 {
                 font-size: 2rem;
@@ -220,7 +184,7 @@
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
-            
+
             footer ul {
                 flex-direction: column;
                 gap: 1rem !important;
@@ -252,36 +216,83 @@
 
 <!-- Main content wrapper -->
 <div class="page-wrapper">
-    
+
     <!-- Hero Section -->
     <div class="hero-wrapper">
         <div class="hero-content">
-            <h1>Founder's Letters</h1>
-            <p class="subtitle">Annual reflections on healthcare, policy, and the road ahead.</p>
+            <h1>Terms of Service</h1>
+            <p class="subtitle">Terms and conditions for using Robinhood Health services.</p>
         </div>
     </div>
 
-    <!-- Letters Section -->
-    <section class="letters-section">
-        <div class="letters-container">
-            <div class="letters-table">
-                <div class="letters-header">Annual Letters</div>
-                <div class="letters-list">
-                    <div class="letter-item">
-                        <a href="/2025Letter.pdf">2025</a>
-                    </div>
-                    <!-- Future years will be added here -->
-                    <!--
-                    <div class="letter-item">
-                        <a href="/letters/2026.pdf">2026</a>
-                    </div>
-                    -->
-                </div>
-            </div>
-            
-            <div class="copyright-notice">
-                © 2025 RH Health Inc. All rights reserved.
-            </div>
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="content-container">
+            <h2>Agreement to Terms</h2>
+            <p>By accessing or using the services provided by RH Health Inc. (dba Robinhood Health) ("we," "us," or "our"), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.</p>
+
+            <h2>Description of Services</h2>
+            <p>Robinhood Health provides virtual healthcare services, including:</p>
+            <ul>
+                <li>At-home health screening test kits</li>
+                <li>Telehealth consultations</li>
+                <li>Care coordination services</li>
+                <li>Health education and support</li>
+            </ul>
+            <p>Our services are provided by licensed healthcare professionals and are designed to supplement, not replace, your relationship with your primary care provider.</p>
+
+            <h2>Eligibility</h2>
+            <p>To use our services, you must:</p>
+            <ul>
+                <li>Be at least 18 years of age (or have parental/guardian consent)</li>
+                <li>Be a resident of a state where we are authorized to provide services</li>
+                <li>Provide accurate and complete information</li>
+                <li>Have coverage through a participating health plan (for no-cost services)</li>
+            </ul>
+
+            <h2>Medical Disclaimer</h2>
+            <p>The information and services provided by Robinhood Health are for informational and healthcare purposes only. Our services:</p>
+            <ul>
+                <li>Do not constitute emergency medical care</li>
+                <li>Are not a substitute for in-person medical evaluation when needed</li>
+                <li>Should not be used for life-threatening conditions</li>
+            </ul>
+            <p><strong>If you are experiencing a medical emergency, call 911 immediately.</strong></p>
+
+            <h2>User Responsibilities</h2>
+            <p>When using our services, you agree to:</p>
+            <ul>
+                <li>Provide accurate personal and health information</li>
+                <li>Follow instructions for completing at-home tests</li>
+                <li>Respond to communications from our care team</li>
+                <li>Share relevant health information with your healthcare providers</li>
+                <li>Not misuse or share your account credentials</li>
+            </ul>
+
+            <h2>Privacy and Data Protection</h2>
+            <p>Your privacy is important to us. Our collection and use of personal and health information is governed by our <a href="/privacy" style="color: var(--fern-green);">Privacy Policy</a> and applicable laws including HIPAA. By using our services, you consent to our data practices as described in our Privacy Policy.</p>
+
+            <h2>Intellectual Property</h2>
+            <p>All content, trademarks, and materials on our website and in our services are owned by or licensed to Robinhood Health. You may not copy, reproduce, or distribute our content without written permission.</p>
+
+            <h2>Limitation of Liability</h2>
+            <p>To the maximum extent permitted by law, Robinhood Health shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of our services. Our total liability shall not exceed the amount paid by you (or your health plan) for the services giving rise to the claim.</p>
+
+            <h2>Modifications to Terms</h2>
+            <p>We may update these Terms of Service from time to time. We will notify you of significant changes by posting the new terms on our website and updating the "Last Updated" date. Your continued use of our services after changes constitutes acceptance of the modified terms.</p>
+
+            <h2>Governing Law</h2>
+            <p>These Terms of Service shall be governed by and construed in accordance with the laws of the State of California, without regard to its conflict of law provisions.</p>
+
+            <h2>Contact Us</h2>
+            <p>If you have questions about these Terms of Service, please contact us at:</p>
+            <p>
+                <strong>Robinhood Health</strong><br>
+                Email: info@robinhoodhealth.co<br>
+                Phone: (866) 961-9977
+            </p>
+
+            <p class="last-updated">Last Updated: December 2025</p>
         </div>
     </section>
 
@@ -299,7 +310,7 @@
                     <span style="font-size: 1.5rem; font-weight: 700;">Robinhood Health</span>
                 </div>
             </div>
-            
+
             <!-- Services Column -->
             <div>
                 <h4 style="font-weight: 600; margin-bottom: 1.5rem; font-size: 1.125rem;">Our Services</h4>
@@ -309,7 +320,7 @@
                      <li><a href="/MCO" style="color: white; text-decoration: none; opacity: 0.9;">For MCOs</a></li>
                 </ul>
             </div>
-            
+
             <!-- Company Column -->
             <div>
                 <h4 style="font-weight: 600; margin-bottom: 1.5rem; font-size: 1.125rem;">Company</h4>
@@ -319,7 +330,7 @@
                     <li><a href="/letters" style="color: white; text-decoration: none; opacity: 0.9;">Founder's Letters</a></li>
                 </ul>
             </div>
-            
+
             <!-- Contact Column -->
             <div>
                 <h4 style="font-weight: 600; margin-bottom: 1.5rem; font-size: 1.125rem;">Contact</h4>
@@ -333,7 +344,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Bottom Section -->
         <div style="padding-top: 3rem;">
             <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; align-items: start;">
@@ -345,11 +356,11 @@
                 </ul>
                 <p style="text-align: right; opacity: 0.7; font-size: 0.875rem;">© 2025 Robinhood Health</p>
             </div>
-            
+
             <!-- Compliance Notice -->
             <div style="background-color: var(--green); padding: 1.25rem; border-radius: 1rem; margin-top: 3rem;">
                 <p style="font-size: 0.75rem; line-height: 1.6; opacity: 0.9; margin: 0;">
-                    Robinhood Health is a virtual medical group providing health screening services. Services are provided at no cost to eligible members through participating health plans. 
+                    Robinhood Health is a virtual medical group providing health screening services. Services are provided at no cost to eligible members through participating health plans.
                     All medical services are provided by licensed healthcare professionals. Your privacy is protected under HIPAA regulations.
                 </p>
             </div>
