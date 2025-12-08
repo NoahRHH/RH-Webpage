@@ -1,0 +1,361 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HQ5GC9P1JN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HQ5GC9P1JN');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Founder's Letters - Robinhood Health</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        
+        :root {
+            --green: #2B5F3F;
+            --fern-green: #4A7C59;
+            --mint-green: #B8E6D0;
+            --sky-blue: #E6F4F7;
+            --cream: #FFF8F3;
+            --white: #FFFFFF;
+            --text-green: #1A3A26;
+            --orange: #F97316;
+            --padding: 2rem;
+            --radius: 2rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-green);
+            background-color: var(--fern-green);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .page-wrapper {
+            background-color: var(--fern-green);
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--padding);
+        }
+
+        /* Header */
+        .header {
+            background-color: var(--fern-green);
+            position: relative;
+            z-index: 30;
+        }
+
+        .promo-bar {
+            color: white;
+            padding: 0.75rem;
+            font-size: 0.875rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-container {
+            background-color: white;
+            border-radius: 2rem 2rem 0 0;
+            overflow: hidden;
+            margin-top: 1rem;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 3rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-green);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        /* Hero Section */
+        .hero-wrapper {
+            background-color: white;
+            margin: 0 calc(-1 * var(--padding)) 3rem calc(-1 * var(--padding));
+            border-radius: 0 0 var(--radius) var(--radius);
+            overflow: hidden;
+            position: relative;
+            padding: 4rem 3rem;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            color: var(--text-green);
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.125rem;
+            color: var(--text-green);
+            opacity: 0.8;
+        }
+
+        /* Letters Section */
+        .letters-section {
+            background-color: var(--sky-blue);
+            padding: 4rem 3rem;
+            border-radius: var(--radius);
+            margin: 3rem 0;
+        }
+
+        .letters-container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .letters-table {
+            width: 100%;
+            border: 2px solid var(--text-green);
+            border-radius: 1rem;
+            overflow: hidden;
+            background-color: white;
+        }
+
+        .letters-header {
+            background-color: var(--mint-green);
+            padding: 1rem;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.125rem;
+            border-bottom: 2px solid var(--text-green);
+        }
+
+        .letters-list {
+            padding: 1.5rem 2rem;
+        }
+
+        .letter-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.5rem 0;
+        }
+
+        .letter-item::before {
+            content: "❧";
+            color: var(--fern-green);
+            font-size: 1rem;
+        }
+
+        .letter-item a {
+            color: var(--fern-green);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.125rem;
+        }
+
+        .letter-item a:hover {
+            text-decoration: underline;
+        }
+
+        .copyright-notice {
+            max-width: 500px;
+            margin: 2rem auto 0;
+            background-color: white;
+            border: 2px solid var(--text-green);
+            border-radius: 1rem;
+            padding: 1rem 1.5rem;
+            text-align: center;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--fern-green);
+            color: white;
+            padding: 5rem 3rem 3rem;
+            border-radius: 2rem 2rem 0 0;
+            margin-top: 5rem;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            footer > div > div:first-child {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            footer ul {
+                flex-direction: column;
+                gap: 1rem !important;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Header -->
+<header class="header">
+    <div class="promo-bar">
+        Making quality healthcare accessible
+    </div>
+    <div class="nav-container">
+        <nav>
+            <a href="/" style="text-decoration: none; display: flex; align-items: center; gap: 1rem;">
+                <img src="RH-Logo.png" alt="Robinhood Health" style="height: 2.5rem;">
+                <span style="font-size: 1.75rem; font-weight: 800; color: var(--text-green);">Robinhood Health</span>
+            </a>
+            <div class="nav-links">
+                <a href="/story">Robinhood Tales</a>
+                <a href="/FQHC">For FQHCs</a>
+                <a href="/MCO">For MCOs</a>
+                <a href="/how-it-works">How It Works</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- Main content wrapper -->
+<div class="page-wrapper">
+    
+    <!-- Hero Section -->
+    <div class="hero-wrapper">
+        <div class="hero-content">
+            <h1>Founder's Letters</h1>
+            <p class="subtitle">Annual reflections on healthcare, policy, and the road ahead.</p>
+        </div>
+    </div>
+
+    <!-- Letters Section -->
+    <section class="letters-section">
+        <div class="letters-container">
+            <div class="letters-table">
+                <div class="letters-header">Annual Letters</div>
+                <div class="letters-list">
+                    <div class="letter-item">
+                        <a href="/letters/2025.pdf">2025</a>
+                    </div>
+                    <!-- Future years will be added here -->
+                    <!--
+                    <div class="letter-item">
+                        <a href="/letters/2026.pdf">2026</a>
+                    </div>
+                    -->
+                </div>
+            </div>
+            
+            <div class="copyright-notice">
+                © 2025 RH Health Inc. All rights reserved.
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<!-- Footer -->
+<footer style="background-color: var(--fern-green); color: white; padding: 5rem 3rem 3rem; border-radius: 2rem 2rem 0 0; margin-top: 5rem;">
+    <div style="max-width: 1280px; margin: 0 auto;">
+        <!-- Top Section -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.2);">
+            <!-- Logo Column -->
+            <div>
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                    <img src="RH-Logo.png" alt="Robinhood Health" style="height: 2.5rem; filter: brightness(0) invert(1);">
+                    <span style="font-size: 1.5rem; font-weight: 700;">Robinhood Health</span>
+                </div>
+            </div>
+            
+            <!-- Services Column -->
+            <div>
+                <h4 style="font-weight: 600; margin-bottom: 1.5rem; font-size: 1.125rem;">Our Services</h4>
+                <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
+                     <li><a href="/how-it-works" style="color: white; text-decoration: none; opacity: 0.9;">How It Works</a></li>
+                     <li><a href="/FQHC" style="color: white; text-decoration: none; opacity: 0.9;">For FQHCs</a></li>
+                     <li><a href="/MCO" style="color: white; text-decoration: none; opacity: 0.9;">For MCOs</a></li>
+                </ul>
+            </div>
+            
+            <!-- Company Column -->
+            <div>
+                <h4 style="font-weight: 600; margin-bottom: 1.5rem; font-size: 1.125rem;">Company</h4>
+                <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
+                    <li><a href="/about" style="color: white; text-decoration: none; opacity: 0.9;">About</a></li>
+                    <li><a href="/story" style="color: white; text-decoration: none; opacity: 0.9;">Robinhood Tales</a></li>
+                    <li><a href="/letters" style="color: white; text-decoration: none; opacity: 0.9;">Founder's Letters</a></li>
+                </ul>
+            </div>
+            
+            <!-- Contact Column -->
+            <div>
+                <h4 style="font-weight: 600; margin-bottom: 1.5rem; font-size: 1.125rem;">Contact</h4>
+                <div style="display: flex; flex-direction: column; gap: 1rem;">
+                    <a href="mailto:info@robinhoodhealth.co" style="display: flex; align-items: center; gap: 0.5rem; color: white; text-decoration: none; background-color: rgba(255,255,255,0.1); padding: 0.75rem 1rem; border-radius: 0.5rem;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.87868 6.037C3 6.91568 3 8.3299 3 11.1583V13.1583C3 15.9868 3 17.401 3.87868 18.2796C4.75736 19.1583 6.17157 19.1583 9 19.1583H15C17.8284 19.1583 19.2426 19.1583 20.1213 18.2796C21 17.401 21 15.9868 21 13.1583V11.1583C21 8.3299 21 6.91568 20.1213 6.037C19.2426 5.15833 17.8284 5.15833 15 5.15833H9C6.17157 5.15833 4.75736 5.15833 3.87868 6.037ZM6.5547 8.32627C6.09517 8.01992 5.4743 8.1441 5.16795 8.60363C4.8616 9.06315 4.98577 9.68402 5.4453 9.99038L10.8906 13.6206C11.5624 14.0684 12.4376 14.0684 13.1094 13.6206L18.5547 9.99038C19.0142 9.68402 19.1384 9.06315 18.8321 8.60363C18.5257 8.1441 17.9048 8.01992 17.4453 8.32627L12 11.9565L6.5547 8.32627Z" fill="white"/>
+                        </svg>
+                        <span>info@robinhoodhealth.co</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom Section -->
+        <div style="padding-top: 3rem;">
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; align-items: start;">
+                <ul style="list-style: none; display: flex; gap: 2rem; flex-wrap: wrap;">
+                    <li><a href="#privacy" style="color: white; text-decoration: none; opacity: 0.7; font-size: 0.875rem;">Privacy Policy</a></li>
+                    <li><a href="#terms" style="color: white; text-decoration: none; opacity: 0.7; font-size: 0.875rem;">Terms of Service</a></li>
+                    <li><a href="#hipaa" style="color: white; text-decoration: none; opacity: 0.7; font-size: 0.875rem;">HIPAA Notice</a></li>
+                    <li><a href="#accessibility" style="color: white; text-decoration: none; opacity: 0.7; font-size: 0.875rem;">Accessibility</a></li>
+                </ul>
+                <p style="text-align: right; opacity: 0.7; font-size: 0.875rem;">© 2025 Robinhood Health</p>
+            </div>
+            
+            <!-- Compliance Notice -->
+            <div style="background-color: var(--green); padding: 1.25rem; border-radius: 1rem; margin-top: 3rem;">
+                <p style="font-size: 0.75rem; line-height: 1.6; opacity: 0.9; margin: 0;">
+                    Robinhood Health is a virtual medical group providing health screening services. Services are provided at no cost to eligible members through participating health plans. 
+                    All medical services are provided by licensed healthcare professionals. Your privacy is protected under HIPAA regulations.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
