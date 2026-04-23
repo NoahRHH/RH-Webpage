@@ -11,9 +11,9 @@
 </script>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-<title>Partners — Robinhood Health</title>
-<meta name="description" content="How Robinhood Health partners with FQHCs, Medicaid managed care plans, and ACOs to close preventive screening gaps." />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<title>Platform — Robinhood Health</title>
+<meta name="description" content="Sherwood and Mariann — the proprietary clinical infrastructure that runs Robinhood Health's screening operation." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -614,125 +614,213 @@ footer {
   .section-hd { grid-template-columns: 1fr; gap: 20px; }
 }
 
-/* page: partners */
-.partner-hub { padding-top: 8px; }
-
-.partner-type {
-  padding: 72px 0;
-  border-top: 1px solid var(--rule);
-}
-.partner-type:last-of-type { border-bottom: 1px solid var(--rule); }
-.partner-type-head {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 48px;
-  align-items: start;
-  margin-bottom: 48px;
+</style>
+<style>
+/* large tech feature cards (reusing vibe from homepage but elaborated) */
+.feature-card {
+  padding: 56px 48px 64px;
+  border-radius: 16px;
+  margin-bottom: 24px;
   position: relative;
 }
-.partner-type-head::before {
-  content: attr(data-num);
-  position: absolute;
-  top: -20px;
-  right: 0;
-  font-family: var(--ff-display);
-  font-weight: 300;
-  font-style: italic;
-  font-size: clamp(100px, 14vw, 180px);
-  line-height: 1;
-  color: var(--forest);
-  opacity: .05;
-  pointer-events: none;
-  z-index: 0;
-  user-select: none;
-}
-.partner-type-head > * { position: relative; z-index: 1; }
-
-.partner-label {
-  font-family: var(--ff-display);
-  font-weight: 400;
-  font-size: clamp(36px, 4vw, 52px);
-  line-height: 1;
-  letter-spacing: -0.02em;
-  color: var(--forest);
-  margin-bottom: 10px;
-}
-.partner-sub {
+.feature-card.sherwood { background: var(--paper-2); }
+.feature-card.mariann { background: var(--lavender); }
+.feature-card .feature-label {
   font-family: var(--ff-mono);
   font-size: 11px;
-  letter-spacing: .1em;
+  letter-spacing: .14em;
   text-transform: uppercase;
-  color: var(--ink-3);
-  margin-bottom: 20px;
+  color: var(--russet);
+  margin-bottom: 16px;
 }
-.partner-type-head h3 {
+.feature-card.mariann .feature-label { color: #6B3F8F; }
+.feature-card h3 {
   font-family: var(--ff-display);
   font-weight: 400;
-  font-style: italic;
-  font-size: clamp(28px, 3.4vw, 38px);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-  margin-bottom: 16px;
-  max-width: 22ch;
+  font-size: clamp(52px, 7vw, 84px);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  margin-bottom: 20px;
+  color: var(--forest);
 }
-.partner-type-head .lede {
+.feature-card.mariann h3 { color: #3C2A5C; }
+.feature-card .tagline {
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-size: 22px;
+  line-height: 1.35;
+  color: var(--ink-2);
+  margin-bottom: 40px;
+  max-width: 36ch;
+}
+.feature-card > p {
   font-size: 16px;
   line-height: 1.65;
   color: var(--ink-2);
-  max-width: 56ch;
+  max-width: 68ch;
+  margin-bottom: 40px;
+}
+.feature-subgrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: rgba(0,0,0,.08);
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.feature-card.sherwood .feature-subgrid { background: rgba(0,0,0,.08); border-color: rgba(0,0,0,.08); }
+.feature-card.mariann .feature-subgrid { background: rgba(0,0,0,.1); border-color: rgba(0,0,0,.1); }
+.feature-subitem {
+  background: inherit;
+  padding: 24px 24px 28px;
+}
+.feature-card.sherwood .feature-subitem { background: var(--paper-2); }
+.feature-card.mariann .feature-subitem { background: var(--lavender); }
+.feature-subitem h5 {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 10px;
+}
+.feature-subitem strong {
+  display: block;
+  font-family: var(--ff-display);
+  font-weight: 400;
+  font-size: 19px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.feature-subitem p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+@media (max-width: 800px) {
+  .feature-subgrid { grid-template-columns: 1fr; }
+  .feature-card { padding: 40px 28px 48px; }
 }
 
-.partner-grid {
+/* security compliance strip */
+.compliance-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  margin-bottom: 32px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 16px;
 }
-.partner-cell {
-  padding: 28px 28px 32px;
-  background: var(--paper-2);
-  border-radius: 12px;
+.compliance-item {
+  background: var(--paper);
+  padding: 28px 24px 32px;
 }
-.partner-cell h4 {
+.compliance-item h5 {
   font-family: var(--ff-mono);
   font-size: 10px;
   letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--russet);
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
-.partner-cell p {
-  font-size: 14px;
-  line-height: 1.65;
+.compliance-item strong {
+  display: block;
+  font-family: var(--ff-display);
+  font-weight: 400;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.compliance-item p {
+  font-size: 13px;
+  line-height: 1.6;
   color: var(--ink-2);
 }
-.partner-cell p + p { margin-top: 10px; }
-.partner-cell strong { color: var(--ink); font-weight: 500; }
+@media (max-width: 800px) { .compliance-grid { grid-template-columns: 1fr; } }
 
-.partner-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
+/* vendor stack table */
+.vendors {
+  border-top: 1px solid var(--rule);
+  margin-top: 16px;
+}
+.vendor-row {
+  display: grid;
+  grid-template-columns: 180px 1fr 1fr;
+  gap: 32px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: baseline;
+}
+.vendor-row .vendor-name {
+  font-family: var(--ff-display);
+  font-weight: 400;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.vendor-row .vendor-role {
   font-family: var(--ff-mono);
   font-size: 11px;
-  letter-spacing: .14em;
+  letter-spacing: .1em;
   text-transform: uppercase;
-  padding: 14px 22px;
-  border: 1px solid var(--forest);
+  color: var(--russet);
+}
+.vendor-row .vendor-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+@media (max-width: 800px) {
+  .vendor-row { grid-template-columns: 1fr; gap: 6px; }
+}
+
+/* status callout */
+.status-callout {
+  margin-top: 16px;
+  padding: 48px 40px;
+  background: var(--mint);
+  border-radius: 18px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.status-dot {
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: var(--forest);
+  position: relative;
+}
+.status-dot::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 2px solid var(--forest);
+  opacity: .3;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: .3; }
+  50% { transform: scale(1.6); opacity: 0; }
+}
+.status-text {
+  font-family: var(--ff-display);
+  font-weight: 400;
+  font-size: clamp(22px, 2.5vw, 30px);
+  line-height: 1.35;
+  letter-spacing: -0.015em;
   color: var(--forest);
-  transition: all .2s;
-  margin-top: 8px;
 }
-.partner-cta:hover { background: var(--forest); color: var(--cream); }
-.partner-cta svg { width: 10px; height: 10px; transition: transform .2s; }
-.partner-cta:hover svg { transform: translateX(3px); }
-
-@media (max-width: 900px) {
-  .partner-type-head { grid-template-columns: 1fr; gap: 16px; }
-  .partner-grid { grid-template-columns: 1fr; }
+.status-text b { font-weight: 500; }
+@media (max-width: 600px) {
+  .status-callout { grid-template-columns: 1fr; gap: 20px; padding: 32px 28px; }
 }
-
 </style>
 </head>
 <body>
@@ -741,7 +829,7 @@ footer {
   <div class="masthead-inner">
     <div>
       <span>Robinhood Health</span>
-      <span>Partners</span>
+      <span>Platform</span>
     </div>
     <div>
       <span>A virtual medical group</span>
@@ -751,121 +839,241 @@ footer {
 
 <nav class="nav">
   <div class="nav-inner">
-    <a href="index.html" class="brand">
-      <img src="RH-Logo.png" alt="Robinhood Health" class="brand-mark" />
+    <a href="/" class="brand">
+      <img src="/RH-Logo.png" alt="Robinhood Health" class="brand-mark" />
       Robinhood Health
     </a>
     <div class="nav-links">
-      <a href="howitworks.html">How it works</a>
-      <a href="model.html">Model</a>
-      <a href="partners.html" class="current">Partners</a>
-      <a href="platform.html">Platform</a>
-      <a href="about.html">About</a>
+      <a href="/howitworks/">How it works</a>
+      <a href="/model/">Model</a>
+      <a href="/partners/">Partners</a>
+      <a href="/platform/" class="current">Platform</a>
+      <a href="/about/">About</a>
     </div>
-    <a href="index.html#cta" class="nav-cta">Request briefing →</a>
+    <a href="/#cta" class="nav-cta">Request briefing →</a>
   </div>
 </nav>
 
 <main>
 
 <section class="hero">
-  <div class="eyebrow">Partners</div>
-  <h1 class="reveal">Same clinical model. <em>Three partner shapes.</em></h1>
-  <p class="hero-lead reveal">Federally Qualified Health Centers, Medicaid managed care plans, and Accountable Care Organizations all share a problem: open care gaps in the populations they serve. We contract with each of them differently, but the underlying clinical service is the same.</p>
+  <div class="eyebrow">Infrastructure</div>
+  <h1 class="reveal">The infrastructure <em>that runs the operation.</em></h1>
+  <p class="hero-lead reveal">Sherwood is our backbone. Mariann is the newest member of our clinical team. Both are proprietary, both are purpose-built for Medicaid screening workflows, and both are deployed and running today.</p>
 </section>
 
-<section class="partner-hub">
-  <div class="partner-type" id="fqhc">
-    <div class="partner-type-head" data-num="01">
-      <div>
-        <div class="partner-label">FQHCs</div>
-        <div class="partner-sub">A contracted care delivery service</div>
-      </div>
-      <div>
-        <h3>Close UDS gaps without adding staff or adding technology.</h3>
-        <p class="lede">FQHCs run on thin operational margins and trailing UDS performance is a chronic concern. We operate as a contracted clinical partner alongside the FQHC, taking direct responsibility for preventive screening delivery while staying out of the medical home relationship.</p>
-      </div>
+<div class="ornament" aria-hidden="true">
+  <svg viewBox="0 0 80 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="2" cy="7" r="1.5" fill="currentColor"/>
+    <line x1="6" y1="7" x2="70" y2="7" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+    <polyline points="62,3 72,7 62,11" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</div>
+
+<section id="sherwood">
+  <div class="section-hd" data-num="01">
+    <div class="section-num"><b>01</b>Sherwood</div>
+    <div>
+      <h2>The clinical system <em>of record.</em></h2>
+      <p class="section-lede">Every screening we run passes through Sherwood. It identifies eligible members, runs clinical decision support against HEDIS and USPSTF rules, routes orders through physician sign-off, manages kit logistics, ingests results, coordinates follow-up, and documents every action in a HIPAA-compliant audit trail.</p>
     </div>
-    <div class="partner-grid">
-      <div class="partner-cell">
-        <h4>What makes this work for FQHCs</h4>
-        <p><strong>UDS credit without reconciliation.</strong> Completed screenings document back to the partner EHR with CPT and LOINC codes mapped to COL-E, GSD, and KED. No supplemental workflow required.</p>
-        <p><strong>No EHR integration.</strong> Sherwood retrieves clinical history via Carequality and Commonwell. No data use agreement, no IT project, no new vendor approval process.</p>
-        <p><strong>Co-branded outreach.</strong> Members hear from us as an extension of their medical home, not as a separate entity displacing the PCP relationship.</p>
-      </div>
-      <div class="partner-cell">
-        <h4>The contracting shape</h4>
-        <p><strong>Grant- and program-funded engagements.</strong> Most FQHC partnerships are funded through HRSA grants, state programs, or existing FQHC quality-improvement budgets.</p>
-        <p><strong>Per-completion or cohort-based.</strong> We structure the economics around completed screenings rather than fixed monthly fees, so the FQHC's cost scales with the actual value delivered.</p>
-        <p><strong>Scalable to sites.</strong> Partnerships typically start at one or two sites and expand across a network once operational fit is validated.</p>
-      </div>
-    </div>
-    <a href="fqhc.html" class="partner-cta">
-      Read the FQHC deep-dive
-      <svg viewBox="0 0 10 10" fill="none"><path d="M1 5h8M5 1l4 4-4 4" stroke="currentColor" stroke-width="1.2"/></svg>
-    </a>
   </div>
 
-  <div class="partner-type" id="mco">
-    <div class="partner-type-head" data-num="02">
-      <div>
-        <div class="partner-label">Medicaid plans</div>
-        <div class="partner-sub">HEDIS-ready home screening</div>
-      </div>
-      <div>
-        <h3>Lift measures at home, at scale, for the members traditional outreach misses.</h3>
-        <p class="lede">Medicaid plans are accountable for HEDIS performance that often lags commercial benchmarks by double digits. We deliver documented measure closure as a contracted clinical service, built specifically for the populations most plans struggle to engage.</p>
-      </div>
-    </div>
-    <div class="partner-grid">
-      <div class="partner-cell">
-        <h4>What makes this work for Medicaid plans</h4>
-        <p><strong>HEDIS-aligned documentation.</strong> Structured results mapped to COL, HBD, and KED, formatted for whatever supplemental data path your quality team already uses.</p>
-        <p><strong>Member-first engagement.</strong> Bilingual SMS outreach on a clinically validated cadence, designed for how Medicaid members actually respond&mdash;not retrofitted from a commercial product.</p>
-        <p><strong>Segment-level targeting.</strong> Narrow to rising-risk members, never-screened members, specific geographies, or specific product lines. The attribution file drives who gets outreach.</p>
-      </div>
-      <div class="partner-cell">
-        <h4>The contracting shape</h4>
-        <p><strong>Flexible economic structures.</strong> Per-completion, PMPM, or hybrid arrangements designed to fit product-level margin requirements and Stars-bonus incentives.</p>
-        <p><strong>Fast time to market.</strong> First outreach in weeks two to four. Steady-state by week six. We can move the needle inside a current measure year from a mid-year start.</p>
-        <p><strong>Multi-vendor coexistence.</strong> Our HIE queries surface members already screened elsewhere, preventing redundant outreach when the plan has other engagement vendors in market.</p>
-      </div>
-    </div>
-    <a href="mco.html" class="partner-cta">
-      Read the Medicaid plan deep-dive
-      <svg viewBox="0 0 10 10" fill="none"><path d="M1 5h8M5 1l4 4-4 4" stroke="currentColor" stroke-width="1.2"/></svg>
-    </a>
-  </div>
+  <div class="feature-card sherwood">
+    <div class="feature-label">Clinical system of record</div>
+    <h3>Sherwood</h3>
+    <div class="tagline">The backbone of everything we do.</div>
+    <p>Sherwood was built from the ground up for the clinical workflow legacy EMRs never anticipated: home-based preventive screening for Medicaid populations, coordinated by a virtual clinical team. It is a clinical decision support engine, an order management system, a patient engagement platform, a care coordination tool, and a reporting system&mdash;unified under a single record and a single audit trail.</p>
 
-  <div class="partner-type" id="aco">
-    <div class="partner-type-head" data-num="03">
-      <div>
-        <div class="partner-label">ACOs</div>
-        <div class="partner-sub">Outcome-aligned attributed care</div>
+    <div class="feature-subgrid">
+      <div class="feature-subitem">
+        <h5>Clinical data retrieval</h5>
+        <strong>Carequality &amp; Commonwell</strong>
+        <p>Clinical history pulled from the same national networks Epic, Cerner, and athenahealth already participate in. No partner-side integration required.</p>
       </div>
-      <div>
-        <h3>Screen attributed lives without burdening participating practices.</h3>
-        <p class="lede">ACOs are measured on outcomes across their attributed population, but the tools available to move those outcomes usually route through the participating practices' workflow. We offer a different path: screening performed outside the practice, attributed back to it, counted toward the ACO's measure performance.</p>
+      <div class="feature-subitem">
+        <h5>Decision support</h5>
+        <strong>HEDIS · USPSTF · UDS</strong>
+        <p>Rule-based CDS algorithms implementing published measure specifications directly in code. Fully interpretable. Immediately auditable.</p>
       </div>
-    </div>
-    <div class="partner-grid">
-      <div class="partner-cell">
-        <h4>What makes this work for ACOs</h4>
-        <p><strong>Zero practice burden.</strong> No outreach ask, no workflow change, no staff time from participating practices. We handle end-to-end.</p>
-        <p><strong>Attribution-aware targeting.</strong> Attribution and risk files drive member prioritization, starting with rising-risk and never-screened members where the measurement impact is highest.</p>
-        <p><strong>TIN-level reporting.</strong> Monthly reach, completion, and disposition broken out by participating TIN, so the ACO can see where the work is landing.</p>
+      <div class="feature-subitem">
+        <h5>Order workflow</h5>
+        <strong>Eight-stage state machine</strong>
+        <p>Every order moves through defined states from initial outreach to physician sign-off to kit shipment to result review to closure. No state skipped. No order lost.</p>
       </div>
-      <div class="partner-cell">
-        <h4>The contracting shape</h4>
-        <p><strong>Outcome-aligned pricing.</strong> Economics structured around measure achievement rather than fixed fees, so the ACO's spend scales with shared-savings realization.</p>
-        <p><strong>Governance-compatible.</strong> Our structure supports the participation-agreement and data-sharing arrangements ACOs already have in place with their participating practices.</p>
-        <p><strong>Annual or multi-year engagements.</strong> Most ACO partnerships align with performance-year cycles and renew based on measure-closure impact.</p>
+      <div class="feature-subitem">
+        <h5>Physician sign-off</h5>
+        <strong>Every order signed</strong>
+        <p>No kit ships without licensed-physician review. Medical director reviews pre-screening responses and clinical history, with a 48-hour review window.</p>
+      </div>
+      <div class="feature-subitem">
+        <h5>Kit logistics</h5>
+        <strong>Lab partner integration</strong>
+        <p>FIT, HbA1c, and ACR orders generated in our lab partners' required formats. Shipment tracking, result ingestion, and deduplication handled automatically.</p>
+      </div>
+      <div class="feature-subitem">
+        <h5>Partner reporting</h5>
+        <strong>EHR write-back · HEDIS · UDS</strong>
+        <p>Completed screenings document back to partner systems as structured chart notes, enabling direct measure credit without reconciliation.</p>
       </div>
     </div>
   </div>
 </section>
 
-<div class="ornament quiet" aria-hidden="true" style="margin-top: 64px;">
+<section id="mariann">
+  <div class="section-hd" data-num="02">
+    <div class="section-num"><b>02</b>Mariann</div>
+    <div>
+      <h2>Our AI-powered <em>nursing assistant.</em></h2>
+      <p class="section-lede">Mariann is the newest member of our clinical team. She runs member outreach on a clinically validated cadence, verifies identity, collects pre-screening history, answers questions at fifth-grade reading level, and schedules follow-up appointments. Bilingual. Clinician-supervised. Every conversation auditable.</p>
+    </div>
+  </div>
+
+  <div class="feature-card mariann">
+    <div class="feature-label">AI patient engagement</div>
+    <h3>Mariann</h3>
+    <div class="tagline">Always on call. Always clinically supervised.</div>
+    <p>Mariann is built on Anthropic's Claude with clinical guardrails designed specifically for the home-based screening workflow. She never diagnoses a condition, never prescribes a medication, and never makes an autonomous clinical decision. Emergency keywords bypass her entirely for immediate 988 or 911 referral. Every conversation is logged and reviewable by the medical director through an AI oversight dashboard.</p>
+
+    <div class="feature-subgrid">
+      <div class="feature-subitem">
+        <h5>What she does</h5>
+        <strong>Outreach and engagement</strong>
+        <p>Initial outreach, DOB-based identity verification, pre-screening clinical questions, kit usage instructions, appointment scheduling, and satisfaction surveys.</p>
+      </div>
+      <div class="feature-subitem">
+        <h5>What she will not do</h5>
+        <strong>No diagnosis, no Rx</strong>
+        <p>All clinical opinions, interpretations, and treatment recommendations are redirected to the human clinical team. Clinical decisions require physician sign-off.</p>
+      </div>
+      <div class="feature-subitem">
+        <h5>Channels</h5>
+        <strong>SMS · TCPA-compliant</strong>
+        <p>SMS as primary channel, with TCPA-compliant opt-in and opt-out handling. Chosen over portal or app because it reaches Medicaid members who have phones but not smartphones.</p>
+      </div>
+      <div class="feature-subitem">
+        <h5>Languages</h5>
+        <strong>English · Spanish native</strong>
+        <p>Every workflow, every prompt, every escalation path available in both languages. Member preference persists from first response forward.</p>
+      </div>
+      <div class="feature-subitem">
+        <h5>Safety architecture</h5>
+        <strong>988 / 911 bypass · sensitive info blocking</strong>
+        <p>Emergency keywords intercepted before AI processing. SSN, credit card, and password patterns blocked inbound. Every escalation routes to a human.</p>
+      </div>
+      <div class="feature-subitem">
+        <h5>Oversight</h5>
+        <strong>Full conversation audit</strong>
+        <p>Every conversation logged and reviewable by the medical director. Flagged conversations surface in a dedicated oversight dashboard for clinical review.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="security">
+  <div class="section-hd" data-num="03">
+    <div class="section-num"><b>03</b>Security &amp; compliance</div>
+    <div>
+      <h2>Built on a <em>HIPAA-compliant foundation.</em></h2>
+      <p class="section-lede">Everything Sherwood and Mariann do sits on a SOC 2 Type II certified hosting platform, runs under signed BAAs with every data processor, and documents every protected health information access in an immutable audit trail.</p>
+    </div>
+  </div>
+
+  <div class="compliance-grid">
+    <div class="compliance-item">
+      <h5>Hosting</h5>
+      <strong>SOC 2 Type II</strong>
+      <p>Deployed on a SOC 2 Type II certified, HIPAA-compliant hosting platform purpose-built for healthcare applications.</p>
+    </div>
+    <div class="compliance-item">
+      <h5>Encryption</h5>
+      <strong>AES-256 · TLS 1.2+</strong>
+      <p>All PHI encrypted at rest using AES-256. All data in transit encrypted via TLS 1.2 or higher.</p>
+    </div>
+    <div class="compliance-item">
+      <h5>Data processing</h5>
+      <strong>BAAs with every vendor</strong>
+      <p>Business Associate Agreements executed with every data processor in the stack. No PHI touches a system without coverage.</p>
+    </div>
+    <div class="compliance-item">
+      <h5>Access control</h5>
+      <strong>Role-based · pod-isolated</strong>
+      <p>Six defined clinical roles with granular permissions. Per-partner data pods ensure clinical staff see only the members they are assigned.</p>
+    </div>
+    <div class="compliance-item">
+      <h5>Audit trail</h5>
+      <strong>Retained · reviewable</strong>
+      <p>Every access to PHI logged with user identity, action, resource, IP address, and timestamp. Retained per HIPAA requirements and available on request.</p>
+    </div>
+    <div class="compliance-item">
+      <h5>Authentication</h5>
+      <strong>Fail-closed · rate-limited</strong>
+      <p>Authorization middleware fails closed on error rather than passing through. DOB verification endpoints rate-limited to prevent brute-force attacks.</p>
+    </div>
+  </div>
+</section>
+
+<section id="stack">
+  <div class="section-hd" data-num="04">
+    <div class="section-num"><b>04</b>The stack</div>
+    <div>
+      <h2>Built on <em>healthcare-first</em> infrastructure.</h2>
+      <p class="section-lede">Every vendor in the stack is either SOC 2 certified, HIPAA-compliant by design, or both. The systems Sherwood and Mariann sit on top of are the same systems trusted by major clinical operations at scale.</p>
+    </div>
+  </div>
+
+  <div class="vendors">
+    <div class="vendor-row">
+      <div class="vendor-name">Aptible</div>
+      <div class="vendor-role">Hosting</div>
+      <div class="vendor-desc">SOC 2 Type II certified, HIPAA-compliant hosting platform purpose-built for healthcare applications.</div>
+    </div>
+    <div class="vendor-row">
+      <div class="vendor-name">Zus Health</div>
+      <div class="vendor-role">Clinical data · HIE</div>
+      <div class="vendor-desc">Clinical data retrieval via Carequality and Commonwell national health information networks.</div>
+    </div>
+    <div class="vendor-row">
+      <div class="vendor-name">Healthie</div>
+      <div class="vendor-role">Clinical management</div>
+      <div class="vendor-desc">Patient records, clinical task management, appointment scheduling, and telehealth video infrastructure.</div>
+    </div>
+    <div class="vendor-row">
+      <div class="vendor-name">Anthropic</div>
+      <div class="vendor-role">AI · Claude</div>
+      <div class="vendor-desc">Language model powering Mariann's conversational workflows, with clinical safety guardrails layered on top.</div>
+    </div>
+    <div class="vendor-row">
+      <div class="vendor-name">Twilio</div>
+      <div class="vendor-role">SMS · TCPA compliance</div>
+      <div class="vendor-desc">Bilingual SMS outreach with TCPA-compliant opt-in and opt-out handling.</div>
+    </div>
+    <div class="vendor-row">
+      <div class="vendor-name">Lab partners</div>
+      <div class="vendor-role">Laboratory · kit fulfillment</div>
+      <div class="vendor-desc">CLIA-certified at-home testing kits for FIT, HbA1c, and ACR, with integrated batch order and result workflows.</div>
+    </div>
+  </div>
+</section>
+
+<section id="status">
+  <div class="section-hd" data-num="05">
+    <div class="section-num"><b>05</b>Status</div>
+    <div>
+      <h2>Built. Deployed. <em>Running today.</em></h2>
+      <p class="section-lede">Sherwood and Mariann are not a product roadmap. They are an operational system that handles live clinical workflows every day. End-to-end technical validation has been completed; the platform is preparing for initial pilot deployment with partner FQHCs.</p>
+    </div>
+  </div>
+
+  <div class="status-callout">
+    <div class="status-dot" aria-hidden="true"></div>
+    <div class="status-text">
+      <b>Operational.</b> Full CDS engine, complete SMS engagement workflow, bilingual support, eight-stage order machine with physician sign-off, Carequality and Commonwell retrieval, video and phone appointment scheduling, AI oversight dashboard, HIPAA-compliant audit trail, and role-based access control with pod-level isolation&mdash;all built, all running.
+    </div>
+  </div>
+</section>
+
+<div class="ornament quiet" aria-hidden="true">
   <svg viewBox="0 0 80 14" fill="none" xmlns="http://www.w3.org/2000/svg">
     <circle cx="2" cy="7" r="1.5" fill="currentColor"/>
     <line x1="6" y1="7" x2="70" y2="7" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
@@ -875,11 +1083,11 @@ footer {
 
 <section class="cta" id="cta">
   <div class="cta-inner">
-    <div class="eyebrow">Next step</div>
-    <h2>Let's talk about <em>what you're trying to solve.</em></h2>
-    <p>Which partner type fits best depends on your measure stack, your data environment, and your workflow. A 30-minute call figures that out faster than any webpage can.</p>
-    <a href="mailto:info@robinhoodhealth.co?subject=Partnership%20conversation" class="cta-btn">
-      Request a conversation
+    <div class="eyebrow">06 / Next step</div>
+    <h2>Want the <em>technical walk-through?</em></h2>
+    <p>A 45-minute platform briefing covers architecture, security posture, clinical workflow, AI oversight model, and integration pathways for partner reporting.</p>
+    <a href="mailto:info@robinhoodhealth.co?subject=Platform%20briefing%20request" class="cta-btn">
+      Request a platform briefing
       <svg viewBox="0 0 12 12" fill="none"><path d="M1 6h10M6 1l5 5-5 5" stroke="currentColor" stroke-width="1.3"/></svg>
     </a>
     <div class="cta-contact">
@@ -888,14 +1096,13 @@ footer {
   </div>
 </section>
 
-
 </main>
 
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <a href="index.html" class="brand">
-        <img src="RH-Logo.png" alt="Robinhood Health" class="brand-mark" />
+      <a href="/" class="brand">
+        <img src="/RH-Logo.png" alt="Robinhood Health" class="brand-mark" />
         Robinhood Health
       </a>
       <p>A virtual medical group closing preventive screening gaps for high-risk Medicaid populations. RH Health Inc., dba Robinhood Health.</p>
@@ -903,27 +1110,27 @@ footer {
     <div class="footer-col">
       <h4>Program</h4>
       <ul>
-        <li><a href="howitworks.html">How it works</a></li>
-        <li><a href="model.html">The model</a></li>
-        <li><a href="platform.html">Platform</a></li>
-        <li><a href="index.html#roadmap">Roadmap</a></li>
+        <li><a href="/howitworks/">How it works</a></li>
+        <li><a href="/model/">The model</a></li>
+        <li><a href="/platform/">Platform</a></li>
+        <li><a href="/#roadmap">Roadmap</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Partners</h4>
       <ul>
-        <li><a href="partners.html">Overview</a></li>
-        <li><a href="fqhc.html">For FQHCs</a></li>
-        <li><a href="mco.html">For Medicaid plans</a></li>
-        <li><a href="index.html#cta">Request briefing</a></li>
+        <li><a href="/partners/">Overview</a></li>
+        <li><a href="/fqhc/">For FQHCs</a></li>
+        <li><a href="/mco/">For Medicaid plans</a></li>
+        <li><a href="/#cta">Request briefing</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Company</h4>
       <ul>
-        <li><a href="about.html">About</a></li>
-        <li><a href="https://www.robinhoodhealth.co/story.html">Robinhood Tales</a></li>
-        <li><a href="letters.html">Founder's letters</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="https://www.robinhoodhealth.co/story/">Robinhood Tales</a></li>
+        <li><a href="/letters/">Founder's letters</a></li>
         <li><a href="mailto:info@robinhoodhealth.co">Contact</a></li>
       </ul>
     </div>
@@ -932,24 +1139,15 @@ footer {
   <div class="footer-colophon">
     <div><span class="footer-mark"><svg viewBox="0 0 22 8" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="4" x2="18" y2="4" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><polyline points="14,1 20,4 14,7" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg></span>© 2026 RH Health Inc., dba Robinhood Health</div>
     <div class="legal">
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
-      <a href="hipaa.html">HIPAA notice</a>
-      <a href="accessibility.html">Accessibility</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/hipaa/">HIPAA notice</a>
+      <a href="/accessibility/">Accessibility</a>
     </div>
   </div>
 </footer>
 
 <script>
-document.querySelectorAll('.faq-item').forEach(item => {
-  const btn = item.querySelector('.faq-q');
-  const body = item.querySelector('.faq-a');
-  btn.addEventListener('click', () => {
-    const isOpen = item.classList.contains('open');
-    item.classList.toggle('open');
-    body.style.maxHeight = isOpen ? '0px' : body.scrollHeight + 'px';
-  });
-});
 const io = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }

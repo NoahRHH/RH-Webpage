@@ -11,9 +11,9 @@
 </script>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-<title>Terms of Service — Robinhood Health</title>
-<meta name="description" content="Terms and conditions for using Robinhood Health's virtual medical group services." />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<title>The model — Robinhood Health</title>
+<meta name="description" content="Three screenings, one managed service. Colorectal cancer, HbA1c, and kidney health evaluation delivered as contracted clinical care." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -123,8 +123,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .brand {
   display: flex;
-  align-items: baseline;
-  gap: 10px;
+  align-items: center;
+  gap: 12px;
   font-family: var(--ff-display);
   font-size: 22px;
   font-weight: 500;
@@ -132,11 +132,12 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   color: var(--forest);
 }
 .brand-mark {
-  width: 14px; height: 14px;
-  position: relative; top: 1px;
+  width: 36px; height: 36px;
+  display: block;
+  object-fit: contain;
   transition: transform .7s cubic-bezier(.34,1.56,.64,1);
 }
-.brand:hover .brand-mark { transform: rotate(24deg) scale(1.08); }
+.brand:hover .brand-mark { transform: scale(1.08); }
 .nav-links {
   display: flex;
   gap: 28px;
@@ -613,125 +614,132 @@ footer {
   .section-hd { grid-template-columns: 1fr; gap: 20px; }
 }
 
-/* legal page layout */
-.legal-page {
-  max-width: 72ch;
-  margin: 0 auto;
-  padding: 0 32px;
-}
-.legal-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  padding: 24px 0;
-  margin-bottom: 48px;
+/* page: model */
+.screening-section {
+  padding: 72px 0;
   border-top: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
-  font-family: var(--ff-mono);
-  font-size: 11px;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: var(--ink-3);
 }
-.legal-meta b { color: var(--russet); font-weight: 500; }
-
-.legal-callout {
-  padding: 32px 40px;
-  background: var(--paper-2);
-  border-left: 3px solid var(--russet);
-  border-radius: 2px;
-  margin-bottom: 56px;
+.screening-section:last-of-type { border-bottom: 1px solid var(--rule); }
+.screening-head {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 48px;
+  align-items: start;
+  margin-bottom: 48px;
+  position: relative;
+}
+.screening-head::before {
+  content: attr(data-num);
+  position: absolute;
+  top: -20px;
+  right: 0;
+  font-family: var(--ff-display);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(100px, 14vw, 180px);
+  line-height: 1;
+  color: var(--forest);
+  opacity: .05;
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+}
+.screening-head > * { position: relative; z-index: 1; }
+.screening-kicker {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  border: 1px solid var(--russet);
+  color: var(--russet);
+  border-radius: 3px;
+  display: inline-block;
+  margin-bottom: 18px;
+}
+.screening-head h3 {
+  font-family: var(--ff-display);
+  font-weight: 400;
+  font-size: clamp(32px, 4.4vw, 52px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+.screening-head h3 em { font-style: italic; color: var(--forest); }
+.screening-head .lede {
   font-family: var(--ff-display);
   font-size: 18px;
   font-weight: 300;
-  line-height: 1.55;
+  line-height: 1.5;
   color: var(--ink-2);
-}
-.legal-callout strong { color: var(--ink); font-weight: 500; }
-
-.legal-content {
-  font-size: 16px;
-  line-height: 1.75;
-  color: var(--ink-2);
-}
-.legal-content h2 {
-  font-family: var(--ff-display);
-  font-weight: 400;
-  font-size: clamp(26px, 3vw, 34px);
-  letter-spacing: -0.015em;
-  color: var(--ink);
-  margin: 56px 0 16px;
-  padding-top: 24px;
-  border-top: 1px solid var(--rule);
-}
-.legal-content h2:first-child {
-  margin-top: 0;
-  padding-top: 0;
-  border-top: 0;
-}
-.legal-content h3 {
-  font-family: var(--ff-display);
-  font-weight: 500;
-  font-size: 20px;
-  letter-spacing: -0.005em;
-  color: var(--ink);
-  margin: 28px 0 8px;
-}
-.legal-content p { margin-bottom: 16px; }
-.legal-content p:last-child { margin-bottom: 0; }
-.legal-content ul {
-  list-style: none;
-  margin: 16px 0 24px;
-  padding: 0;
-}
-.legal-content ul li {
-  position: relative;
-  padding: 6px 0 6px 28px;
-  line-height: 1.65;
-}
-.legal-content ul li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 17px;
-  width: 14px;
-  height: 1px;
-  background: var(--russet);
-}
-.legal-content strong { color: var(--ink); font-weight: 500; }
-.legal-content a {
-  color: var(--forest);
-  border-bottom: 1px solid rgba(31, 59, 46, .3);
-  padding-bottom: 1px;
-  transition: all .2s;
-}
-.legal-content a:hover {
-  border-bottom-color: var(--forest);
+  max-width: 52ch;
 }
 
-.legal-contact-card {
-  margin-top: 56px;
-  padding: 32px 36px;
+.screening-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+.screening-panel {
   background: var(--paper-2);
-  border-radius: 10px;
+  border-radius: 12px;
+  padding: 32px 28px;
 }
-.legal-contact-card h4 {
+.screening-panel h4 {
   font-family: var(--ff-mono);
-  font-size: 11px;
+  font-size: 10px;
   letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--russet);
   margin-bottom: 14px;
 }
-.legal-contact-card p {
-  font-size: 15px;
+.screening-panel p {
+  font-size: 14px;
   line-height: 1.65;
   color: var(--ink-2);
+}
+.screening-panel p + p { margin-top: 10px; }
+.screening-panel strong { color: var(--ink); font-weight: 500; }
+
+.screening-spec {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.screening-spec > div {
+  padding: 20px 20px;
+  border-right: 1px solid var(--rule);
+  background: var(--paper);
+}
+.screening-spec > div:last-child { border-right: 0; }
+.screening-spec .spec-label {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
   margin-bottom: 8px;
 }
-.legal-contact-card a {
-  color: var(--forest);
-  font-weight: 500;
+.screening-spec .spec-value {
+  font-family: var(--ff-display);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+@media (max-width: 900px) {
+  .screening-head { grid-template-columns: 1fr; gap: 16px; }
+  .screening-body { grid-template-columns: 1fr; gap: 16px; }
+  .screening-spec { grid-template-columns: 1fr 1fr; }
+  .screening-spec > div:nth-child(2) { border-right: 0; }
+  .screening-spec > div:nth-child(1), .screening-spec > div:nth-child(2) {
+    border-bottom: 1px solid var(--rule);
+  }
 }
 
 </style>
@@ -742,7 +750,7 @@ footer {
   <div class="masthead-inner">
     <div>
       <span>Robinhood Health</span>
-      <span>Terms of Service</span>
+      <span>The model</span>
     </div>
     <div>
       <span>A virtual medical group</span>
@@ -752,100 +760,122 @@ footer {
 
 <nav class="nav">
   <div class="nav-inner">
-    <a href="index.html" class="brand">
-      <img src="RH-Logo.png" alt="Robinhood Health" class="brand-mark" />
+    <a href="/" class="brand">
+      <img src="/RH-Logo.png" alt="Robinhood Health" class="brand-mark" />
       Robinhood Health
     </a>
     <div class="nav-links">
-      <a href="howitworks.html">How it works</a>
-      <a href="model.html">Model</a>
-      <a href="partners.html">Partners</a>
-      <a href="platform.html">Platform</a>
-      <a href="about.html">About</a>
+      <a href="/howitworks/">How it works</a>
+      <a href="/model/" class="current">Model</a>
+      <a href="/partners/">Partners</a>
+      <a href="/platform/">Platform</a>
+      <a href="/about/">About</a>
     </div>
-    <a href="index.html#cta" class="nav-cta">Request briefing →</a>
+    <a href="/#cta" class="nav-cta">Request briefing →</a>
   </div>
 </nav>
 
 <main>
 
 <section class="hero">
-  <div class="eyebrow">Terms of Service</div>
-  <h1 class="reveal">Terms and conditions <em>for using our services.</em></h1>
+  <div class="eyebrow">The model</div>
+  <h1 class="reveal">Three screenings. <em>One managed service.</em></h1>
+  <p class="hero-lead reveal">Colorectal cancer, hemoglobin A1c, and kidney health evaluation. These are the three preventive measures with the widest gaps in Medicaid populations, the highest downstream cost when missed, and the best case for home-based screening as an operational solution.</p>
 </section>
 
-<div class="legal-page">
-  <div class="legal-meta">
-    <span>Terms of Service</span>
-    <span><b>Last updated</b> · December 2025</span>
+<section>
+  <div class="screening-section" id="crc">
+    <div class="screening-head" data-num="01">
+      <div>
+        <span class="screening-kicker">HEDIS COL · UDS COL-E</span>
+      </div>
+      <div>
+        <h3>Colorectal cancer <em>screening.</em></h3>
+        <p class="lede">One of the most preventable cancers, systematically underdiagnosed in populations who face the highest barriers to colonoscopy access.</p>
+      </div>
+    </div>
+    <div class="screening-body">
+      <div class="screening-panel">
+        <h4>Clinical rationale</h4>
+        <p>Colorectal cancer kills roughly 53,000 Americans each year. Five-year survival exceeds 90% when caught at stage I. It falls below 15% when caught at stage IV. The screening test works. The barrier is access.</p>
+        <p>Colonoscopy is the gold-standard screening, but it requires transportation, bowel prep, sedation, and a day off work. FIT&mdash;the fecal immunochemical test&mdash;is a USPSTF-recognized alternative that can be completed at home, requires no prep, and costs less than $25 per kit. For Medicaid populations, FIT is often the difference between a completed screening and no screening at all.</p>
+      </div>
+      <div class="screening-panel">
+        <h4>Member experience</h4>
+        <p>A text message. A conversation. A kit in the mail within days. Instructions on the inside of the box. A small sample returned in a postage-paid envelope.</p>
+        <p>Results in one to two weeks. If the test is negative, a follow-up confirming the result and a reminder to screen again next year. If the test is positive, an immediate SMS from the care team to schedule a diagnostic colonoscopy, coordinated by our nurses and tracked to completion.</p>
+      </div>
+    </div>
+    <div class="screening-spec">
+      <div><div class="spec-label">Method</div><div class="spec-value">FIT · at-home</div></div>
+      <div><div class="spec-label">Population</div><div class="spec-value">Ages 45–75</div></div>
+      <div><div class="spec-label">Cadence</div><div class="spec-value">Annual</div></div>
+      <div><div class="spec-label">Abnormal path</div><div class="spec-value">Colonoscopy</div></div>
+    </div>
   </div>
 
-  <div class="legal-callout">
-    By accessing or using the services provided by <strong>RH Health Inc. (dba Robinhood Health)</strong>, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.
+  <div class="screening-section" id="hba1c">
+    <div class="screening-head" data-num="02">
+      <div>
+        <span class="screening-kicker">HEDIS HBD · UDS GSD</span>
+      </div>
+      <div>
+        <h3>Diabetes control <em>(HbA1c).</em></h3>
+        <p class="lede">The best early indicator of whether a member's diabetes is under control, and one of the most predictive numbers in all of preventive care.</p>
+      </div>
+    </div>
+    <div class="screening-body">
+      <div class="screening-panel">
+        <h4>Clinical rationale</h4>
+        <p>Hemoglobin A1c measures the average blood glucose level over the preceding two to three months. An HbA1c below 8% substantially reduces the risk of diabetic retinopathy, neuropathy, nephropathy, and cardiovascular complications. An HbA1c above 9% is associated with dramatically accelerated disease progression.</p>
+        <p>Despite this, 28% of FQHC diabetic patients have uncontrolled blood sugar or received no A1c test during the measurement year. Not because the test is complicated. Because getting a member in for the draw, coordinating the lab, and closing the loop on the result is operationally expensive.</p>
+      </div>
+      <div class="screening-panel">
+        <h4>Member experience</h4>
+        <p>A capillary sampling kit arrives at home. A small finger-stick produces enough blood for a lab-quality A1c result. The member completes the draw at home, seals the sample, and mails it back.</p>
+        <p>Results return within a week. Members in range receive a confirmation and a reminder for next year's test. Members out of range are contacted by the care team with a recommended next step, and the member's primary care provider is notified with a structured clinical summary.</p>
+      </div>
+    </div>
+    <div class="screening-spec">
+      <div><div class="spec-label">Method</div><div class="spec-value">Capillary · at-home</div></div>
+      <div><div class="spec-label">Population</div><div class="spec-value">Members w/ T1D or T2D</div></div>
+      <div><div class="spec-label">Cadence</div><div class="spec-value">Annual</div></div>
+      <div><div class="spec-label">Abnormal path</div><div class="spec-value">PCP escalation</div></div>
+    </div>
   </div>
 
-  <div class="legal-content">
-    <h2>Description of services</h2>
-    <p>Robinhood Health provides virtual healthcare services, including:</p>
-    <ul>
-      <li>At-home health screening test kits</li>
-      <li>Telehealth consultations</li>
-      <li>Care coordination services</li>
-      <li>Health education and support</li>
-    </ul>
-    <p>Our services are provided by licensed healthcare professionals and are designed to supplement, not replace, your relationship with your primary care provider.</p>
-
-    <h2>Eligibility</h2>
-    <p>To use our services, you must:</p>
-    <ul>
-      <li>Be at least 18 years of age, or have parental or guardian consent</li>
-      <li>Be a resident of a state where we are authorized to provide services</li>
-      <li>Provide accurate and complete information</li>
-      <li>Have coverage through a participating health plan for no-cost services</li>
-    </ul>
-
-    <h2>Medical disclaimer</h2>
-    <p>The information and services provided by Robinhood Health are for informational and healthcare purposes only. Our services:</p>
-    <ul>
-      <li>Do not constitute emergency medical care</li>
-      <li>Are not a substitute for in-person medical evaluation when needed</li>
-      <li>Should not be used for life-threatening conditions</li>
-    </ul>
-    <p><strong>If you are experiencing a medical emergency, call 911 immediately.</strong></p>
-
-    <h2>User responsibilities</h2>
-    <p>When using our services, you agree to:</p>
-    <ul>
-      <li>Provide accurate personal and health information</li>
-      <li>Follow instructions for completing at-home tests</li>
-      <li>Respond to communications from our care team</li>
-      <li>Share relevant health information with your healthcare providers</li>
-      <li>Not misuse or share your account credentials</li>
-    </ul>
-
-    <h2>Privacy and data protection</h2>
-    <p>Your privacy is important to us. Our collection and use of personal and health information is governed by our <a href="privacy.html">Privacy Policy</a> and applicable laws including HIPAA. By using our services, you consent to our data practices as described in our Privacy Policy.</p>
-
-    <h2>Intellectual property</h2>
-    <p>All content, trademarks, and materials on our website and in our services are owned by or licensed to Robinhood Health. You may not copy, reproduce, or distribute our content without written permission.</p>
-
-    <h2>Limitation of liability</h2>
-    <p>To the maximum extent permitted by law, Robinhood Health shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of our services. Our total liability shall not exceed the amount paid by you or your health plan for the services giving rise to the claim.</p>
-
-    <h2>Modifications to terms</h2>
-    <p>We may update these Terms of Service from time to time. We will notify you of significant changes by posting the new terms on our website and updating the "Last Updated" date. Your continued use of our services after changes constitutes acceptance of the modified terms.</p>
-
-    <h2>Governing law</h2>
-    <p>These Terms of Service shall be governed by and construed in accordance with the laws of the State of California, without regard to its conflict of law provisions.</p>
+  <div class="screening-section" id="ked">
+    <div class="screening-head" data-num="03">
+      <div>
+        <span class="screening-kicker">HEDIS / UDS · KED</span>
+      </div>
+      <div>
+        <h3>Kidney health <em>evaluation.</em></h3>
+        <p class="lede">The most persistent measure gap in Medicaid, and the most responsive to home-based collection. This is where the widest distance between commercial and Medicaid performance exists.</p>
+      </div>
+    </div>
+    <div class="screening-body">
+      <div class="screening-panel">
+        <h4>Clinical rationale</h4>
+        <p>About 40% of adults with diabetes will develop chronic kidney disease. Catching it early&mdash;before symptoms appear, before the kidneys have sustained permanent damage&mdash;is what makes intervention possible. The KED measure requires both a serum eGFR and a urine albumin-to-creatinine ratio (uACR) within the measurement year.</p>
+        <p>The uACR is where the gap lives. Most members with diabetes have had an eGFR drawn routinely, but uACR completion trails badly. Annual uACR requires a urine sample, which requires an office visit, which is the exact barrier our model removes.</p>
+      </div>
+      <div class="screening-panel">
+        <h4>Member experience</h4>
+        <p>A kit containing a collection cup and a stabilizing dropper. Simple written and video instructions. A return envelope for the sample.</p>
+        <p>Results return in a week. In-range results are documented. Out-of-range results trigger escalation to the primary care team with a recommendation for nephrology referral if clinically warranted. The combined eGFR and uACR close the KED measure.</p>
+      </div>
+    </div>
+    <div class="screening-spec">
+      <div><div class="spec-label">Method</div><div class="spec-value">uACR · at-home</div></div>
+      <div><div class="spec-label">Population</div><div class="spec-value">Members w/ diabetes</div></div>
+      <div><div class="spec-label">Cadence</div><div class="spec-value">Annual</div></div>
+      <div><div class="spec-label">Abnormal path</div><div class="spec-value">PCP · nephrology</div></div>
+    </div>
   </div>
+</section>
 
-  <div class="legal-contact-card">
-    <h4>Contact us</h4>
-    <p>If you have questions about these Terms of Service, please contact us at <a href="mailto:info@robinhoodhealth.co">info@robinhoodhealth.co</a>.</p>
-  </div>
-</div>
-
-<div class="ornament quiet" aria-hidden="true" style="margin-top: 96px;">
+<div class="ornament quiet" aria-hidden="true" style="margin-top: 64px;">
   <svg viewBox="0 0 80 14" fill="none" xmlns="http://www.w3.org/2000/svg">
     <circle cx="2" cy="7" r="1.5" fill="currentColor"/>
     <line x1="6" y1="7" x2="70" y2="7" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
@@ -853,14 +883,29 @@ footer {
   </svg>
 </div>
 
+<section class="cta" id="cta">
+  <div class="cta-inner">
+    <div class="eyebrow">Next step</div>
+    <h2>The model <em>in your numbers.</em></h2>
+    <p>Share your population size and measure priorities. We'll build a specific impact estimate for what the three-screening program could look like against your book of business.</p>
+    <a href="mailto:info@robinhoodhealth.co?subject=Model%20deep-dive" class="cta-btn">
+      Request an impact estimate
+      <svg viewBox="0 0 12 12" fill="none"><path d="M1 6h10M6 1l5 5-5 5" stroke="currentColor" stroke-width="1.3"/></svg>
+    </a>
+    <div class="cta-contact">
+      or write to <a href="mailto:info@robinhoodhealth.co">info@robinhoodhealth.co</a>
+    </div>
+  </div>
+</section>
+
 
 </main>
 
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <a href="index.html" class="brand">
-        <img src="RH-Logo.png" alt="Robinhood Health" class="brand-mark" />
+      <a href="/" class="brand">
+        <img src="/RH-Logo.png" alt="Robinhood Health" class="brand-mark" />
         Robinhood Health
       </a>
       <p>A virtual medical group closing preventive screening gaps for high-risk Medicaid populations. RH Health Inc., dba Robinhood Health.</p>
@@ -868,43 +913,53 @@ footer {
     <div class="footer-col">
       <h4>Program</h4>
       <ul>
-        <li><a href="howitworks.html">How it works</a></li>
-        <li><a href="model.html">The model</a></li>
-        <li><a href="platform.html">Platform</a></li>
-        <li><a href="index.html#roadmap">Roadmap</a></li>
+        <li><a href="/howitworks/">How it works</a></li>
+        <li><a href="/model/">The model</a></li>
+        <li><a href="/platform/">Platform</a></li>
+        <li><a href="/#roadmap">Roadmap</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Partners</h4>
       <ul>
-        <li><a href="partners.html">Overview</a></li>
-        <li><a href="fqhc.html">For FQHCs</a></li>
-        <li><a href="mco.html">For Medicaid plans</a></li>
-        <li><a href="index.html#cta">Request briefing</a></li>
+        <li><a href="/partners/">Overview</a></li>
+        <li><a href="/fqhc/">For FQHCs</a></li>
+        <li><a href="/mco/">For Medicaid plans</a></li>
+        <li><a href="/#cta">Request briefing</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Company</h4>
       <ul>
-        <li><a href="about.html">About</a></li>
-        <li><a href="https://www.robinhoodhealth.co/story.html">Robinhood Tales</a></li>
-        <li><a href="letters.html">Founder's letters</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="https://www.robinhoodhealth.co/story/">Robinhood Tales</a></li>
+        <li><a href="/letters/">Founder's letters</a></li>
         <li><a href="mailto:info@robinhoodhealth.co">Contact</a></li>
       </ul>
     </div>
+  
   </div>
   <div class="footer-colophon">
     <div><span class="footer-mark"><svg viewBox="0 0 22 8" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="4" x2="18" y2="4" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><polyline points="14,1 20,4 14,7" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg></span>© 2026 RH Health Inc., dba Robinhood Health</div>
     <div class="legal">
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
-      <a href="hipaa.html">HIPAA notice</a>
-      <a href="accessibility.html">Accessibility</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/hipaa/">HIPAA notice</a>
+      <a href="/accessibility/">Accessibility</a>
     </div>
   </div>
 </footer>
 
 <script>
+document.querySelectorAll('.faq-item').forEach(item => {
+  const btn = item.querySelector('.faq-q');
+  const body = item.querySelector('.faq-a');
+  btn.addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    item.classList.toggle('open');
+    body.style.maxHeight = isOpen ? '0px' : body.scrollHeight + 'px';
+  });
+});
 const io = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }

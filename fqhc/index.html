@@ -11,9 +11,9 @@
 </script>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-<title>Accessibility — Robinhood Health</title>
-<meta name="description" content="Robinhood Health's commitment to making our website and services accessible to everyone." />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<title>For FQHCs — Robinhood Health</title>
+<meta name="description" content="Robinhood Health operates as a contracted care delivery service alongside FQHCs, closing UDS measure gaps without staff burden or EHR integration." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -123,8 +123,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .brand {
   display: flex;
-  align-items: baseline;
-  gap: 10px;
+  align-items: center;
+  gap: 12px;
   font-family: var(--ff-display);
   font-size: 22px;
   font-weight: 500;
@@ -132,11 +132,12 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   color: var(--forest);
 }
 .brand-mark {
-  width: 14px; height: 14px;
-  position: relative; top: 1px;
+  width: 36px; height: 36px;
+  display: block;
+  object-fit: contain;
   transition: transform .7s cubic-bezier(.34,1.56,.64,1);
 }
-.brand:hover .brand-mark { transform: rotate(24deg) scale(1.08); }
+.brand:hover .brand-mark { transform: scale(1.08); }
 .nav-links {
   display: flex;
   gap: 28px;
@@ -613,127 +614,94 @@ footer {
   .section-hd { grid-template-columns: 1fr; gap: 20px; }
 }
 
-/* legal page layout */
-.legal-page {
-  max-width: 72ch;
-  margin: 0 auto;
-  padding: 0 32px;
+</style>
+<style>
+/* page-specific styles */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 16px;
 }
-.legal-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  padding: 24px 0;
-  margin-bottom: 48px;
-  border-top: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
+.stat-card {
+  background: var(--paper);
+  padding: 36px 28px 32px;
+}
+.stat-card .number {
+  font-family: var(--ff-display);
+  font-weight: 400;
+  font-size: clamp(52px, 7vw, 88px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--forest);
+  margin-bottom: 16px;
+}
+.stat-card .label {
+  font-family: var(--ff-display);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 12px;
+  max-width: 22ch;
+}
+.stat-card .source {
   font-family: var(--ff-mono);
-  font-size: 11px;
-  letter-spacing: .1em;
+  font-size: 10px;
+  letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--ink-3);
 }
-.legal-meta b { color: var(--russet); font-weight: 500; }
+@media (max-width: 800px) { .stats-grid { grid-template-columns: 1fr; } }
 
-.legal-callout {
-  padding: 32px 40px;
-  background: var(--paper-2);
-  border-left: 3px solid var(--russet);
-  border-radius: 2px;
-  margin-bottom: 56px;
-  font-family: var(--ff-display);
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 1.55;
-  color: var(--ink-2);
-}
-.legal-callout strong { color: var(--ink); font-weight: 500; }
-
-.legal-content {
-  font-size: 16px;
-  line-height: 1.75;
-  color: var(--ink-2);
-}
-.legal-content h2 {
-  font-family: var(--ff-display);
-  font-weight: 400;
-  font-size: clamp(26px, 3vw, 34px);
-  letter-spacing: -0.015em;
-  color: var(--ink);
-  margin: 56px 0 16px;
-  padding-top: 24px;
+/* two-column "what you get / what we need" */
+.partner-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-top: 8px;
+  padding-top: 32px;
   border-top: 1px solid var(--rule);
 }
-.legal-content h2:first-child {
-  margin-top: 0;
-  padding-top: 0;
-  border-top: 0;
-}
-.legal-content h3 {
-  font-family: var(--ff-display);
-  font-weight: 500;
-  font-size: 20px;
-  letter-spacing: -0.005em;
-  color: var(--ink);
-  margin: 28px 0 8px;
-}
-.legal-content p { margin-bottom: 16px; }
-.legal-content p:last-child { margin-bottom: 0; }
-.legal-content ul {
-  list-style: none;
-  margin: 16px 0 24px;
-  padding: 0;
-}
-.legal-content ul li {
-  position: relative;
-  padding: 6px 0 6px 28px;
-  line-height: 1.65;
-}
-.legal-content ul li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 17px;
-  width: 14px;
-  height: 1px;
-  background: var(--russet);
-}
-.legal-content strong { color: var(--ink); font-weight: 500; }
-.legal-content a {
-  color: var(--forest);
-  border-bottom: 1px solid rgba(31, 59, 46, .3);
-  padding-bottom: 1px;
-  transition: all .2s;
-}
-.legal-content a:hover {
-  border-bottom-color: var(--forest);
-}
-
-.legal-contact-card {
-  margin-top: 56px;
-  padding: 32px 36px;
-  background: var(--paper-2);
-  border-radius: 10px;
-}
-.legal-contact-card h4 {
+.partner-split-col h3 {
   font-family: var(--ff-mono);
   font-size: 11px;
   letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--russet);
-  margin-bottom: 14px;
+  margin-bottom: 24px;
 }
-.legal-contact-card p {
-  font-size: 15px;
-  line-height: 1.65;
+.partner-split-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.partner-split-col li {
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--rule);
+}
+.partner-split-col li:last-child { border-bottom: 0; padding-bottom: 0; }
+.partner-split-col strong {
+  display: block;
+  font-family: var(--ff-display);
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.partner-split-col p {
+  font-size: 14px;
+  line-height: 1.6;
   color: var(--ink-2);
-  margin-bottom: 8px;
 }
-.legal-contact-card a {
-  color: var(--forest);
-  font-weight: 500;
-}
-
+@media (max-width: 800px) { .partner-split { grid-template-columns: 1fr; gap: 32px; } }
 </style>
 </head>
 <body>
@@ -742,7 +710,7 @@ footer {
   <div class="masthead-inner">
     <div>
       <span>Robinhood Health</span>
-      <span>Accessibility</span>
+      <span>For FQHCs</span>
     </div>
     <div>
       <span>A virtual medical group</span>
@@ -752,97 +720,37 @@ footer {
 
 <nav class="nav">
   <div class="nav-inner">
-    <a href="index.html" class="brand">
-      <img src="RH-Logo.png" alt="Robinhood Health" class="brand-mark" />
+    <a href="/" class="brand">
+      <img src="/RH-Logo.png" alt="Robinhood Health" class="brand-mark" />
       Robinhood Health
     </a>
     <div class="nav-links">
-      <a href="howitworks.html">How it works</a>
-      <a href="model.html">Model</a>
-      <a href="partners.html">Partners</a>
-      <a href="platform.html">Platform</a>
-      <a href="about.html">About</a>
+      <a href="/howitworks/">How it works</a>
+      <a href="/model/">Model</a>
+      <a href="/partners/" class="current">Partners</a>
+      <a href="/platform/">Platform</a>
+      <a href="/about/">About</a>
     </div>
-    <a href="index.html#cta" class="nav-cta">Request briefing →</a>
+    <a href="/#cta" class="nav-cta">Request briefing →</a>
   </div>
 </nav>
 
 <main>
 
 <section class="hero">
-  <div class="eyebrow">Accessibility</div>
-  <h1 class="reveal">Our commitment to making healthcare <em>accessible to everyone.</em></h1>
+  <div class="eyebrow">A contracted care delivery service</div>
+  <h1 class="reveal">Close your UDS gaps. <em>End to end.</em></h1>
+  <p class="hero-lead reveal">Robinhood Health operates as a contracted clinical partner alongside FQHCs, closing UDS measure gaps for the hardest-to-reach members without adding staff, adding technology, or integrating with your EHR. You send us a patient list. We do the rest.</p>
+  <div class="hero-ctas reveal">
+    <a href="/#cta" class="btn btn-primary">
+      Request a partnership call
+      <svg viewBox="0 0 10 10" fill="none"><path d="M1 5h8M5 1l4 4-4 4" stroke="currentColor" stroke-width="1.2"/></svg>
+    </a>
+    <a href="#workflow" class="btn btn-ghost">See how it works</a>
+  </div>
 </section>
 
-<div class="legal-page">
-  <div class="legal-meta">
-    <span>Accessibility Statement</span>
-    <span><b>Last updated</b> · December 2025</span>
-  </div>
-
-  <div class="legal-callout">
-    <strong>Our mission.</strong> Robinhood Health is committed to ensuring that our website and services are accessible to all individuals, including those with disabilities. We believe everyone deserves equal access to healthcare information and services.
-  </div>
-
-  <div class="legal-content">
-    <h2>Our accessibility commitment</h2>
-    <p>At Robinhood Health, accessibility is core to our mission of making quality healthcare accessible to underserved communities. We are committed to providing a website and digital services that are usable by all people, regardless of ability.</p>
-
-    <h2>Accessibility standards</h2>
-    <p>We strive to conform to the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA standards. These guidelines help make web content more accessible to people with disabilities, including those who:</p>
-    <ul>
-      <li>Use screen readers or other assistive technologies</li>
-      <li>Have visual impairments, including color blindness</li>
-      <li>Have hearing impairments</li>
-      <li>Have motor impairments that affect their ability to use a mouse</li>
-      <li>Have cognitive or learning disabilities</li>
-    </ul>
-
-    <h2>Accessibility features</h2>
-    <p>Our website includes the following accessibility features:</p>
-    <ul>
-      <li><strong>Keyboard Navigation.</strong> All functionality is available using a keyboard.</li>
-      <li><strong>Alt Text.</strong> Images include descriptive alternative text.</li>
-      <li><strong>Color Contrast.</strong> Text has sufficient contrast against backgrounds.</li>
-      <li><strong>Resizable Text.</strong> Text can be resized without loss of functionality.</li>
-      <li><strong>Clear Headings.</strong> Content is organized with descriptive headings.</li>
-      <li><strong>Form Labels.</strong> Form fields have clear, associated labels.</li>
-      <li><strong>Focus Indicators.</strong> Visible focus indicators for keyboard navigation.</li>
-      <li><strong>Responsive Design.</strong> Content adapts to different screen sizes and devices.</li>
-    </ul>
-
-    <h2>Accessible healthcare services</h2>
-    <p>Beyond our website, we are committed to making our healthcare services accessible:</p>
-    <ul>
-      <li><strong>Multilingual Support.</strong> Services available in English and Spanish, with additional languages upon request.</li>
-      <li><strong>At-Home Testing.</strong> Our at-home test kits eliminate transportation barriers.</li>
-      <li><strong>SMS Communication.</strong> Text-based communication for those who prefer not to use apps.</li>
-      <li><strong>Phone Support.</strong> Live phone support available for those who need assistance.</li>
-      <li><strong>Large Print Materials.</strong> Available upon request.</li>
-      <li><strong>TTY/TDD Services.</strong> Available for deaf or hard-of-hearing individuals.</li>
-    </ul>
-
-    <h2>Ongoing efforts</h2>
-    <p>Accessibility is an ongoing effort. We regularly:</p>
-    <ul>
-      <li>Review and test our website for accessibility</li>
-      <li>Train our team on accessibility best practices</li>
-      <li>Incorporate accessibility into our development process</li>
-      <li>Update our practices based on user feedback</li>
-    </ul>
-
-    <h2>Third-party content</h2>
-    <p>Our website may link to third-party websites or include third-party content. While we encourage our partners to follow accessibility best practices, we cannot guarantee the accessibility of third-party content.</p>
-  </div>
-
-  <div class="legal-contact-card">
-    <h4>Feedback and assistance</h4>
-    <p>We welcome your feedback on the accessibility of our website and services. If you encounter any accessibility barriers or need assistance, please contact us at <a href="mailto:accessibility@robinhoodhealth.co">accessibility@robinhoodhealth.co</a>.</p>
-    <p>When contacting us, please describe the specific accessibility issue you encountered, including the page URL and any assistive technology you are using. We will work to address the issue and provide the information or service you need in an accessible format.</p>
-  </div>
-</div>
-
-<div class="ornament quiet" aria-hidden="true" style="margin-top: 96px;">
+<div class="ornament" aria-hidden="true">
   <svg viewBox="0 0 80 14" fill="none" xmlns="http://www.w3.org/2000/svg">
     <circle cx="2" cy="7" r="1.5" fill="currentColor"/>
     <line x1="6" y1="7" x2="70" y2="7" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
@@ -850,14 +758,251 @@ footer {
   </svg>
 </div>
 
+<section id="uds">
+  <div class="section-hd" data-num="01">
+    <div class="section-num"><b>01</b>The UDS reality</div>
+    <div>
+      <h2>Persistent gaps. <em>Year after year.</em></h2>
+      <p class="section-lede">National UDS performance shows care gaps that incremental quality improvement has not been able to close. The binding constraint is not motivation. It is the operational capacity to reach members between visits.</p>
+    </div>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="number">42.71%</div>
+      <div class="label">FQHC patients up to date on colorectal cancer screening.</div>
+      <div class="source">2024 National UDS · vs. 74.4% Healthy People target</div>
+    </div>
+    <div class="stat-card">
+      <div class="number">28.13%</div>
+      <div class="label">Diabetic FQHC patients uncontrolled or untested during the measurement year.</div>
+      <div class="source">2024 National UDS · HbA1c &gt;9% or no test</div>
+    </div>
+    <div class="stat-card">
+      <div class="number">&lt; 45%</div>
+      <div class="label">Annual kidney health evaluation among diabetic patients.</div>
+      <div class="source">NCQA HEDIS benchmark · KED</div>
+    </div>
+  </div>
+</section>
+
+<section id="workflow">
+  <div class="section-hd" data-num="02">
+    <div class="section-num"><b>02</b>How it works</div>
+    <div>
+      <h2>A partnership that is <em>operationally light.</em></h2>
+      <p class="section-lede">We integrate into your UDS-reporting workflow without adding steps to your clinical workflow. Every action we take runs through a defined state machine, every clinical decision passes through a licensed physician, and every documented outcome writes back to your EHR.</p>
+    </div>
+  </div>
+
+  <ol class="steplist">
+    <li>
+      <div>
+        <strong>You send us a patient list.</strong>
+        <p>Name, date of birth, contact information. Via secure file transfer or API, whichever your stack supports. This is the only operational ask on your side.</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <strong>Sherwood enriches the data.</strong>
+        <p>Our platform queries Carequality and Commonwell to pull each member's clinical history from the networks Epic, Cerner, and athenahealth already participate in. No integration. No data use agreement.</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <strong>Our CDS engine identifies eligible members.</strong>
+        <p>Rules aligned to USPSTF guidelines and HEDIS measures (COL-E, GSD, KED) surface each open care gap with clinical reasoning and severity.</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <strong>Mariann engages on your FQHC's behalf.</strong>
+        <p>Our AI nursing assistant conducts bilingual SMS outreach identified as coming from your clinic, verifies identity by date of birth, and collects pre-screening clinical history before any kit is sent.</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <strong>Our physicians sign each order.</strong>
+        <p>No kit ships without licensed-physician review of the member's pre-screening responses, relevant clinical history, and recommended action. Physician sign-off happens within 48 hours of member response.</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <strong>Kits ship, results return, abnormals escalate.</strong>
+        <p>CLIA-certified kits shipped to the home. Results return to Sherwood, reviewed by the medical director, with closed-loop coordination for positive findings to in-network diagnostic follow-up.</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <strong>Results document to your EHR.</strong>
+        <p>Completed screenings write back as structured chart notes, enabling direct UDS measure credit without additional documentation work on your side.</p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<section id="terms">
+  <div class="section-hd" data-num="03">
+    <div class="section-num"><b>03</b>The partnership</div>
+    <div>
+      <h2>What you get. <em>What we need.</em></h2>
+      <p class="section-lede">We designed the partnership so that the asks on your team are minimal and the outputs back to your team are maximal. The table below is a complete accounting of both.</p>
+    </div>
+  </div>
+
+  <div class="partner-split">
+    <div class="partner-split-col">
+      <h3>What you get</h3>
+      <ul>
+        <li>
+          <strong>UDS measure credit</strong>
+          <p>Structured documentation mapped to COL-E, GSD, and KED, delivered into your EHR without reconciliation work.</p>
+        </li>
+        <li>
+          <strong>Closed-loop follow-up</strong>
+          <p>Abnormal FIT results routed to in-network colonoscopy. Elevated HbA1c escalated to your PCP. Tracked to resolution.</p>
+        </li>
+        <li>
+          <strong>Co-branded member outreach</strong>
+          <p>Every member touchpoint arrives on behalf of your FQHC. Patients stay attributed to your medical home.</p>
+        </li>
+        <li>
+          <strong>Monthly dashboards</strong>
+          <p>Reach, completion rate, result distribution, and gap closure reported by clinic, measure, and population segment.</p>
+        </li>
+        <li>
+          <strong>Quarterly business reviews</strong>
+          <p>Cohort analysis, follow-up disposition, and a forward impact estimate for the upcoming quarter.</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="partner-split-col">
+      <h3>What we need</h3>
+      <ul>
+        <li>
+          <strong>A patient list</strong>
+          <p>Demographics and contact information for the members you want us to engage. Via secure file transfer or API.</p>
+        </li>
+        <li>
+          <strong>A Business Associate Agreement</strong>
+          <p>Standard BAA executed in week one. We've reviewed and signed many.</p>
+        </li>
+        <li>
+          <strong>One point of clinical contact</strong>
+          <p>A single clinical lead for escalation of abnormal results and coordination with your care team.</p>
+        </li>
+        <li>
+          <strong>Nothing else</strong>
+          <p>No EHR access, no IT project, no staff reassignment, no workflow change. That is the design commitment.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="timeline">
+  <div class="section-hd" data-num="04">
+    <div class="section-num"><b>04</b>Timeline</div>
+    <div>
+      <h2>From signature <em>to live. Six weeks.</em></h2>
+      <p class="section-lede">Most partnerships are in-market inside a 45-day window, which means we can move the needle on measure completion inside a current measure year from a mid-year start.</p>
+    </div>
+  </div>
+
+  <ol class="steplist">
+    <li>
+      <div>
+        <strong>Week 1 — Paperwork</strong>
+        <p>BAA execution. Data-sharing agreement. Secure file transfer credentials provisioned. Point-of-contact handoffs on both sides.</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <strong>Weeks 2–3 — Data</strong>
+        <p>First patient list transmitted. Sherwood enrichment run. CDS alerts generated. Medical director review of first cohort.</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <strong>Weeks 3–4 — First outreach</strong>
+        <p>Initial member touchpoints go out. Identity verification, pre-screening, physician sign-off, first kits in the mail.</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <strong>Weeks 5–6 — Steady state</strong>
+        <p>Results flowing back. First abnormal result follow-ups scheduled. First reporting dashboard delivered. Second cohort staged.</p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<section id="faq">
+  <div class="section-hd" data-num="05">
+    <div class="section-num"><b>05</b>FAQ</div>
+    <div>
+      <h2>Questions FQHC leaders <em>ask us first.</em></h2>
+    </div>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q"><span class="num">01</span><span class="label">Who is the ordering provider of record?</span><span class="icon"></span></button>
+      <div class="faq-a"><div class="faq-a-inner">Robinhood Health is a virtual medical group. Our physicians sign every order and carry the clinical responsibility that goes with that signature. For your UDS and compliance documentation, orders show our physicians as the ordering provider, with your FQHC identified as the referring medical home.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q"><span class="num">02</span><span class="label">Do patients stay attributed to our FQHC?</span><span class="icon"></span></button>
+      <div class="faq-a"><div class="faq-a-inner">Yes. Every member touchpoint arrives on behalf of your FQHC. Patients understand their medical home has sent us to close a specific care gap. We do not enroll members into Robinhood Health as a separate medical home, and we do not displace the primary care relationship.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q"><span class="num">03</span><span class="label">How does this interact with our sliding fee scale?</span><span class="icon"></span></button>
+      <div class="faq-a"><div class="faq-a-inner">It does not. All preventive screening services in our program are covered at zero cost-sharing for Medicaid beneficiaries under the ACA. For uninsured members, we work with partner FQHCs to leverage existing financial assistance programs and in-network specialist relationships. No member receives a bill for our services.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q"><span class="num">04</span><span class="label">What if a member has care at another provider?</span><span class="icon"></span></button>
+      <div class="faq-a"><div class="faq-a-inner">Sherwood's Carequality and Commonwell queries retrieve clinical data from all of a member's providers. Members who have already received an in-date screening at another site are not identified as overdue, and will not be outreach targets. This prevents redundant testing and respects existing care relationships.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q"><span class="num">05</span><span class="label">How are abnormal results followed up?</span><span class="icon"></span></button>
+      <div class="faq-a"><div class="faq-a-inner">Our population health nurses manage every abnormal result as clinicians of record. For positive FIT results, we coordinate with contracted in-network gastroenterology practices and track diagnostic colonoscopy completion to resolution. For elevated HbA1c or abnormal ACR findings, we escalate to your primary care team with a structured summary and recommended action. Your FQHC is notified of every abnormal result.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q"><span class="num">06</span><span class="label">What reporting do we get for UDS?</span><span class="icon"></span></button>
+      <div class="faq-a"><div class="faq-a-inner">Structured chart notes documented to your EHR for every completed screening, mapped to the CPT and LOINC codes UDS uses for COL-E, GSD, and KED. On top of that, monthly dashboards show reach, completion, result distribution, and measure closure by clinic. A quarterly cohort analysis is delivered in a format suitable for board and grant reporting.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="ornament quiet" aria-hidden="true">
+  <svg viewBox="0 0 80 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="2" cy="7" r="1.5" fill="currentColor"/>
+    <line x1="6" y1="7" x2="70" y2="7" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+    <polyline points="62,3 72,7 62,11" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</div>
+
+<section class="cta" id="cta">
+  <div class="cta-inner">
+    <div class="eyebrow">06 / Next step</div>
+    <h2>Tell us about <em>your members.</em></h2>
+    <p>A 30-minute partnership call walks through the operational fit for your FQHC: which measures are open, which sites are highest priority, and what the first 90 days could look like.</p>
+    <a href="mailto:info@robinhoodhealth.co?subject=FQHC%20partnership%20call" class="cta-btn">
+      Request a partnership call
+      <svg viewBox="0 0 12 12" fill="none"><path d="M1 6h10M6 1l5 5-5 5" stroke="currentColor" stroke-width="1.3"/></svg>
+    </a>
+    <div class="cta-contact">
+      or write to <a href="mailto:info@robinhoodhealth.co">info@robinhoodhealth.co</a>
+    </div>
+  </div>
+</section>
 
 </main>
 
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <a href="index.html" class="brand">
-        <img src="RH-Logo.png" alt="Robinhood Health" class="brand-mark" />
+      <a href="/" class="brand">
+        <img src="/RH-Logo.png" alt="Robinhood Health" class="brand-mark" />
         Robinhood Health
       </a>
       <p>A virtual medical group closing preventive screening gaps for high-risk Medicaid populations. RH Health Inc., dba Robinhood Health.</p>
@@ -865,43 +1010,53 @@ footer {
     <div class="footer-col">
       <h4>Program</h4>
       <ul>
-        <li><a href="howitworks.html">How it works</a></li>
-        <li><a href="model.html">The model</a></li>
-        <li><a href="platform.html">Platform</a></li>
-        <li><a href="index.html#roadmap">Roadmap</a></li>
+        <li><a href="/howitworks/">How it works</a></li>
+        <li><a href="/model/">The model</a></li>
+        <li><a href="/platform/">Platform</a></li>
+        <li><a href="/#roadmap">Roadmap</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Partners</h4>
       <ul>
-        <li><a href="partners.html">Overview</a></li>
-        <li><a href="fqhc.html">For FQHCs</a></li>
-        <li><a href="mco.html">For Medicaid plans</a></li>
-        <li><a href="index.html#cta">Request briefing</a></li>
+        <li><a href="/partners/">Overview</a></li>
+        <li><a href="/fqhc/">For FQHCs</a></li>
+        <li><a href="/mco/">For Medicaid plans</a></li>
+        <li><a href="/#cta">Request briefing</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Company</h4>
       <ul>
-        <li><a href="about.html">About</a></li>
-        <li><a href="https://www.robinhoodhealth.co/story.html">Robinhood Tales</a></li>
-        <li><a href="letters.html">Founder's letters</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="https://www.robinhoodhealth.co/story/">Robinhood Tales</a></li>
+        <li><a href="/letters/">Founder's letters</a></li>
         <li><a href="mailto:info@robinhoodhealth.co">Contact</a></li>
       </ul>
     </div>
+  
   </div>
   <div class="footer-colophon">
     <div><span class="footer-mark"><svg viewBox="0 0 22 8" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="4" x2="18" y2="4" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><polyline points="14,1 20,4 14,7" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg></span>© 2026 RH Health Inc., dba Robinhood Health</div>
     <div class="legal">
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
-      <a href="hipaa.html">HIPAA notice</a>
-      <a href="accessibility.html">Accessibility</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/hipaa/">HIPAA notice</a>
+      <a href="/accessibility/">Accessibility</a>
     </div>
   </div>
 </footer>
 
 <script>
+document.querySelectorAll('.faq-item').forEach(item => {
+  const btn = item.querySelector('.faq-q');
+  const body = item.querySelector('.faq-a');
+  btn.addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    item.classList.toggle('open');
+    body.style.maxHeight = isOpen ? '0px' : body.scrollHeight + 'px';
+  });
+});
 const io = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }

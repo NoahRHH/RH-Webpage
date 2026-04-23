@@ -11,9 +11,9 @@
 </script>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-<title>About — Robinhood Health</title>
-<meta name="description" content="Robinhood Health is a virtual medical group built on a narrow thesis: that care gaps are a distribution problem before they are anything else." />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<title>Privacy Policy — Robinhood Health</title>
+<meta name="description" content="How Robinhood Health collects, uses, and protects your personal and health information." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -123,8 +123,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .brand {
   display: flex;
-  align-items: center;
-  gap: 12px;
+  align-items: baseline;
+  gap: 10px;
   font-family: var(--ff-display);
   font-size: 22px;
   font-weight: 500;
@@ -132,12 +132,11 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   color: var(--forest);
 }
 .brand-mark {
-  width: 36px; height: 36px;
-  display: block;
-  object-fit: contain;
+  width: 14px; height: 14px;
+  position: relative; top: 1px;
   transition: transform .7s cubic-bezier(.34,1.56,.64,1);
 }
-.brand:hover .brand-mark { transform: scale(1.08); }
+.brand:hover .brand-mark { transform: rotate(24deg) scale(1.08); }
 .nav-links {
   display: flex;
   gap: 28px;
@@ -614,21 +613,127 @@ footer {
   .section-hd { grid-template-columns: 1fr; gap: 20px; }
 }
 
-</style>
-<style>
-.manifesto {
-  text-align: center;
-  max-width: 24ch;
-  margin: 72px auto 96px;
-  font-family: var(--ff-display);
-  font-weight: 300;
-  font-style: italic;
-  font-size: clamp(32px, 5vw, 56px);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  color: var(--forest);
+/* legal page layout */
+.legal-page {
+  max-width: 72ch;
+  margin: 0 auto;
+  padding: 0 32px;
 }
-.manifesto b { font-weight: 500; font-style: normal; color: var(--ink); }
+.legal-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 24px 0;
+  margin-bottom: 48px;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.legal-meta b { color: var(--russet); font-weight: 500; }
+
+.legal-callout {
+  padding: 32px 40px;
+  background: var(--paper-2);
+  border-left: 3px solid var(--russet);
+  border-radius: 2px;
+  margin-bottom: 56px;
+  font-family: var(--ff-display);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+.legal-callout strong { color: var(--ink); font-weight: 500; }
+
+.legal-content {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--ink-2);
+}
+.legal-content h2 {
+  font-family: var(--ff-display);
+  font-weight: 400;
+  font-size: clamp(26px, 3vw, 34px);
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin: 56px 0 16px;
+  padding-top: 24px;
+  border-top: 1px solid var(--rule);
+}
+.legal-content h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+.legal-content h3 {
+  font-family: var(--ff-display);
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+  margin: 28px 0 8px;
+}
+.legal-content p { margin-bottom: 16px; }
+.legal-content p:last-child { margin-bottom: 0; }
+.legal-content ul {
+  list-style: none;
+  margin: 16px 0 24px;
+  padding: 0;
+}
+.legal-content ul li {
+  position: relative;
+  padding: 6px 0 6px 28px;
+  line-height: 1.65;
+}
+.legal-content ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 17px;
+  width: 14px;
+  height: 1px;
+  background: var(--russet);
+}
+.legal-content strong { color: var(--ink); font-weight: 500; }
+.legal-content a {
+  color: var(--forest);
+  border-bottom: 1px solid rgba(31, 59, 46, .3);
+  padding-bottom: 1px;
+  transition: all .2s;
+}
+.legal-content a:hover {
+  border-bottom-color: var(--forest);
+}
+
+.legal-contact-card {
+  margin-top: 56px;
+  padding: 32px 36px;
+  background: var(--paper-2);
+  border-radius: 10px;
+}
+.legal-contact-card h4 {
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--russet);
+  margin-bottom: 14px;
+}
+.legal-contact-card p {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--ink-2);
+  margin-bottom: 8px;
+}
+.legal-contact-card a {
+  color: var(--forest);
+  font-weight: 500;
+}
+
 </style>
 </head>
 <body>
@@ -637,7 +742,7 @@ footer {
   <div class="masthead-inner">
     <div>
       <span>Robinhood Health</span>
-      <span>About</span>
+      <span>Privacy Policy</span>
     </div>
     <div>
       <span>A virtual medical group</span>
@@ -647,59 +752,100 @@ footer {
 
 <nav class="nav">
   <div class="nav-inner">
-    <a href="index.html" class="brand">
-      <img src="RH-Logo.png" alt="Robinhood Health" class="brand-mark" />
+    <a href="/" class="brand">
+      <img src="/RH-Logo.png" alt="Robinhood Health" class="brand-mark" />
       Robinhood Health
     </a>
     <div class="nav-links">
-      <a href="howitworks.html">How it works</a>
-      <a href="model.html">Model</a>
-      <a href="partners.html">Partners</a>
-      <a href="platform.html">Platform</a>
-      <a href="about.html" class="current">About</a>
+      <a href="/howitworks/">How it works</a>
+      <a href="/model/">Model</a>
+      <a href="/partners/">Partners</a>
+      <a href="/platform/">Platform</a>
+      <a href="/about/">About</a>
     </div>
-    <a href="index.html#cta" class="nav-cta">Request briefing →</a>
+    <a href="/#cta" class="nav-cta">Request briefing →</a>
   </div>
 </nav>
 
 <main>
 
 <section class="hero">
-  <div class="eyebrow">About Robinhood Health</div>
-  <h1 class="reveal">A virtual medical group for the members <em>traditional delivery reaches last.</em></h1>
+  <div class="eyebrow">Privacy Policy</div>
+  <h1 class="reveal">How we collect, use, <em>and protect your information.</em></h1>
 </section>
 
-<div class="manifesto">
-  <b>The appointment</b> should come to the home.<br>
-  <b>The language</b> should meet the member where they are.<br>
-  <b>The result</b> should be documented cleanly to the measure.
+<div class="legal-page">
+  <div class="legal-meta">
+    <span>Privacy Policy</span>
+    <span><b>Last updated</b> · December 9, 2025</span>
+  </div>
+
+  <div class="legal-callout">
+    <strong>RH Health Inc. (dba Robinhood Health)</strong> is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our services.
+  </div>
+
+  <div class="legal-content">
+    <h2>Information we collect</h2>
+    <p>We may collect the following types of information:</p>
+    <ul>
+      <li><strong>Personal Information.</strong> Name, date of birth, address, phone number, email address, and Social Security Number when required for insurance verification.</li>
+      <li><strong>Health Information.</strong> Medical history, test results, diagnoses, medications, and other protected health information (PHI) as defined by HIPAA.</li>
+      <li><strong>Insurance Information.</strong> Health plan details, member ID, and eligibility information.</li>
+      <li><strong>Usage Data.</strong> Information about how you interact with our website and services.</li>
+    </ul>
+
+    <h2>How we use your information</h2>
+    <p>We use your information to:</p>
+    <ul>
+      <li>Provide healthcare services, including at-home health screenings</li>
+      <li>Coordinate care with your healthcare providers</li>
+      <li>Process insurance claims and verify eligibility</li>
+      <li>Communicate with you about your health and our services</li>
+      <li>Comply with legal and regulatory requirements</li>
+      <li>Improve our services and develop new offerings</li>
+    </ul>
+
+    <h2>How we protect your information</h2>
+    <p>We implement robust security measures to protect your information, including:</p>
+    <ul>
+      <li>Encryption of data in transit and at rest</li>
+      <li>Access controls and authentication requirements</li>
+      <li>Regular security assessments and audits</li>
+      <li>Employee training on privacy and security</li>
+      <li>Business Associate Agreements with all vendors who handle PHI</li>
+    </ul>
+
+    <h2>Information sharing</h2>
+    <p>We may share your information with:</p>
+    <ul>
+      <li><strong>Healthcare Providers.</strong> Your primary care physician and other providers involved in your care.</li>
+      <li><strong>Health Plans.</strong> Your insurance company for claims processing and care coordination.</li>
+      <li><strong>Business Associates.</strong> Third-party vendors who help us provide services, under strict contractual protections.</li>
+      <li><strong>Legal Requirements.</strong> When required by law or to protect rights and safety.</li>
+    </ul>
+
+    <h2>Your rights</h2>
+    <p>You have the right to:</p>
+    <ul>
+      <li>Access your health information</li>
+      <li>Request corrections to your records</li>
+      <li>Request restrictions on certain uses of your information</li>
+      <li>Receive an accounting of disclosures</li>
+      <li>Receive a copy of this Privacy Policy</li>
+      <li>File a complaint if you believe your privacy rights have been violated</li>
+    </ul>
+
+    <h2>California privacy rights</h2>
+    <p>If you are a California resident, you have additional rights under the California Consumer Privacy Act (CCPA) and California Privacy Rights Act (CPRA), including the right to know what personal information we collect, request deletion, and opt out of the sale of personal information. Note that health information governed by HIPAA is exempt from certain CCPA/CPRA requirements.</p>
+  </div>
+
+  <div class="legal-contact-card">
+    <h4>Contact us</h4>
+    <p>If you have questions about this Privacy Policy or our privacy practices, please contact us at <a href="mailto:privacy@robinhoodhealth.co">privacy@robinhoodhealth.co</a>.</p>
+  </div>
 </div>
 
-<section id="thesis">
-  <div class="section-hd" data-num="01">
-    <div class="section-num"><b>01</b>The thesis</div>
-    <div>
-      <h2>Care gaps are <em>a distribution problem.</em></h2>
-      <p class="section-lede">Before they are a motivation problem, a technology problem, a funding problem, or a clinical knowledge problem, care gaps are a problem of distribution. The members who need preventive care most are the members for whom the traditional delivery system works least well.</p>
-    </div>
-  </div>
-
-  <div class="prose">
-    <p class="lead">Transportation, time, trust, language, and fragmentation compound into a single outcome. A closed loop that never closes.</p>
-
-    <p>Federally Qualified Health Centers serve 32 million patients, most of them Medicaid-eligible, most of them from communities with elevated clinical risk. Screening rates at these sites persistently trail national benchmarks by fifteen to twenty percentage points. This is not because the care teams are unmotivated. It is because closing a screening gap requires reaching a member between visits, in their preferred language, at the right cadence, with a modality they will actually use.</p>
-
-    <p>That work takes operational capacity that front-line clinical teams do not have.</p>
-
-    <p>Robinhood Health was built to contribute that capacity. We are a virtual medical group that partners with FQHCs and Medicaid managed care plans as a contracted clinical service. Our physicians become the ordering providers of record. Our nurses close the loop on abnormal results. Our infrastructure handles identification, outreach, testing, and reporting&mdash;so the front-line team can focus on the care only they can deliver.</p>
-
-    <blockquote>The barrier is almost never the patient. It is the system's ability to meet them where they are.</blockquote>
-
-    <p>Everything downstream of that thesis&mdash;our care model, our infrastructure, our partner relationships&mdash;is an attempt to honor it.</p>
-  </div>
-</section>
-
-<div class="ornament" aria-hidden="true">
+<div class="ornament quiet" aria-hidden="true" style="margin-top: 96px;">
   <svg viewBox="0 0 80 14" fill="none" xmlns="http://www.w3.org/2000/svg">
     <circle cx="2" cy="7" r="1.5" fill="currentColor"/>
     <line x1="6" y1="7" x2="70" y2="7" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
@@ -707,102 +853,14 @@ footer {
   </svg>
 </div>
 
-<section id="work">
-  <div class="section-hd" data-num="02">
-    <div class="section-num"><b>02</b>The work</div>
-    <div>
-      <h2>A clinical service, <em>not a platform.</em></h2>
-      <p class="section-lede">We are not a technology vendor. We are not a member engagement tool. We are not a software product. We are a clinical group that contracts with safety-net providers and Medicaid plans to deliver a specific set of preventive services to a specific kind of patient population.</p>
-    </div>
-  </div>
-
-  <div class="prose">
-    <p>The work is narrow by design. For 2026 we focus on three measures: colorectal cancer screening, hemoglobin A1c control, and kidney health evaluation. Each is a recognized HEDIS measure and a tracked UDS metric. Each addresses a condition that is disproportionately undetected in Medicaid populations, disproportionately costly when undetected, and disproportionately preventable with timely screening.</p>
-
-    <p>We deliver the work end to end. Our technology identifies eligible members from their clinical history. Our AI-powered nursing assistant engages them bilingually over SMS. Our licensed physicians sign every order. CLIA-certified kits ship to the home. Our nurses coordinate diagnostic follow-up for abnormal results. The completed record documents back to the partner's system for measure credit.</p>
-
-    <p>We built the infrastructure to make this work possible&mdash;Sherwood as the clinical system of record, Mariann as the patient engagement layer&mdash;but the infrastructure is not what we sell. It is how we do our job. What we sell is the job done.</p>
-  </div>
-</section>
-
-<div class="ornament quiet" aria-hidden="true">
-  <svg viewBox="0 0 80 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="2" cy="7" r="1.5" fill="currentColor"/>
-    <line x1="6" y1="7" x2="70" y2="7" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
-    <polyline points="62,3 72,7 62,11" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>
-</div>
-
-<section id="history">
-  <div class="section-hd" data-num="03">
-    <div class="section-num"><b>03</b>How we got here</div>
-    <div>
-      <h2>A lesson <em>from the last company.</em></h2>
-      <p class="section-lede">Robinhood Health is a second act. The lesson from the first is the reason the second exists.</p>
-    </div>
-  </div>
-
-  <div class="prose">
-    <p>Before Robinhood Health, the founding team built a clinical decision support platform for medical groups and health systems. It scaled to one hundred and eighty care sites, integrated with every major EHR, and closed a successful exit in 2021.</p>
-
-    <p>It also revealed something uncomfortable. No matter how good the decision support got, the outcomes it produced were bounded by whether the doctors received it well, used it consistently, and had the operational capacity to act on it. For well-resourced health systems, those conditions mostly held. For the safety-net clinics and Medicaid-focused medical groups, they often did not.</p>
-
-    <p>The reasonable conclusion, after several years of watching that ceiling from below, was that the highest-leverage move for the populations who most need preventive care is not to give their doctors better software. It is to become the doctor, and become the technology, at the same time. To own both halves of the problem.</p>
-
-    <p>Robinhood Health is what that conclusion looks like when it is executed.</p>
-  </div>
-</section>
-
-<section id="future">
-  <div class="section-hd" data-num="04">
-    <div class="section-num"><b>04</b>What is next</div>
-    <div>
-      <h2>From foundation <em>to whole-person care.</em></h2>
-      <p class="section-lede">Three screenings is a wedge, not an endpoint. The same infrastructure, the same clinical team, and the same partner relationships extend naturally into adjacent preventive services that Medicaid populations are systematically underserved on.</p>
-    </div>
-  </div>
-
-  <div class="prose">
-    <p>For 2026, the program stays focused on colorectal, diabetes, and kidney screening. Doing these three well, at scale, with closed-loop follow-up, is the work.</p>
-
-    <p>For 2027, the roadmap extends to cervical cancer screening, adult immunization support, medication therapy management, and same-day virtual urgent care. Each of these is a recognized quality measure, each is deliverable through the infrastructure we have already built, and each is a service that Medicaid populations use at rates dramatically below the commercial benchmark.</p>
-
-    <p>The longer horizon is a whole-person preventive care service for Medicaid-eligible adults, delivered entirely by a contracted clinical team, documented entirely to the measures that matter to our partners, and economically structured to make it possible for a Medicaid plan or an FQHC to buy what they could not otherwise afford to build.</p>
-
-    <p>That is the company.</p>
-  </div>
-</section>
-
-<div class="ornament" aria-hidden="true">
-  <svg viewBox="0 0 80 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="2" cy="7" r="1.5" fill="currentColor"/>
-    <line x1="6" y1="7" x2="70" y2="7" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
-    <polyline points="62,3 72,7 62,11" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>
-</div>
-
-<section class="cta" id="cta">
-  <div class="cta-inner">
-    <div class="eyebrow">05 / Get in touch</div>
-    <h2>The rest <em>is a conversation.</em></h2>
-    <p>If what we do matches something you are trying to accomplish&mdash;as an FQHC, as a Medicaid plan, as a collaborator&mdash;write us. We answer.</p>
-    <a href="mailto:info@robinhoodhealth.co?subject=Hello" class="cta-btn">
-      Get in touch
-      <svg viewBox="0 0 12 12" fill="none"><path d="M1 6h10M6 1l5 5-5 5" stroke="currentColor" stroke-width="1.3"/></svg>
-    </a>
-    <div class="cta-contact">
-      or write to <a href="mailto:info@robinhoodhealth.co">info@robinhoodhealth.co</a>
-    </div>
-  </div>
-</section>
 
 </main>
 
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <a href="index.html" class="brand">
-        <img src="RH-Logo.png" alt="Robinhood Health" class="brand-mark" />
+      <a href="/" class="brand">
+        <img src="/RH-Logo.png" alt="Robinhood Health" class="brand-mark" />
         Robinhood Health
       </a>
       <p>A virtual medical group closing preventive screening gaps for high-risk Medicaid populations. RH Health Inc., dba Robinhood Health.</p>
@@ -810,39 +868,38 @@ footer {
     <div class="footer-col">
       <h4>Program</h4>
       <ul>
-        <li><a href="howitworks.html">How it works</a></li>
-        <li><a href="model.html">The model</a></li>
-        <li><a href="platform.html">Platform</a></li>
-        <li><a href="index.html#roadmap">Roadmap</a></li>
+        <li><a href="/howitworks/">How it works</a></li>
+        <li><a href="/model/">The model</a></li>
+        <li><a href="/platform/">Platform</a></li>
+        <li><a href="/#roadmap">Roadmap</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Partners</h4>
       <ul>
-        <li><a href="partners.html">Overview</a></li>
-        <li><a href="fqhc.html">For FQHCs</a></li>
-        <li><a href="mco.html">For Medicaid plans</a></li>
-        <li><a href="index.html#cta">Request briefing</a></li>
+        <li><a href="/partners/">Overview</a></li>
+        <li><a href="/fqhc/">For FQHCs</a></li>
+        <li><a href="/mco/">For Medicaid plans</a></li>
+        <li><a href="/#cta">Request briefing</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Company</h4>
       <ul>
-        <li><a href="about.html">About</a></li>
-        <li><a href="https://www.robinhoodhealth.co/story.html">Robinhood Tales</a></li>
-        <li><a href="letters.html">Founder's letters</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="https://www.robinhoodhealth.co/story/">Robinhood Tales</a></li>
+        <li><a href="/letters/">Founder's letters</a></li>
         <li><a href="mailto:info@robinhoodhealth.co">Contact</a></li>
       </ul>
     </div>
-  
   </div>
   <div class="footer-colophon">
     <div><span class="footer-mark"><svg viewBox="0 0 22 8" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="4" x2="18" y2="4" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><polyline points="14,1 20,4 14,7" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg></span>© 2026 RH Health Inc., dba Robinhood Health</div>
     <div class="legal">
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
-      <a href="hipaa.html">HIPAA notice</a>
-      <a href="accessibility.html">Accessibility</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/hipaa/">HIPAA notice</a>
+      <a href="/accessibility/">Accessibility</a>
     </div>
   </div>
 </footer>
